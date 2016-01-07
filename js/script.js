@@ -33,6 +33,7 @@ $( document ).ready(function() {
     });
 
 
+
     $("#users").on("click", ".deleteUser", function (e) {
         if(confirm("Удалить пользователя?")===false){
             e.preventDefault();
