@@ -63,7 +63,19 @@ class User extends CI_Controller {
 
         $this->load->view('user/header');
         $this->load->view('adress/list', $this->data);
-        $this->load->view('adress/footer');
+        $this->load->view('user/footer');
+    }
+    public function clist()
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        //$this->data['listUsers'] = $this->user_model->getUserList();
+        $this->data['listAdress'] = $this->user_model->getAdressList();
+
+        $this->load->view('user/header');
+        $this->load->view('clients/list');
+        $this->load->view('user/footer');
     }
     //добавить контроллеры для всех видов
     public function logout()
