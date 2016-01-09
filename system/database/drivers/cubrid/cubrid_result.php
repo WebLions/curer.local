@@ -71,7 +71,7 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	/**
 	 * Field data
 	 *
-	 * Generates an array of objects containing field meta-data
+	 * Generates an array of adress containing field meta-data
 	 *
 	 * @access	public
 	 * @return	array

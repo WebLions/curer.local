@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Admin panel</title>
+    <title>Административная панель</title>
 
     <?php echo link_tag('bootstrap/css/bootstrap.min.css'); ?>
     <?php echo link_tag('bootstrap/css/bootstrap-theme.css'); ?>
@@ -62,6 +62,13 @@
                     <a href="/user/alist" class="">
                         <i class="icon_group"></i>
                         <span>Контрагенты</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="/user/сlist" class="">
+                        <i class="icon_group"></i>
+                        <span>Клиенты</span>
                     </a>
                 </li>
 

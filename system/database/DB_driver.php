@@ -401,7 +401,7 @@ class CI_DB_driver {
 			$CR->result_object	= $RES->result_object();
 			$CR->result_array	= $RES->result_array();
 
-			// Reset these since cached objects can not utilize resource IDs.
+			// Reset these since cached adress can not utilize resource IDs.
 			$CR->conn_id		= NULL;
 			$CR->result_id		= NULL;
 
@@ -1128,7 +1128,7 @@ class CI_DB_driver {
 			}
 		}
 
-		$this->CACHE = new CI_DB_Cache($this); // pass db object to support multiple db connections and returned db objects
+		$this->CACHE = new CI_DB_Cache($this); // pass db object to support multiple db connections and returned db adress
 		return TRUE;
 	}
 
