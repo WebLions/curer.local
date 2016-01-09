@@ -62,4 +62,9 @@ class User_model extends CI_Model
         $result = $this->db->get("access");
         return $result->result_array();
     }
+    public function getAdressList()
+    {
+        $result = $this->db->get("adress");
+        return $result->result_array();
+    }
 }
