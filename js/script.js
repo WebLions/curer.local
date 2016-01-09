@@ -53,4 +53,103 @@ $( document ).ready(function() {
         });
     });
 
+
+    $(".addcontragent").click(function(e){
+        $.post( "/ajax/addContragent",  $("#addform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getContragents", function( data ) {
+            $("#clients").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+    $("#myModalEditClient").on("click", ".saveClient", function(e){
+        $.post( "/ajax/saveContragent",  $("#saveform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getContragents", function( data ) {
+            $("#clients").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+    $("#clients").on("click", ".editClient", function (e) {
+        $("#myModalEditClient").empty();
+        $.post("/ajax/getContragent", { userId : $(this).attr("data-id")}, function(data){
+            $("#myModalEditClient").html(data);
+        });
+    });
+    $("#clients").on("click", ".deleteClient", function (e) {
+        if(confirm("Удалить контрагента?")===false){
+            e.preventDefault();
+            return false;
+        }else{
+            $.post( "/ajax/deleteContragent", { userId : $(this).attr("data-id")});
+            $.post( "/ajax/getContragents", function( data ) {
+                $("#clients").html(data);
+            });
+        }
+    });
+    $(".addadress").click(function(e){
+        $.post( "/ajax/addAdress",  $("#addform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getAdresss",{id: $("#id_contragent").val() }, function( data ) {
+            $("#listAdress").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+    $("#myModalEditAdress").on("click", ".saveAdress", function(e){
+        $.post( "/ajax/saveAdress",  $("#saveform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getAdresss",{id: $("#id_contragent").val() }, function( data ) {
+            $("#listAdress").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+    $("#listAdress").on("click", ".editAdress", function (e) {
+        $("#myModalEditAdress").empty();
+        $.post("/ajax/getAdress", { id : $(this).attr("data-id")}, function(data){
+            $("#myModalEditAdress").html(data);
+        });
+    });
+    $("#listAdress").on("click", ".deleteAdress", function (e) {
+        if(confirm("Удалить адрес?")===false){
+            e.preventDefault();
+            return false;
+        }else{
+            $.post( "/ajax/deleteAdress", { id : $(this).attr("data-id")});
+            $.post( "/ajax/getAdresss",{id: $("#id_contragent").val() }, function( data ) {
+                $("#listAdress").html(data);
+            });
+        }
+    });
 });

@@ -35,7 +35,9 @@ class User extends CI_Controller {
         if(!$this->data['user_token']) {
             redirect('user/login');
         }
-            $this->load->view('user/header');
+        $this->data['active'] = "home";
+
+            $this->load->view('user/header', $this->data);
             $this->load->view('user/home');
             $this->load->view('user/footer');
 
@@ -47,21 +49,23 @@ class User extends CI_Controller {
         }
         $this->data['listUsers'] = $this->user_model->getUserList();
         $this->data['listAccess'] = $this->user_model->getAccessList();
+        $this->data['active'] = "ulist";
 
-        $this->load->view('user/header');
+        $this->load->view('user/header', $this->data);
         $this->load->view('user/list', $this->data);
         $this->load->view('user/footer');
 
     }
-    public function alist()
+    public function alist($id = 0)
     {
         if(!$this->data['user_token']) {
             redirect('user/login');
         }
-        //$this->data['listUsers'] = $this->user_model->getUserList();
-        $this->data['listAdress'] = $this->user_model->getAdressList();
+        $this->data['client'] = $this->user_model->getClient($id);
+        $this->data['listAdress'] = $this->user_model->getAdressList($id);
+        $this->data['active'] = "clist";
 
-        $this->load->view('user/header');
+        $this->load->view('user/header', $this->data);
         $this->load->view('adress/list', $this->data);
         $this->load->view('user/footer');
     }
@@ -71,10 +75,11 @@ class User extends CI_Controller {
             redirect('user/login');
         }
         //$this->data['listUsers'] = $this->user_model->getUserList();
-        $this->data['listAdress'] = $this->user_model->getAdressList();
+        $this->data['listClients'] = $this->user_model->getClientsList();
+        $this->data['active'] = "clist";
 
-        $this->load->view('user/header');
-        $this->load->view('clients/list');
+        $this->load->view('user/header', $this->data);
+        $this->load->view('clients/list', $this->data);
         $this->load->view('user/footer');
     }
     //добавить контроллеры для всех видов
