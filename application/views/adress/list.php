@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
                     <li><i class="fa fa-laptop"></i>Клиенты</li>
-                    <li><i class="fa fa-laptop"></i<?/*Наименование клиента*/?></li>
+                    <li><i class="fa fa-laptop"></i>*Наименование клиента*</li>
                 </ol>
             </div>
         </div>
