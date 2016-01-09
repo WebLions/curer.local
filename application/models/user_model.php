@@ -62,8 +62,20 @@ class User_model extends CI_Model
         $result = $this->db->get("access");
         return $result->result_array();
     }
-    public function getAdressList()
+    public function getClientsList() //получение данных контагентов
     {
+        $query = $this->db->get("contragent");
+        return $query->result_array();
+    }
+    public function getClient($id = 0)
+    {
+        $this->db->where("id", $id);
+        $result = $this->db->get("contragent");
+        return $result->row();
+    }
+    public function getAdressList($id = 0)
+    {
+        $this->db->where("id_contragent", $id);
         $result = $this->db->get("adress");
         return $result->result_array();
     }

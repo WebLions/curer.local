@@ -43,14 +43,14 @@
         <div id="sidebar"  class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
-                <li class="active">
+                <li class="sub-menu <?=($active=="home")? 'active' : ''?>">
                     <a class="" href="/user/home">
                         <i class="icon_house_alt"></i>
                         <span>Главная</span>
                     </a>
                 </li>
                 <? if($_SESSION['access'] == 1){?>
-                <li class="sub-menu">
+                <li class="sub-menu <?=($active=="ulist")? 'active' : ''?>">
                     <a href="/user/ulist" class="">
                         <i class="icon_group"></i>
                         <span>Пользователи</span>
@@ -58,9 +58,9 @@
                 </li>
                 <? } ?>
 
-                <li class="sub-menu">
+                <li class="sub-menu <?=($active=="clist")? 'active' : ''?>">
                     <a href="/user/clist" class="">
-                        <i class="icon_group"></i>
+                        <i class="icon_id-2"></i>
                         <span>Контрагенты</span>
                     </a>
                 </li>

@@ -39,7 +39,7 @@
                                         <input name="contact" class="form-control" id="contact">
                                     </div>
 
-                                    <button type="submit" class="btn btn-default adduser">Добавить</button>
+                                    <button type="submit" class="btn btn-default addcontragent">Добавить</button>
                                 </form>
                             </div>
                         </div>
@@ -60,21 +60,21 @@
                             <th>Контактные данные</th>
                             <th><i class="icon_cogs"></i>Действия</th>
                         </tr>
-
+                        <? foreach($listClients as $listClient) { ?>
                             <tr>
-                                <td>name</td>
-                                <td>vendor</td>
-                                <td>contact</td>
+                                <td><?=$listClient['name']?></td>
+                                <td><?=$listClient['vendor']?></td>
+                                <td><?=$listClient['contact']?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-success editClient" data-toggle="modal" data-target="#myModalEditClient"  data-id="" href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteClient" data-id=""  href="#"><i class="icon_trash_alt"></i></a>
-                                        <a class="btn btn-info showClient" data-id="" href="#"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                        <a class="btn btn-success editClient" data-id="<?=$listClient['id']?>" data-toggle="modal" data-target="#myModalEditClient"  href="#"><i class="icon_cog"></i></a>
+                                        <a class="btn btn-danger deleteClient" data-id="<?=$listClient['id']?>" href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-danger showClient" data-id="<?=$listClient['id']?>" href="/user/alist/<?=$listClient['id']?>"><i class="glyphicon glyphicon-eye-open"></i></a>
 
                                     </div>
                                 </td>
                             </tr>
-
+                        <? } ?>
                         </tbody>
                     </table>
                 </section>

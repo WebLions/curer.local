@@ -10,15 +10,15 @@
                 <input name="id" type="hidden" class="form-control" value="<?=$client->id?>">
                 <div class="form-group">
                     <label for="name">Название</label>
-                    <input name="name" type="text" class="form-control" id="name">
+                    <input name="name" type="text" class="form-control" id="name" value="<?=$client->name?>">
                 </div>
                 <div class="form-group">
                     <label for="vendor">Ответсnвенное лицо</label>
-                    <input name="vendor" class="form-control" id="vendor">
+                    <input name="vendor" class="form-control" id="vendor" value="<?=$client->vendor?>">
                 </div>
                 <div class="form-group">
                     <label for="contact">Контактные данные</label>
-                    <input name="contact" class="form-control" id="contact">
+                    <input name="contact" class="form-control" id="contact" value="<?=$client->contact?>">
                 </div>
                 <button type="submit" class="btn btn-default saveClient">Сохранить</button>
             </form>
