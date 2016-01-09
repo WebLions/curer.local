@@ -752,7 +752,7 @@ class CI_Javascript {
 	 * Can be passed a database result or associative array and returns a JSON formatted string
 	 *
 	 * @param	mixed	result set or array
-	 * @param	bool	match array types (defaults to objects)
+	 * @param	bool	match array types (defaults to adress)
 	 * @return	string	a json formatted string
 	 */
 	function generate_json($result = NULL, $match_array_type = FALSE)
