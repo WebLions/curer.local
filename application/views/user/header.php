@@ -59,7 +59,7 @@
                 <? } ?>
 
                 <li class="sub-menu">
-                    <a href="/user/alist" class="">
+                    <a href="/user/clist" class="">
                         <i class="icon_group"></i>
                         <span>Контрагенты</span>
                     </a>

@@ -14,7 +14,6 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Добавить адресс</button>
                 <div id="myModalEditAdress" class="modal fade" role="dialog">
                 </div>
                 <div id="myModal" class="modal fade" role="dialog">
@@ -50,27 +49,29 @@
             <div class="col-lg-12">
                 <section class="panel" id="clients">
                     <table class="table table-striped table-advance table-hover">
-                        <tbody>
-                        <tr>
+                        <thead>
                             <th>Адресс</th>
                             <th>Примечание</th>
                             <th><i class="icon_cogs"></i>Действия</th>
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        <? foreach($listAdress as $listAdres) { ?>
-                            <tr>
-                                <td><?=$listAdres['adress']?></td>
-                                <td><?=$listAdres['note']?></td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-success editAdress" data-id="<?=$listAdres['id']?>" data-toggle="modal" data-target="#myModalEditAdress"  href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteAdress" data-id="<?=$listAdres['id']?>" href="#"><i class="icon_trash_alt"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        <? } ?>
+
+
                         </tbody>
                     </table>
+                    <div class = "button-center">
+
+                        <a class="btn btn-success " data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i></a>
+                    </div>
+
                 </section>
+
             </div>
         </div>
 

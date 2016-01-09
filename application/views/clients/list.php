@@ -55,26 +55,26 @@
                     <table class="table table-striped table-advance table-hover">
                         <tbody>
                         <tr>
-                            <th>ФИО</th>
-                            <th>Логин</th>
-                            <th>Пароль</th>
-                            <th>Роль</th>
+                            <th>Название</th>
+                            <th>Ответственное лицо</th>
+                            <th>Контактные данные</th>
                             <th><i class="icon_cogs"></i>Действия</th>
                         </tr>
-                        <? foreach($listUsers as $listUser) { ?>
+
                             <tr>
-                                <td><?=$listUser['fio']?></td>
-                                <td><?=$listUser['login']?></td>
-                                <td>******</td>
-                                <td><?=$listUser['access']?></td>
+                                <td>name</td>
+                                <td>vendor</td>
+                                <td>contact</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-success editClient" data-toggle="modal" data-target="#myModalEditClient"  data-id="<?=$listUser['id']?>" href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteClient" data-id="<?=$listUser['id']?>"  href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-success editClient" data-toggle="modal" data-target="#myModalEditClient"  data-id="" href="#"><i class="icon_cog"></i></a>
+                                        <a class="btn btn-danger deleteClient" data-id=""  href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-info showClient" data-id="" href="#"><i class="glyphicon glyphicon-eye-open"></i></a>
+
                                     </div>
                                 </td>
                             </tr>
-                        <? } ?>
+
                         </tbody>
                     </table>
                 </section>
