@@ -69,6 +69,32 @@ class User extends CI_Controller {
         $this->load->view('adress/list', $this->data);
         $this->load->view('user/footer');
     }
+    public function courlist($id = 0)
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['client'] = $this->user_model->getClient($id);
+        $this->data['listAdress'] = $this->user_model->getAdressList($id);
+        $this->data['active'] = "courlist";
+
+        $this->load->view('user/header', $this->data);
+        $this->load->view('courier/list', $this->data);
+        $this->load->view('user/footer');
+    }
+    public function olist($id = 0)
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['client'] = $this->user_model->getClient($id);
+        $this->data['listAdress'] = $this->user_model->getAdressList($id);
+        $this->data['active'] = "olist";
+
+        $this->load->view('user/header', $this->data);
+        $this->load->view('order/list', $this->data);
+        $this->load->view('user/footer');
+    }
     public function clist()
     {
         if(!$this->data['user_token']) {
