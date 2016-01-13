@@ -7,20 +7,20 @@
         </div>
         <div class="modal-body">
             <form role="form" id="saveform">
-                <input name="id" type="hidden" class="form-control" value="<?=$client->id?>">
+                <input name="id" type="hidden" class="form-control" id="id_courier" value="<?=$listCouriers->id?>">
                 <div class="form-group">
                     <label for="name">ФИО</label>
-                    <input name="name" type="text" class="form-control" id="name" value="<?=$client->name?>">
+                    <input name="name" type="text" class="form-control" id="name" value="<?=$listCouriers->name?>">
                 </div>
                 <div class="form-group">
                     <label for="contact">Контактный номер</label>
-                    <input name="contact" class="form-control" id="contact" value="<?=$client->vendor?>">
+                    <input name="contact" class="form-control" id="contact" value="<?=$listCouriers->contact?>">
                 </div>
                 <div class="form-group">
                     <label for="note">Примечание</label>
-                    <input name="note" class="form-control" id="note" value="<?=$client->contact?>">
+                    <input name="note" class="form-control" id="note" value="<?=$listCouriers->note?>">
                 </div>
-                <button type="submit" class="btn btn-default saveClient">Сохранить</button>
+                <button type="submit" class="btn btn-default saveCourier">Сохранить</button>
             </form>
         </div>
     </div>

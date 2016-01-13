@@ -132,5 +132,93 @@ class Ajax_model extends CI_Model {
         $this->db->where("id", $id);
         $this->db->delete("adress");
     }
+    //kurier
+    public function saveCourier($post = array(), $type = 'save') // two type 'save' or 'update'
+    {
+        $data = array(
+            'name' => $post['name'],
+            'contact' => $post['contact'],
+            'note' => $post['note']
+        );
+        $id = isset($post['id']) ? $post['id'] : null ;
+        if($type == 'update' && !empty($id))
+        {
+            $this->db->where("id", $id);
+            $this->db->update("cour", $data);
+            return true;
+        }
+        $this->db->insert("cour", $data);
+        return true;
+    }
+    public function getCouriers($id = 0) //получение данных курьеров
+    {
+        if(!empty($id))
+        {
+            $this->db->where("id", $id);
+            $query = $this->db->get("cour");
+            return $query->row();
+        }else{
+            $query = $this->db->get("cour");
+            return $query->result_array();
+        }
+    }
+    public function deleteCourier($id) //удаление ондного контагента по id
+    {
+        $this->db->where("id", $id);
+        $this->db->delete("cour");
+    }
+    //kurier
+    public function saveOrder($post = array(), $type = 'save') // two type 'save' or 'update'
+    {
+        if($post['buysell'] == 'buy')
+        {
+            $buy = true;
+            $sell = false;
+        }else{
+            $buy = false;
+            $sell = true;
+        }
 
+        $data = array(
+            'id_client' => $post['id_client'],
+            'date' => $post['date'],
+            'order_state' => $post['order_state'],
+            'tariff' => $post['tariff'],
+            'payment' => $post['payment'],
+            'giver_adress' => $post['giver_adress'],
+            'id_courier_1' => $post['courier_1'],
+            'taker_adress' => $post['taker_adress'],
+            'id_courier_2' => $post['courier_2'],
+            'buy' => $buy,
+            'sell' => $sell
+        );
+        $id = isset($post['id']) ? $post['id'] : null ;
+        if($type == 'update' && !empty($id))
+        {
+            $this->db->where("id", $id);
+            $this->db->update("order", $data);
+            return true;
+        }
+        $this->db->insert("order", $data);
+        return true;
+    }
+    public function getShortOrders() //получение данных курьеров
+    {
+        $this->db->select("order.id, contragent.name as client, order.date, order.order_state, order.tariff, order.payment");
+        $this->db->join("contragent", "contragent.id = order.id_client");
+        $query = $this->db->get("order");
+        return $query->result_array();
+
+    }
+    public function deleteOrder($id) //удаление  по id
+    {
+        $this->db->where("id", $id);
+        $this->db->delete("order");
+    }
+    public function getOrder($id) //  по id
+    {
+        $this->db->where("id", $id);
+        $query = $this->db->get("order");
+        return $query->row();
+    }
 }

@@ -32,13 +32,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="vendor">Контактные данные</label>
-                                        <input name="vendor" class="form-control" id="vendor">
+                                        <input name="contact" class="form-control" id="vendor">
                                     </div>
                                     <div class="form-group">
                                         <label for="note">Примечание</label>
                                         <input name="note" class="form-control" id="note">
                                     </div>
-                                    <button type="submit" class="btn btn-default addcontragent">Добавить</button>
+                                    <button type="submit" class="btn btn-default addCourier">Добавить</button>
                                 </form>
                             </div>
                         </div>
@@ -59,28 +59,26 @@
                             <th>Примечание</th>
                             <th><i class="icon_cogs"></i>Действия</th>
                         </tr>
-
+                        <? foreach($listCouriers as $listCourier) { ?>
                             <tr>
-                                <td>name</td>
-                                <td>contact</td>
-                                <td>note</td>
+                                <td><?=$listCourier['name']?></td>
+                                <td><?=$listCourier['contact']?></td>
+                                <td><?=$listCourier['note']?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-success editClient" data-id="" data-toggle="modal" data-target="#myModalEditCourier"  href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteClient" data-id="" href="#"><i class="icon_trash_alt"></i></a>
-                                        <a class="btn btn-danger showClient" data-id="" href=""><i class="glyphicon glyphicon-eye-open"></i></a>
+                                        <a class="btn btn-success editCourier" data-id="<?=$listCourier['id']?>" data-toggle="modal" data-target="#myModalEditCourier"  href="#"><i class="icon_cog"></i></a>
+                                        <a class="btn btn-danger deleteCourier" data-id="<?=$listCourier['id']?>" href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-danger showCourier" data-id="<?=$listCourier['id']?>" href="#"><i class="glyphicon glyphicon-eye-open"></i></a>
 
                                     </div>
                                 </td>
                             </tr>
-
+                        <? } ?>
                         </tbody>
                     </table>
                 </section>
             </div>
         </div>
-
-
     </section>
 </section>
 <!--main content end-->
