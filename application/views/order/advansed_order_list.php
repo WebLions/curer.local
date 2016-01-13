@@ -6,42 +6,74 @@
 
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
-                    <li><i class="fa fa-laptop"></i><a href ="/user/orders">Заказы</a></li>
+                    <li><i class="fa fa-laptop"></i><a href ="/user/olist">Заказы</a></li>
                     <li><i class="fa fa-laptop"></i>Ссылка на заказ, имя клиента</li>
                 </ol>
             </div>
         </div>
-        <pre>
-            <?print_r($order);?>
-        </pre>
-        <div class="row">
-            <div class="col-lg-12">
-                <section class="panel" id="advansed_orders">
-                    <table class="table table-striped table-advance table-hover">
-                        <tbody>
+
+        <ul class="nav nav-tabs">
+            <li class = "active"><a data-toggle="tab" href="#adress">Адреса и курьеры</a></li>
+            <li><a data-toggle="tab" href="#order_data">Данные по заказу</a></li>
+            <li><a data-toggle="tab" href="#payment_data">Студенты</a></li>
+
+        </ul>
+
+        <div id="adress" class="tab-pane fade ">
+            <div class = "row">
+                <div class = "col-md-12">
+                    <table width = "100%">
                         <tr>
-                            <th>Адрес отправителя</th>
-                            <th>Курьер</th>
-                            <th>Адрес получателя</th>
-                            <th>Курьер</th>
-                            <th>Купить</th>
-                            <th>Продать</th>
-                            <th>Оплата доставки</th>
+                            <th style = "width: 25%">Адресс отправителя</th>
+                            <th style = "width: 25%">Курьер</th>
+                            <th style = "width: 25%">Адресс получателя</th>
+                            <th style = "width: 25%">Курьер</th>
                         </tr>
-
-                            <tr>
-                                <td>giver_adress</td>
-                                <td>courier_1</td>
-                                <td>taker_adress</td>
-                                <td>courier_2</td>
-                                <td>buy</td>
-                                <td>sell</td>
-                                <td>payment</td>
-                            </tr>
-
-                        </tbody>
+                        <tr>
+                            <td>авипвап</td>
+                            <td>ывапыв</td>
+                            <td>авипвап</td>
+                            <td>ывапыв</td>
+                         </tr>
                     </table>
-                </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="order_data" class="tab-pane fade ">
+            <div class = "row">
+                <div class = "col-md-12">
+                    <table width = "100%">
+                        <tr>
+                            <th style = "width: 25%">Дата доставки</th>
+                            <th style = "width: 25%">Клиент</th>
+                            <th style = "width: 25%">Статус заказа</th>
+                        </tr>
+                        <tr>
+                            <td>авипвап</td>
+                            <td>ывапыв</td>
+                            <td>авипвап</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="payment_data" class="tab-pane fade ">
+            <div class = "row">
+                <div class = "col-md-12">
+                    <table width = "100%">
+                        <tr>
+                            <th style = "width: 25%">Тариф</th>
+                            <th style = "width: 25%">Купить</th>
+                            <th style = "width: 25%">Продать</th>
+                        </tr>
+                        <tr>
+                            <td>авипвап</td>
+                            <td>ывапыв</td>
+                            <td>авипвап</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
