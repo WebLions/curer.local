@@ -15,13 +15,16 @@
         <ul class="nav nav-tabs">
             <li class = "active"><a data-toggle="tab" href="#adress">Адреса и курьеры</a></li>
             <li><a data-toggle="tab" href="#order_data">Данные по заказу</a></li>
-            <li><a data-toggle="tab" href="#payment_data">Студенты</a></li>
+            <li><a data-toggle="tab" href="#payment_data">Данные по оплате</a></li>
 
         </ul>
 
+
+        <div class="tab-content">
         <div id="adress" class="tab-pane fade ">
             <div class = "row">
                 <div class = "col-md-12">
+                    <br>
                     <table width = "100%">
                         <tr>
                             <th style = "width: 25%">Адресс отправителя</th>
@@ -43,6 +46,7 @@
         <div id="order_data" class="tab-pane fade ">
             <div class = "row">
                 <div class = "col-md-12">
+                    <br>
                     <table width = "100%">
                         <tr>
                             <th style = "width: 25%">Дата доставки</th>
@@ -61,6 +65,7 @@
         <div id="payment_data" class="tab-pane fade ">
             <div class = "row">
                 <div class = "col-md-12">
+                    <br>
                     <table width = "100%">
                         <tr>
                             <th style = "width: 25%">Тариф</th>
@@ -76,6 +81,7 @@
                 </div>
             </div>
         </div>
+            </div>
 
 
     </section>
