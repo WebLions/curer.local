@@ -19,9 +19,11 @@
 
         </ul>
 
+        <div class="tab-content">
         <div id="adress" class="tab-pane fade ">
             <div class = "row">
                 <div class = "col-md-12">
+                    <br>
                     <table width = "100%">
                         <tr>
                             <th style = "width: 25%">Адресс отправителя</th>
@@ -36,25 +38,6 @@
                             <td>ывапыв</td>
                          </tr>
                     </table>
-                    <div class="container">
-                        <div class="row">
-                            <div class='col-sm-6'>
-                                <div class="form-group">
-                                    <div class='input-group date' id='datetimepicker1'>
-                                        <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <script type="text/javascript">
-                                $(function () {
-                                    $('#datetimepicker1').datetimepicker();
-                                });
-                            </script>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -62,6 +45,7 @@
         <div id="order_data" class="tab-pane fade ">
             <div class = "row">
                 <div class = "col-md-12">
+                    <br>
                     <table width = "100%">
                         <tr>
                             <th style = "width: 25%">Дата доставки</th>
@@ -80,6 +64,7 @@
         <div id="payment_data" class="tab-pane fade ">
             <div class = "row">
                 <div class = "col-md-12">
+                    <br>
                     <table width = "100%">
                         <tr>
                             <th style = "width: 25%">Тариф</th>
@@ -95,6 +80,7 @@
                 </div>
             </div>
         </div>
+            </div>
 
 
     </section>
