@@ -15,7 +15,7 @@
         <ul class="nav nav-tabs">
             <li class = "active"><a data-toggle="tab" href="#adress">Адреса и курьеры</a></li>
             <li><a data-toggle="tab" href="#order_data">Данные по заказу</a></li>
-            <li><a data-toggle="tab" href="#payment_data">Студенты</a></li>
+            <li><a data-toggle="tab" href="#payment_data">Данные по оплате</a></li>
 
         </ul>
 
@@ -36,6 +36,25 @@
                             <td>ывапыв</td>
                          </tr>
                     </table>
+                    <div class="container">
+                        <div class="row">
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker1').datetimepicker();
+                                });
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
