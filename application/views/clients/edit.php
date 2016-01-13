@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contact">Дополнительно:</label>
-                    <input name="contact" class="form-control" id="other" value="<?=$client->other?>">
+                    <input name="other" class="form-control" id="other" value="<?=$client->other?>">
                 </div>
                 <button type="submit" class="btn btn-default saveClient">Сохранить</button>
             </form>

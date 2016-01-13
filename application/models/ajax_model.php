@@ -64,7 +64,8 @@ class Ajax_model extends CI_Model {
         $data = array(
             'name' => $post['name'],
             'vendor' => $post['vendor'],
-            'contact' => $post['contact']
+            'contact' => $post['contact'],
+            'other' => $post['other']
         );
         $this->db->insert("contragent", $data);
     }
@@ -91,7 +92,8 @@ class Ajax_model extends CI_Model {
         $data = array(
             'name' => $post['name'],
             'vendor' => $post['vendor'],
-            'contact' => $post['contact']
+            'contact' => $post['contact'],
+            'other' => $post['other']
         );
         $this->db->where("id", $post['id']);
         $this->db->update("contragent", $data);

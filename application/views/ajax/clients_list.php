@@ -10,11 +10,11 @@
     </tr>
     <? foreach($listClients as $listClient) { ?>
         <tr>
-            <td>id</td>
+            <td><?=$listClient['id']?></td>
             <td><?=$listClient['name']?></td>
             <td><?=$listClient['vendor']?></td>
             <td><?=$listClient['contact']?></td>
-            <td>other</td>
+            <td><?=$listClient['other']?></td>
             <td>
                 <div class="btn-group">
                     <a class="btn btn-success editClient" data-id="<?=$listClient['id']?>" data-toggle="modal" data-target="#myModalEditClient"  href="#"><i class="icon_cog"></i></a>
