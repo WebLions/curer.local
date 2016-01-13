@@ -144,4 +144,93 @@ class Ajax extends CI_Controller {
         }
         echo json_encode($this->data);
     }
+    //Courier
+    public function addCourier()
+    {
+        $this->form_validation->set_rules('name','ФИО','trim|required|xss_clean');
+        $this->form_validation->set_rules('contact','Контактные данные','trim|required|xss_clean');
+        $this->form_validation->set_rules('note','Примечание','trim|required|xss_clean');
+
+        if($this->form_validation->run() == true)
+        {
+            $this->data['error'] = 0;
+            $this->ajax_model->saveCourier( $this->input->post() );
+        }else{
+            $this->data['error'] = 1;
+        }
+        echo json_encode($this->data);
+    }
+    public function saveCourier()
+    {
+        $this->form_validation->set_rules('name','ФИО','trim|required|xss_clean');
+        $this->form_validation->set_rules('contact','Контактные данные','trim|required|xss_clean');
+        $this->form_validation->set_rules('note','Примечание','trim|required|xss_clean');
+
+        if($this->form_validation->run() == true)
+        {
+            $this->data['error'] = 0;
+            $this->ajax_model->saveCourier( $this->input->post(), "update" );
+        }else{
+            $this->data['error'] = 1;
+        }
+        echo json_encode($this->data);
+    }
+    public function getCouriers($id = '')
+    {
+        $id = $this->input->post('id');
+        $this->data['listCouriers'] = $this->ajax_model->getCouriers($id);
+        if(!empty($id))
+            $this->load->view('courier/edit', $this->data);
+        else
+            $this->load->view('ajax/courier_list', $this->data);
+    }
+    public function deleteCourier()
+    {
+        $this->ajax_model->deleteCourier( (int) $this->input->post("id") );
+    }
+    //Orders
+    public function addOrder()
+    {
+        $this->form_validation->set_rules('order_state','Статус заказа','trim|required|xss_clean');
+
+        if($this->form_validation->run() == true)
+        {
+            $this->data['error'] = 0;
+            $this->ajax_model->saveOrder( $this->input->post() );
+        }else{
+            $this->data['error'] = 1;
+        }
+        echo json_encode($this->data);
+    }
+    public function saveOrder()
+    {
+        $this->form_validation->set_rules('order_state','Статус заказа','trim|required|xss_clean');
+
+        if($this->form_validation->run() == true)
+        {
+            $this->data['error'] = 0;
+            $this->ajax_model->saveOrder( $this->input->post(), "update");
+        }else{
+            $this->data['error'] = 1;
+        }
+        echo json_encode($this->data);
+    }
+    public function getShortOrders()
+    {
+        $this->data['listOrders'] = $this->ajax_model->getShortOrders();
+        $this->load->view('ajax/orders_list', $this->data);
+    }
+    public function getOrder()
+    {
+        $this->data['order'] = $this->ajax_model->getOrder((int) $this->input->post("id"));
+
+        $this->data['clientList'] = $this->user_model->getClientsList();
+        $this->data['courierList'] = $this->user_model->getCouriersList();
+
+        $this->load->view('order/edit', $this->data);
+    }
+    public function deleteOrder()
+    {
+        $this->ajax_model->deleteOrder( (int) $this->input->post("id") );
+    }
 }

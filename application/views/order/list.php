@@ -32,11 +32,18 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="client">Клиент</label>
-                                        <input name="client" class="form-control" id="client">
+                                        <select name="id_client" class="form-control">
+                                            <? foreach($clientList as $row) {?>
+                                            <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                            <? } ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="order_state">Статус заказа</label>
-                                        <input name="order_state" class="form-control" id="order_state">
+                                        <select name="order_state" class="form-control">
+                                            <option value="Оплачен">Оплачен</option>
+                                            <option value="Не оплачен">Не оплачен</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="giver_adress">Адрес отправителя</label>
@@ -44,7 +51,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="courier_1">Курьер</label>
-                                        <input name="courier_1" class="form-control" id="courier_1">
+                                        <select name="courier_1" class="form-control">
+                                            <? foreach($courierList as $row) {?>
+                                                <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                            <? } ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="taker_adress">Адрес получателя</label>
@@ -52,7 +63,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="courier_2">Курьер</label>
-                                        <input name="courier_2" class="form-control" id="courier_2">
+                                        <select name="courier_2" class="form-control">
+                                            <? foreach($courierList as $row) {?>
+                                                <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                            <? } ?>
+                                        </select>
                                      </div>
                                     <div class="form-group">
                                         <label for="tariff">Тариф</label>
@@ -60,17 +75,18 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="buy">Купить</label>
-                                        <input name="buy" class="form-control" id="buy">
-                                    </div>
-                                    <div class="form-group">
+                                        <input name="buysell" type="radio" checked class="form-control" value="buy">
                                         <label for="sell">Продать</label>
-                                        <input name="sell" class="form-control" id="sell">
+                                        <input name="buysell" type="radio" class="form-control" value="sell">
                                     </div>
                                     <div class="form-group">
                                         <label for="payment">Оплата доставки</label>
-                                        <input name="payment" class="form-control" id="payment">
+                                        <select name="payment" class="form-control">
+                                            <option value="Да">Да</option>
+                                            <option value="Нет">Нет</option>
+                                        </select>
                                     </div>
-                                    <button type="submit" class="btn btn-default addcontragent">Добавить</button>
+                                    <button type="submit" class="btn btn-default addOrder">Добавить</button>
                                 </form>
                             </div>
                         </div>
@@ -95,23 +111,22 @@
                             <th>Оплата доставки</th>
                             <th><i class="icon_cogs"></i>Действия</th>
                         </tr>
-
+                        <? foreach($listOrders as $listOrder) { ?>
                             <tr>
-                                <td>client</td>
-                                <td>date</td>
-                                <td>order_state</td>
-                                <td>tariff</td>
-                                <td>payment</td>
+                                <td><?=$listOrder['client']?></td>
+                                <td><?=$listOrder['date']?></td>
+                                <td><?=$listOrder['order_state']?></td>
+                                <td><?=$listOrder['tariff']?></td>
+                                <td><?=$listOrder['payment']?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-success editClient" data-id="" data-toggle="modal" data-target="#myModalEditOrder"  href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteClient" data-id=" href="#"><i class="icon_trash_alt"></i></a>
-                                        <a class="btn btn-danger showClient" data-id="" href="olist отдельный заказ"><i class="glyphicon glyphicon-eye-open"></i></a>
-
+                                        <a class="btn btn-success editOrder" data-id="<?=$listOrder['id']?>" data-toggle="modal" data-target="#myModalEditOrder"  href="#"><i class="icon_cog"></i></a>
+                                        <a class="btn btn-danger deleteOrder" data-id="<?=$listOrder['id']?>" href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-danger showOrder" data-id="<?=$listOrder['id']?>" href="/user/order_view/<?=$listOrder['id']?>"><i class="glyphicon glyphicon-eye-open"></i></a>
                                     </div>
                                 </td>
                             </tr>
-
+                        <? } ?>
                         </tbody>
                     </table>
                 </section>

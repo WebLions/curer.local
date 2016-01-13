@@ -74,8 +74,8 @@ class User extends CI_Controller {
         if(!$this->data['user_token']) {
             redirect('user/login');
         }
-        $this->data['client'] = $this->user_model->getClient($id);
-        $this->data['listAdress'] = $this->user_model->getAdressList($id);
+        //$this->data['client'] = $this->user_model->getClient($id);
+        $this->data['listCouriers'] = $this->user_model->getCouriersList();
         $this->data['active'] = "courlist";
 
         $this->load->view('user/header', $this->data);
@@ -88,11 +88,25 @@ class User extends CI_Controller {
             redirect('user/login');
         }
         $this->data['client'] = $this->user_model->getClient($id);
-        $this->data['listAdress'] = $this->user_model->getAdressList($id);
+        $this->data['clientList'] = $this->user_model->getClientsList();
+        $this->data['courierList'] = $this->user_model->getCouriersList();
+        $this->data['listOrders'] = $this->user_model->getShortOrders();
         $this->data['active'] = "olist";
 
         $this->load->view('user/header', $this->data);
         $this->load->view('order/list', $this->data);
+        $this->load->view('user/footer');
+    }
+    public function order_view($id = 0)
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['active'] = "olist";
+        $this->data['order'] = $this->user_model->getOrder((int) $id);
+
+        $this->load->view('user/header', $this->data);
+        $this->load->view('order/advansed_order_list', $this->data);
         $this->load->view('user/footer');
     }
     public function clist()

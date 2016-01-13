@@ -6,12 +6,14 @@
 
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
-                    <li><i class="fa fa-laptop"></i><a href ="/user/orders">Заказы</li>
+                    <li><i class="fa fa-laptop"></i><a href ="/user/orders">Заказы</a></li>
                     <li><i class="fa fa-laptop"></i>Ссылка на заказ, имя клиента</li>
                 </ol>
             </div>
         </div>
-
+        <pre>
+            <?print_r($order);?>
+        </pre>
         <div class="row">
             <div class="col-lg-12">
                 <section class="panel" id="advansed_orders">

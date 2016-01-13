@@ -3,54 +3,70 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Редактирование клиента</h4>
+            <h4 class="modal-title">Редактирование заказа</h4>
         </div>
         <div class="modal-body">
             <form role="form" id="saveform">
-                <input name="id" type="hidden" class="form-control" value="Айди заказа">
+                <input name="id" type="hidden" class="form-control" value="<?=$order->id?>">
                 <div class="form-group">
                     <label for="date">Дата доставки</label>
-                    <input name="date" type="text" class="form-control" id="date">
+                    <input name="date" type="text" class="form-control" id="date" value="<?=$order->date?>">
                 </div>
                 <div class="form-group">
                     <label for="client">Клиент</label>
-                    <input name="client" class="form-control" id="client">
+                    <select name="id_client" class="form-control">
+                        <? foreach($clientList as $row) {?>
+                            <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="order_state">Статус заказа</label>
-                    <input name="order_state" class="form-control" id="order_state">
+                    <select name="order_state" class="form-control">
+                        <option value="Оплачен" <?=($order->order_state="Оплачен")?"checked":"";?> >Оплачен</option>
+                        <option value="Не оплачен" <?=($order->order_state="Не оплачен")?"checked":"";?> >Не оплачен</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="giver_adress">Адрес отправителя</label>
-                    <input name="giver_adress" class="form-control" id="giver_adress">
+                    <input name="giver_adress" class="form-control" id="giver_adress" value="<?=$order->giver_adress?>">
                 </div>
                 <div class="form-group">
                     <label for="courier_1">Курьер</label>
-                    <input name="courier_1" class="form-control" id="courier_1">
+                    <select name="courier_1" class="form-control">
+                        <? foreach($courierList as $row) {?>
+                            <option value="<?=$row['id']?>" <?=($order->id_courier_1==$row['id'])?"checked":"";?> ><?=$row['name']?></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="taker_adress">Адрес получателя</label>
-                    <input name="taker_adress" class="form-control" id="taker_adress">
+                    <input name="taker_adress" class="form-control" id="taker_adress" value="<?=$order->taker_adress?>">
                 </div>
                 <div class="form-group">
                     <label for="courier_2">Курьер</label>
-                    <input name="courier_2" class="form-control" id="courier_2">
+                    <select name="courier_2" class="form-control">
+                        <? foreach($courierList as $row) {?>
+                            <option value="<?=$row['id']?>" <?=($order->id_courier_1==$row['id'])?"checked":"";?> ><?=$row['name']?></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="tariff">Тариф</label>
-                    <input name="tariff" class="form-control" id="tariff">
+                    <input name="tariff" class="form-control" id="tariff" value="<?=$order->tariff?>">
                 </div>
                 <div class="form-group">
                     <label for="buy">Купить</label>
-                    <input name="buy" class="form-control" id="buy">
-                </div>
-                <div class="form-group">
+                    <input name="buysell" type="radio" class="form-control" value="buy" <?=($order->buy==true)?"checked":"";?>>
                     <label for="sell">Продать</label>
-                    <input name="sell" class="form-control" id="sell">
+                    <input name="buysell" type="radio" class="form-control" value="sell" <?=($order->sell==true)?"checked":"";?>>
                 </div>
                 <div class="form-group">
                     <label for="payment">Оплата доставки</label>
-                    <input name="payment" class="form-control" id="payment">
+                    <select name="payment" class="form-control">
+                        <option value="Да" <?=($order->payment="Да")?"checked":"";?>>Да</option>
+                        <option value="Нет" <?=($order->payment="Нет")?"checked":"";?>>Нет</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-default saveOrder">Сохранить</button>
             </form>

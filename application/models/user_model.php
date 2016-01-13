@@ -79,4 +79,40 @@ class User_model extends CI_Model
         $result = $this->db->get("adress");
         return $result->result_array();
     }
+    public function getCouriersList()
+    {
+        $result = $this->db->get("cour");
+        return $result->result_array();
+    }
+    public function getShortOrders() //получение данных курьеров
+    {
+        $this->db->select("order.id, contragent.name as client, order.date, order.order_state, order.tariff, order.payment");
+        $this->db->join("contragent", "contragent.id = order.id_client");
+        $query = $this->db->get("order");
+        return $query->result_array();
+
+    }
+    public function getOrder($id)
+    {
+        $this->db->select("*");
+        $this->db->where("id",$id);
+        $query = $this->db->get("order");
+        $items = $query->row();
+
+        $this->db->select("*");
+        $query = $this->db->get("contragent");
+        foreach ($query->result_array() as $item) {
+            $items->id_client = ( $items->id_client == $item['id'] )? $item['name']: "";
+        }
+        unset($query);
+        $this->db->select("*");
+        $query = $this->db->get("cour");
+        foreach ($query->result_array() as $item) {
+            $items->id_courier_1 = ( $items->id_courier_1 == $item['id'] )? $item['name']: "";
+            $items->id_courier_2 = ( $items->id_courier_2 == $item['id'] )? $item['name']: "";
+        }
+
+        return $items;
+    }
+
 }

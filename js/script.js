@@ -152,4 +152,113 @@ $( document ).ready(function() {
             });
         }
     });
+    //курьери
+    $(".addCourier").click(function(e){
+        $.post( "/ajax/addCourier",  $("#addform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getCouriers", function( data ) {
+            $("#couriers").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+
+    $("#myModalEditCourier").on("click", ".saveCourier", function(e){
+        $.post( "/ajax/saveCourier",  $("#saveform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getCouriers", function( data ) {
+            $("#couriers").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+    $("#couriers").on("click", ".editCourier", function (e) {
+        $("#myModalEditCourier").empty();
+        $.post("/ajax/getCouriers", { id : $(this).attr("data-id")}, function(data){
+            $("#myModalEditCourier").html(data);
+        });
+    });
+    $("#couriers").on("click", ".deleteCourier", function (e) {
+        if(confirm("Удалить курьера?")===false){
+            e.preventDefault();
+            return false;
+        }else{
+            $.post( "/ajax/deleteCourier", { id : $(this).attr("data-id")});
+            $.post( "/ajax/getCouriers", function( data ) {
+                $("#couriers").html(data);
+            });
+        }
+    });
+    //заказы
+    $(".addOrder").click(function(e){
+        $.post( "/ajax/addOrder",  $("#addform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getShortOrders", function( data ) {
+            $("#orders").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+
+    $("#myModalEditOrder").on("click", ".saveOrder", function(e){
+        $.post( "/ajax/saveOrder",  $("#saveform").serialize() , function( data ) {
+            var obj = jQuery.parseJSON( data );
+            if(obj.error == 0)
+            {
+                $(".close").trigger('click');
+            }
+            else{
+            }
+        });
+        $.post( "/ajax/getShortOrders", function( data ) {
+            $("#orders").html(data);
+        });
+        return false;
+        e.preventDefault();
+    });
+    $("#orders").on("click", ".editOrder", function (e) {
+        $("#myModalEditOrder").empty();
+        $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
+            $("#myModalEditOrder").html(data);
+        });
+    });
+    $("#orders").on("click", ".deleteOrder", function (e) {
+        if(confirm("Удалить заказ?")===false){
+            e.preventDefault();
+            return false;
+        }else{
+            $.post( "/ajax/deleteOrder", { id : $(this).attr("data-id")});
+            $.post( "/ajax/getShortOrders", function( data ) {
+                $("#orders").html(data);
+            });
+        }
+    });
+    $('input[type=checkbox]').change(function(){
+        if($(this).attr('checked')){
+            $(this).val('TRUE');
+        }else{
+            $(this).val('FALSE');
+        }
+    });
 });
