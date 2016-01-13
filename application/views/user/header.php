@@ -65,6 +65,20 @@
                     </a>
                 </li>
 
+                <li class="sub-menu <?=($active=="courlist")? 'active' : ''?>">
+                    <a href="/user/courlist" class="">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>Курьеры</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu <?=($active=="olist")? 'active' : ''?>">
+                    <a href="/user/olist" class="">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                        <span>Заказы</span>
+                    </a>
+                </li>
+
                 <li class="sub-menu">
                     <a href="/user/logout" class="">
                         <i class="icon_lock_alt"></i>
