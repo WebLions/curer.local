@@ -73,11 +73,15 @@
                                         <label for="tariff">Тариф</label>
                                         <input name="tariff" class="form-control" id="tariff">
                                     </div>
+
                                     <div class="form-group">
                                         <label for="buy">Купить</label>
-                                        <input name="buysell" type="radio" checked class="form-control" value="buy">
+                                        <input name="buy" type="radio" checked class="form-control" value="buy">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="sell">Продать</label>
-                                        <input name="buysell" type="radio" class="form-control" value="sell">
+                                        <input name="sell" type="radio" class="form-control" value="sell">
                                     </div>
                                     <div class="form-group">
                                         <label for="payment">Оплата доставки</label>
