@@ -27,6 +27,10 @@
                             <div class="modal-body">
                                 <form role="form" id="addform">
                                     <div class="form-group">
+                                        <label for="nick">Позывной</label>
+                                        <input name="nick" type="text" class="form-control" id="nick">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name">ФИО</label>
                                         <input name="name" type="text" class="form-control" id="name">
                                     </div>
@@ -54,6 +58,7 @@
                     <table class="table table-striped table-advance table-hover">
                         <tbody>
                         <tr>
+                            <th>Позывной</th>
                             <th>ФИО</th>
                             <th>Контактные телефон</th>
                             <th>Примечание</th>
@@ -61,6 +66,7 @@
                         </tr>
                         <? foreach($listCouriers as $listCourier) { ?>
                             <tr>
+                                <td><?=$listCourier['nick']?></td>
                                 <td><?=$listCourier['name']?></td>
                                 <td><?=$listCourier['contact']?></td>
                                 <td><?=$listCourier['note']?></td>

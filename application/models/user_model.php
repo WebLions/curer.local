@@ -100,17 +100,24 @@ class User_model extends CI_Model
         $items = $query->row();
 
         $this->db->select("*");
+        $this->db->where("id", $items->id_client);
         $query = $this->db->get("contragent");
-        foreach ($query->result_array() as $item) {
-            $items->id_client = ( $items->id_client == $item['id'] )? $item['name']: "";
-        }
+        $item = $query->row();
+        $items->id_client = $item->name;
+
         unset($query);
         $this->db->select("*");
+        $this->db->where("id", $items->id_courier_1);
         $query = $this->db->get("cour");
-        foreach ($query->result_array() as $item) {
-            $items->id_courier_1 = ( $items->id_courier_1 == $item['id'] )? $item['name']: "";
-            $items->id_courier_2 = ( $items->id_courier_2 == $item['id'] )? $item['name']: "";
-        }
+        $item = $query->row();
+        $items->id_courier_1 = $item->name;
+
+        unset($query);
+        $this->db->select("*");
+        $this->db->where("id", $items->id_courier_2);
+        $query = $this->db->get("cour");
+        $item = $query->row();
+        $items->id_courier_2 = isset($item->name)? $item->name : NULL;
 
         return $items;
     }
