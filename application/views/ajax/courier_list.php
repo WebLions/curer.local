@@ -1,6 +1,7 @@
 <table class="table table-striped table-advance table-hover">
     <tbody>
     <tr>
+        <th>Позывной</th>
         <th>ФИО</th>
         <th>Контактные телефон</th>
         <th>Примечание</th>
@@ -8,6 +9,7 @@
     </tr>
     <? foreach($listCouriers as $listCourier) { ?>
         <tr>
+            <td><?=$listCourier['nick']?></td>
             <td><?=$listCourier['name']?></td>
             <td><?=$listCourier['contact']?></td>
             <td><?=$listCourier['note']?></td>

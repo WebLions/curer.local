@@ -255,10 +255,10 @@ $( document ).ready(function() {
         }
     });
     $('input[type=checkbox]').change(function(){
-        if($(this).attr('checked')){
-            $(this).val('TRUE');
-        }else{
+        if($(this).attr('checked') || ($(this).val()=='TRUE')) {
             $(this).val('FALSE');
+        }else{
+            $(this).val('TRUE');
         }
     });
 });

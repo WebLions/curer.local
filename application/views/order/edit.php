@@ -57,9 +57,9 @@
                 </div>
                 <div class="form-group">
                     <label for="buy">Купить</label>
-                    <input name="buysell" type="radio" class="form-control" value="buy" <?=($order->buy==true)?"checked":"";?>>
+                    <input name="buy" type="checkbox" class="form-control" <?=($order->buy==true)?" value=\"TRUE\" checked":" value=\"FALSE\" ";?>>
                     <label for="sell">Продать</label>
-                    <input name="buysell" type="radio" class="form-control" value="sell" <?=($order->sell==true)?"checked":"";?>>
+                    <input name="sell" type="checkbox" class="form-control" <?=($order->sell==true)?" value=\"TRUE\" checked":" value=\"FALSE\" ";?>>
                 </div>
                 <div class="form-group">
                     <label for="payment">Оплата доставки</label>

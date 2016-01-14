@@ -9,6 +9,10 @@
             <form role="form" id="saveform">
                 <input name="id" type="hidden" class="form-control" id="id_courier" value="<?=$listCouriers->id?>">
                 <div class="form-group">
+                    <label for="nick">Позывной</label>
+                    <input name="nick" type="text" class="form-control" id="nick" value="<?=$listCouriers->nick?>">
+                </div>
+                <div class="form-group">
                     <label for="name">ФИО</label>
                     <input name="name" type="text" class="form-control" id="name" value="<?=$listCouriers->name?>">
                 </div>

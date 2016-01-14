@@ -76,12 +76,12 @@
 
                                     <div class="form-group">
                                         <label for="buy">Купить</label>
-                                        <input name="buy" type="radio" checked class="form-control" value="buy">
+                                        <input name="buy" type="checkbox" class="form-control" value="FALSE">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="sell">Продать</label>
-                                        <input name="sell" type="radio" class="form-control" value="sell">
+                                        <input name="sell" type="checkbox" class="form-control" value="FALSE">
                                     </div>
                                     <div class="form-group">
                                         <label for="payment">Оплата доставки</label>
