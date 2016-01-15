@@ -60,8 +60,8 @@
                         <tr>
                             <th style="width: 10%">Позывной</th>
                             <th style="width: 20%">ФИО</th>
-                            <th style="width: 10%">Контактные телефон</th>
-                            <th style="width: 55%">Примечание</th>
+                            <th style="width: 15%">Конт. телефон</th>
+                            <th style="width: 50%">Примечание</th>
                             <th style="width: 5%"><i class="icon_cogs"></i>Действия</th>
                         </tr>
                         <? foreach($listCouriers as $listCourier) { ?>

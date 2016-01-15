@@ -28,7 +28,7 @@
                                 <form role="form" id="addform">
                                     <div class="form-group">
                                         <label for="date">Дата доставки</label>
-                                        <input name="date" type="text" class="form-control" id="date">
+                                        <input name="date" type="text" class="form-control datepicker" id="date">
                                     </div>
                                     <div class="form-group">
                                         <label for="client">Клиент</label>
