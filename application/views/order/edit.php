@@ -10,7 +10,7 @@
                 <input name="id" type="hidden" class="form-control" value="<?=$order->id?>">
                 <div class="form-group">
                     <label for="date">Дата доставки</label>
-                    <input name="date" type="text" class="form-control" id="date" value="<?=$order->date?>">
+                    <input name="date" type="text" class="form-control" id="date2" value="<?=$order->date?>">
                 </div>
                 <div class="form-group">
                     <label for="client">Клиент</label>
