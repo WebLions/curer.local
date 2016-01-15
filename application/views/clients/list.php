@@ -58,12 +58,12 @@
                     <table class="table table-striped table-advance table-hover">
                         <tbody>
                         <tr>
-                            <th>ID</th>
-                            <th>Название</th>
-                            <th>Ответственное лицо</th>
-                            <th>Контактные данные</th>
-                            <th>Дополнительно</th>
-                            <th><i class="icon_cogs"></i>Действия</th>
+                            <th style="width: 1%">ID</th>
+                            <th style="width: 14%">Название</th>
+                            <th style="width: 20%">Отв.лицо</th>
+                            <th style="width: 10%">Конт. данные</th>
+                            <th style="width: 43%">Дополнительно</th>
+                            <th style="width: 12%"><i class="icon_cogs"></i>Действия</th>
                         </tr>
                         <? foreach($listClients as $listClient) { ?>
                             <tr>
