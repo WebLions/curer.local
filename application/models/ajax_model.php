@@ -173,14 +173,8 @@ class Ajax_model extends CI_Model {
     //kurier
     public function saveOrder($post = array(), $type = 'save') // two type 'save' or 'update'
     {
-        if($post['buysell'] == 'buy')
-        {
-            $buy = true;
-            $sell = false;
-        }else{
-            $buy = false;
-            $sell = true;
-        }
+        $buy = empty($post['buy'])?"0":"1";
+        $sell = empty($post['sell'])?"0":"1";
 
         $data = array(
             'id_client' => $post['id_client'],
@@ -192,8 +186,8 @@ class Ajax_model extends CI_Model {
             'id_courier_1' => $post['courier_1'],
             'taker_adress' => $post['taker_adress'],
             'id_courier_2' => $post['courier_2'],
-            'buy' => $post['buy'],
-            'sell' => $post['sell']
+            'buy' => $buy,
+            'sell' => $sell
         );
         $id = isset($post['id']) ? $post['id'] : null ;
         if($type == 'update' && !empty($id))
