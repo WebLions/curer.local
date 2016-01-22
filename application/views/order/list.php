@@ -10,6 +10,7 @@
                 </ol>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-12">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Добавить заказ</button>
@@ -21,27 +22,34 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Добавление заказа</h4>
+                                <h4 class="modal-title" style="text-align: center">Добавление заказа</h4>
                             </div>
                             <div class="modal-body">
                                 <form role="form" id="addform">
+
                                     <div class="form-group">
                                         <label for="client">Клиент</label>
                                         <select name="id_client" class="form-control">
                                             <? foreach($clientList as $row) {?>
-                                            <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                                <option value="<?=$row['id']?>"><?=$row['name']?></option>
                                             <? } ?>
                                         </select>
                                     </div>
-
                                     <div class="form-group">
-                                        <label for="order_date">Дата заказа</label>
-                                        <input name="oreder_date" type="text" class="form-control datepicker" id="date">
+                                        <label for=order_date">Дата заказа</label>
+                                        <input name="order_date" type="text" class="form-control datepicker" id="order_date">
                                     </div>
 
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="sender_order_date">Дата заказа</label>
+                                                <input name="sender_order_date" type="text" class="form-control datepicker" id="sender_order_date">
+                                            </div>
+
                                     <div class="form-group" id="client_adress_block">
-                                        <label for="sender_adress">Адрес клиента</label>
-                                        <select name="id_sender_adress" class="form-control">
+                                        <label for="sender_adress" style="width: 100%">Адрес отправителя</label>
+                                        <select name="id_sender_adress" style="width: 80%; float:left;" class="form-control">
                                            //адреса клиента
                                         </select>
                                         <div>
@@ -49,66 +57,24 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        //подгружается с адреса, если такой адрес имеется иначе добавляется
-                                        <label for="note">Примечание</label>
-                                        <input name="note" class="form-control" id="note">
-                                    </div>
+                                            <div class="form-group">
+                                                <label for="note">Примечание</label>
+                                                <input name="note" class="form-control" id="note">
+                                            </div>
 
                                     <div class="form-group">
-                                        <label for="sender_time1">Время</label>
+                                        <label for="sender_time1">От:</label>
                                         <select name="sender_time1" class="form-control">
-                                            <option value="01:00">01:00</option>
-                                            <option value="02:00">02:00</option>
-                                            <option value="03:00">03:00</option>
-                                            <option value="04:00">04:00</option>
-                                            <option value="05:00">05:00</option>
-                                            <option value="06:00">06:00</option>
-                                            <option value="07:00">07:00</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="09:00">09:00</option>
-                                            <option value="10:00">10:00</option>
-                                            <option value="11:00">11:00</option>
-                                            <option value="12:00">12:00</option>
-                                            <option value="13:00">13:00</option>
-                                            <option value="14:00">14:00</option>
-                                            <option value="15:00">15:00</option>
-                                            <option value="16:00">16:00</option>
-                                            <option value="17:00">17:00</option>
-                                            <option value="18:00">18:00</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="20:00">20:00</option>
-                                            <option value="21:00">21:00</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="24:00">24:00</option>
+                                            <? for($i=0;$i<=4;$i++) {?>
+                                                <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'0'.$i.':00':$i.':00'?></option>
+                                            <? } ?>
                                         </select>
 
+                                        <label for="sender_time1">До:</label>
                                         <select name="sender_time2" class="form-control">
-                                            <option value="01:00">01:00</option>
-                                            <option value="02:00">02:00</option>
-                                            <option value="03:00">03:00</option>
-                                            <option value="04:00">04:00</option>
-                                            <option value="05:00">05:00</option>
-                                            <option value="06:00">06:00</option>
-                                            <option value="07:00">07:00</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="09:00">09:00</option>
-                                            <option value="10:00">10:00</option>
-                                            <option value="11:00">11:00</option>
-                                            <option value="12:00">12:00</option>
-                                            <option value="13:00">13:00</option>
-                                            <option value="14:00">14:00</option>
-                                            <option value="15:00">15:00</option>
-                                            <option value="16:00">16:00</option>
-                                            <option value="17:00">17:00</option>
-                                            <option value="18:00">18:00</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="20:00">20:00</option>
-                                            <option value="21:00">21:00</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="24:00">24:00</option>
+                                            <? for($i=0;$i<=24;$i++) {?>
+                                                <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'0'.$i.':00':$i.':00'?></option>
+                                            <? } ?>
                                         </select>
                                     </div>
 
@@ -121,12 +87,6 @@
                                     <div class="form-group">
                                         <label for="sender_order_note">Дополнительно</label>
                                         <input name="sender_order_note" class="form-control" id="sender_order_note">
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="order_date">Дата заказа</label>
-                                        <input name="oreder_date" type="text" class="form-control datepicker" id="date">
                                     </div>
 
                                     <div class="form-group">
@@ -161,6 +121,9 @@
                                         <input name="sender_dis_note_1" class="form-control" id="sender_dis_note_1">
                                     </div>
 
+                                        </div>
+
+                                    <div class="col-lg-6">
 
                                     <div class="form-group">
                                         <label for="recipient_order_date">Дата заказа</label>
@@ -177,65 +140,24 @@
                                         <input name="recipient_note" class="form-control" id="note">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="recipient_time1">Время</label>
-                                        <select name="recipient_time1" class="form-control">
-                                            <option value="01:00">01:00</option>
-                                            <option value="02:00">02:00</option>
-                                            <option value="03:00">03:00</option>
-                                            <option value="04:00">04:00</option>
-                                            <option value="05:00">05:00</option>
-                                            <option value="06:00">06:00</option>
-                                            <option value="07:00">07:00</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="09:00">09:00</option>
-                                            <option value="10:00">10:00</option>
-                                            <option value="11:00">11:00</option>
-                                            <option value="12:00">12:00</option>
-                                            <option value="13:00">13:00</option>
-                                            <option value="14:00">14:00</option>
-                                            <option value="15:00">15:00</option>
-                                            <option value="16:00">16:00</option>
-                                            <option value="17:00">17:00</option>
-                                            <option value="18:00">18:00</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="20:00">20:00</option>
-                                            <option value="21:00">21:00</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="24:00">24:00</option>
-                                        </select>
+                                        <div class="form-group">
+                                            <label for="sender_time1">От:</label>
+                                            <select name="sender_time1" class="form-control">
+                                                <? for($i=0;$i<=4;$i++) {?>
+                                                    <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'0'.$i.':00':$i.':00'?></option>
+                                                <? } ?>
+                                            </select>
 
-                                        <select name="recipient_time2" class="form-control">
-                                            <option value="01:00">01:00</option>
-                                            <option value="02:00">02:00</option>
-                                            <option value="03:00">03:00</option>
-                                            <option value="04:00">04:00</option>
-                                            <option value="05:00">05:00</option>
-                                            <option value="06:00">06:00</option>
-                                            <option value="07:00">07:00</option>
-                                            <option value="08:00">08:00</option>
-                                            <option value="09:00">09:00</option>
-                                            <option value="10:00">10:00</option>
-                                            <option value="11:00">11:00</option>
-                                            <option value="12:00">12:00</option>
-                                            <option value="13:00">13:00</option>
-                                            <option value="14:00">14:00</option>
-                                            <option value="15:00">15:00</option>
-                                            <option value="16:00">16:00</option>
-                                            <option value="17:00">17:00</option>
-                                            <option value="18:00">18:00</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="20:00">20:00</option>
-                                            <option value="21:00">21:00</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="24:00">24:00</option>
-                                        </select>
-                                    </div>
+                                            <label for="sender_time1">До:</label>
+                                            <select name="sender_time2" class="form-control">
+                                                <? for($i=0;$i<=24;$i++) {?>
+                                                    <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'0'.$i.':00':$i.':00'?></option>
+                                                <? } ?>
+                                            </select>
+                                        </div>
 
                                     <div class="form-group">
-                                        <label for="recipient_weight">Курьер</label>
+                                        <label for="recipient_weight">Вес</label>
                                         <input name="recipient_weight" class="form-control" id="weight">
 
                                     </div>
@@ -252,11 +174,6 @@
                                                 <option value="<?=$row['id']?>"><?=$row['nick']?></option>
                                             <? } ?>
                                         </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="recipient_order_note">Дополнительно</label>
-                                        <input name="order_note" class="form-control" id="order_note">
                                     </div>
 
                                     <div class="form-group">
@@ -279,9 +196,14 @@
 
                                     <div class="form-group">
                                         <label for="recipient_dis_note">Комментарий диспетчера</label>
-                                        <input name="recipient_dis_note" class="form-control" id="dis_note_2">
+                                        <input name="recipient_dis_note" class="form-control t-text-area" id="dis_note_2">
                                     </div>
 
+                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                    <div class="col-lg-12">
 
                                     <div class="form-group">
                                         <label for="tariff">Тариф</label>
@@ -314,6 +236,9 @@
                                             <option value="Отменён">Отменён</option>
                                             <option value="Отказ">Отказ</option>
                                         </select>
+                                    </div>
+
+                                    </div>
                                     </div>
                                     <button type="submit" class="btn btn-default addOrder">Добавить</button>
                                 </form>
