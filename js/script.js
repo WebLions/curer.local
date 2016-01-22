@@ -1,10 +1,23 @@
 $( document ).ready(function() {
-    $('#date').datetimepicker({
-        format: 'YYYY-MM-DD HH:MM:SS'
+    $('#order_date').datetimepicker({
+        format: 'YYYY-MM-DD'
     });
-    $('#myModalEditOrder').find('#date2').datetimepicker({
-        format: 'YYYY-MM-DD HH:MM:SS'
+    $('#myModalEditOrder').find('#order_date_edit').datetimepicker({
+        format: 'YYYY-MM-DD'
     });
+        $('#sender_date').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('#myModalEditOrder').find('#sender_date_order').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+
+            $('#recipient_date').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('#myModalEditOrder').find('#recipient_date_edit').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
 
     $(".adduser").click(function(e){
         $.post( "/ajax/addUser",  $("#addform").serialize() , function( data ) {

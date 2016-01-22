@@ -35,13 +35,13 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input name="order_date" type="text" class="form-control datepicker" id="order_date" placeholder="Дата заказа">
+                                        <input name="order_date" type="text" class="form-control datepicker"  placeholder="Дата заказа" id="order_date">
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input name="sender_order_date" type="text" class="form-control datepicker" id="sender_order_date" placeholder="Дата заказа">
+                                                <input name="sender_order_date" type="text" class="form-control datepicker" id="sender_date" placeholder="Дата заказа">
                                             </div>
 
                                     <div class="form-group" id="client_adress_block">
@@ -113,7 +113,7 @@
                                     <div class="col-lg-6">
 
                                     <div class="form-group">
-                                        <input name="recipient_order_date" type="text" class="form-control datepicker" placeholder="Дата заказа" id="date">
+                                        <input name="recipient_order_date" type="text" class="form-control datepicker" placeholder="Дата заказа" id="recipient_date">
                                     </div>
 
                                     <div class="form-group" id="client_adress_block">
