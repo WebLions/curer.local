@@ -1,4 +1,11 @@
 $( document ).ready(function() {
+    $('#date').datetimepicker({
+        format: 'YYYY-MM-DD HH:MM:SS'
+    });
+    $('#myModalEditOrder').find('#date2').datetimepicker({
+        format: 'YYYY-MM-DD HH:MM:SS'
+    });
+
     $(".adduser").click(function(e){
         $.post( "/ajax/addUser",  $("#addform").serialize() , function( data ) {
             var obj = jQuery.parseJSON( data );
@@ -241,6 +248,11 @@ $( document ).ready(function() {
         $("#myModalEditOrder").empty();
         $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
             $("#myModalEditOrder").html(data);
+            var date = $('#myModalEditOrder').find('#date2').val();
+            $('#myModalEditOrder').find('#date2').datetimepicker({
+                format: 'YYYY-MM-DD HH:MM:SS'
+            });
+            $('#myModalEditOrder').find('#date2').val(date);
         });
     });
     $("#orders").on("click", ".deleteOrder", function (e) {
@@ -254,7 +266,7 @@ $( document ).ready(function() {
             });
         }
     });
-    $('input[type=checkbox]').change(function(){
+    $('#main-content').on('change','input[type=checkbox]', function(){
         if($(this).attr('checked') || ($(this).val()=='TRUE')) {
             $(this).val('FALSE');
         }else{

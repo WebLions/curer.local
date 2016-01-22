@@ -7,8 +7,6 @@
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
 
-    <link href="/datepicker/css/datepicker.css" rel="stylesheet">
-    <script src="/datepicker/js/bootstrap-datepicker.js"></script>
 
     <?php echo link_tag('bootstrap/css/bootstrap.min.css'); ?>
     <?php echo link_tag('bootstrap/css/bootstrap-theme.css'); ?>
