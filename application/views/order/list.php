@@ -10,7 +10,6 @@
                 </ol>
             </div>
         </div>
-
         <div class="row">
             <div class="col-lg-12">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Добавить заказ</button>
