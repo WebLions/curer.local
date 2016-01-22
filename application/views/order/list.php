@@ -46,26 +46,25 @@
 
                                     <div class="form-group" id="client_adress_block">
                                         <label for="sender_adress" style="width: 100%">Адрес отправителя</label>
-                                        <select name="id_sender_adress" style="width: 83%; float:left;" class="form-control" >
+                                        <select name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
                                            //адреса клиента
                                         </select>
                                         <div>
-                                            <button type="submit" class="btn btn-default addadress"><i class="glyphicon glyphicon-plus"></i></button>
+                                            <button type="submit" class="glyphicon glyphicon-plus addadress form-control" style="width: 10%"></button>
                                         </div>
                                     </div>
 
                                             <div class="form-group">
-                                                <input name="note" class="form-control" id="note" placeholder="Примечание">
+                                                <input name="sender_note" class="form-control" id="sender_note" placeholder="Примечание">
                                             </div>
 
                                     <div class="form-group">
-                                        <select name="sender_time1" class="form-control">
+                                        <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
                                             <? for($i=0;$i<=24;$i++) {?>
-                                                <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'До: '.$i.':00'?></option>
+                                                <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
                                             <? } ?>
                                         </select>
-                                        <br>
-                                        <select name="sender_time2" class="form-control">
+                                        <select style="width: 49%" name="sender_time2" class="form-control">
                                             <? for($i=0;$i<=24;$i++) {?>
                                                 <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
                                             <? } ?>
@@ -81,8 +80,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="sender_courier">Курьер</label>
-                                        <select name="sender_courier" class="form-control">
+                                        <label style="width:19%;float: left; font-size: 14px;padding: 4px 1px" for="recipient_courier">Курьер</label>
+                                        <select style="width: 80%" name="sender_courier" class="form-control">
                                             <? foreach($courierList as $row) {?>
                                                 <option value="<?=$row['id']?>"><?=$row['nick']?></option>
                                             <? } ?>
@@ -93,7 +92,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">₴</span>
                                             <input name="sender_buy" id="sender_buy" type="text" class="form-control" placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
-                                            <span class="input-group-addon">.00</span>
+
                                         </div>
                                     </div>
 
@@ -101,12 +100,12 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">₴</span>
                                             <input name="sender_sell" id="sender_sell" type="text" class="form-control" placeholder="Продажа" aria-label="Amount (to the nearest dollar)">
-                                            <span class="input-group-addon">.00</span>
+
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <input name="sender_dis_note_1" class="form-control" id="sender_dis_note_1" placeholder="Комментарий диспетчера">
+                                        <input name="sender_dis_note" class="form-control" id="sender_dis_note" placeholder="Комментарий диспетчера">
                                     </div>
 
                                         </div>
@@ -127,13 +126,12 @@
                                     </div>
 
                                         <div class="form-group">
-                                            <select name="sender_time1" class="form-control">
+                                            <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
                                                 <? for($i=0;$i<=24;$i++) {?>
-                                                    <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'До: '.$i.':00'?></option>
+                                                    <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
                                                 <? } ?>
                                             </select>
-                                            <br>
-                                            <select name="sender_time2" class="form-control">
+                                            <select style="width: 49%" name="sender_time2" class="form-control">
                                                 <? for($i=0;$i<=24;$i++) {?>
                                                     <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
                                                 <? } ?>
@@ -149,8 +147,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient_courier">Курьер</label>
-                                        <select name="recipient_courier" class="form-control">
+                                        <label style="width:19%;float: left; font-size: 14px;padding: 4px 1px" for="recipient_courier">Курьер</label>
+                                        <select style="width:80%" name="recipient_courier" class="form-control">
                                             <? foreach($courierList as $row) {?>
                                                 <option value="<?=$row['id']?>"><?=$row['nick']?></option>
                                             <? } ?>
@@ -160,7 +158,7 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">₴</span>
-                                            <input name="recipient_buy" id="recipient_buy" type="text" class="form-control"  placeholder="Закупки" aria-label="Amount (to the nearest dollar)">
+                                            <input name="recipient_buy" id="recipient_buy" type="text" class="form-control"  placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
 
                                         </div>
                                     </div>
@@ -174,7 +172,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input name="recipient_dis_note" class="form-control t-text-area" id="dis_note_2" placeholder="Комментарий диспетчера" >
+                                        <input name="recipient_dis_note" class="form-control t-text-area" id="recipient_dis_note" placeholder="Комментарий диспетчера" >
                                     </div>
 
                                     </div>
@@ -188,8 +186,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="payment">Методы оплаты</label>
-                                        <select name="payment" class="form-control">
+                                        <label style="width: 20%; font-size: 14px;padding: 4px 1px" for="payment">Методы оплаты</label>
+                                        <select  style="width: 72%;float: right" name="payment" class="form-control">
                                             <option value="Кредит">Кредит</option>
                                             <option value="Приват">Приват</option>
                                             <option value="Безнал">Безнал</option>
@@ -198,17 +196,18 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="payment_person">Доставку оплачивает</label>
-                                        <select name="payment_person" class="form-control">
+                                    <div  class="form-group">
+                                        <label style=" font-size: 14px;padding: 4px 1px" for="payment_person">Доставку оплачивает</label>
+                                        <select style="width: 72%;float: right"  name="payment_person" class="form-control">
                                             <option value="Отравитель">Отправитель</option>
                                             <option value="Получатель">Получатель</option>
                                             <option value="Клиент">Клиент</option>
                                         </select>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="state">Статус</label>
-                                        <select name="state" class="form-control">
+                                        <label style="width: 15%; font-size: 14px;padding: 4px 1px" for="state">Статус</label>
+                                        <select style="width: 72%;float: right"  name="state" class="form-control">
                                             <option value="Выполнено">Выполнено</option>
                                             <option value="Отменён">Отменён</option>
                                             <option value="Отказ">Отказ</option>
@@ -217,7 +216,10 @@
 
                                     </div>
                                     </div>
-                                    <button type="submit" class="btn btn-default addOrder">Добавить</button>
+                                    <div style="text-align: center">
+                                        <button  type="submit" class="btn btn-default addOrder">Добавить</button>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
