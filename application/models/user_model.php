@@ -23,7 +23,7 @@ class User_model extends CI_Model
 
     public function login($login = '', $password = '')
     {
-        $this->db->select('password, access, fio');
+        $this->db->select('password, access, fio, id');
         $this->db->from('users');
         $this->db->where('login', $login);
         $query = $this->db->get();
@@ -35,6 +35,7 @@ class User_model extends CI_Model
                 $_SESSION['token'] = rand(0, 123456);
                 $_SESSION['access'] = $result->access;
                 $_SESSION['fio'] = $result->fio;
+                $_SESSION['id'] = $result->id;
                 return TRUE;
             } else {
                 return FALSE;
@@ -97,10 +98,12 @@ class User_model extends CI_Model
                             <th>Диспетчер</th>
                             <th>Курьер</th>
     */
+        $user_id = $_SESSION['user_id'];
         $this->db->select("
                          order.id,
-                         sender.name as sender_courier,
-                         recipient.name as recipient_courier,
+                         sender.nick as sender_courier,
+                         recipient.nick as recipient_courier,
+                         users.fio as disp,
                          contragent.name as client,
                          order.order_date,
                          order.state,
@@ -113,8 +116,9 @@ class User_model extends CI_Model
         $this->db->join("cour as sender", "sender.id = order.sender_courier");
         $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
         $this->db->join("adress", "adress.id = order.id_sender_adress");
+        $this->db->join("users", "users.id = order.{$user_id}");
         $query = $this->db->get("order");
-        echo $this->db->last_query();
+        //echo $this->db->last_query();
         return $query->result_array();
 
     }
