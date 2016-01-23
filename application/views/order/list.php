@@ -28,7 +28,7 @@
                                 <form role="form" id="addform">
 
                                     <div class="form-group">
-                                        <select name="id_client" class="form-control" >
+                                        <select name="id_client" class="form-control" id="client">
                                             <? foreach($clientList as $row) {?>
                                                 <option value="<?=$row['id']?>"><?=$row['name']?></option>
                                             <? } ?>
@@ -46,7 +46,7 @@
 
                                     <div class="form-group" id="client_adress_block">
                                         <label for="sender_adress" style="width: 100%">Адрес отправителя</label>
-                                        <select name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
+                                        <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
                                            //адреса клиента
                                         </select>
                                         <div>
@@ -126,12 +126,12 @@
                                     </div>
 
                                         <div class="form-group">
-                                            <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
+                                            <select style="width: 50%; float:left;" name="recipient_time1" class="form-control">
                                                 <? for($i=0;$i<=24;$i++) {?>
                                                     <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
                                                 <? } ?>
                                             </select>
-                                            <select style="width: 49%" name="sender_time2" class="form-control">
+                                            <select style="width: 49%" name="recipient_time2" class="form-control">
                                                 <? for($i=0;$i<=24;$i++) {?>
                                                     <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
                                                 <? } ?>
@@ -246,19 +246,20 @@
                             <th>Адрес получателя</th>
                             <th>Диспетчер</th>
                             <th>Курьер</th>
+                            <!- откуда взяли диспечера? ->
                             <th><i class="icon_cogs"></i>Действия</th>
                         </tr>
                         <? foreach($listOrders as $listOrder) { ?>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?=$listOrder['id']?></td>
+                                <td><?=$listOrder['order_date']?></td>
+                                <td><?=$listOrder['client']?></td>
+                                <td><?=$listOrder['sender_adress']?></td>
+                                <td><?=$listOrder['id']?></td>
+                                <td><?=$listOrder['sender_courier']?></td>
+                                <td><?=$listOrder['recipient_adress']?></td>
+                                <td><?=$listOrder['id']?></td>
+                                <td><?=$listOrder['recipient_courier']?></td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-success editOrder" data-id="<?=$listOrder['id']?>" data-toggle="modal" data-target="#myModalEditOrder"  href="#"><i class="icon_cog"></i></a>

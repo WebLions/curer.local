@@ -286,4 +286,10 @@ $( document ).ready(function() {
             $(this).val('TRUE');
         }
     });
+    $('#client').change(function(){
+        $.post( "/ajax/getAdressClient",{id: $(this).find(":selected").val() }, function( data ) {
+            $("#sender_adress").empty();
+            $("#sender_adress").html(data);
+        });
+    });
 });

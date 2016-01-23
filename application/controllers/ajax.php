@@ -191,7 +191,7 @@ class Ajax extends CI_Controller {
     //Orders
     public function addOrder()
     {
-        $this->form_validation->set_rules('order_state','Статус заказа','trim|required|xss_clean');
+        $this->form_validation->set_rules('order_date','Статус заказа','trim|required|xss_clean');
 
         if($this->form_validation->run() == true)
         {
@@ -204,7 +204,7 @@ class Ajax extends CI_Controller {
     }
     public function saveOrder()
     {
-        $this->form_validation->set_rules('order_state','Статус заказа','trim|required|xss_clean');
+        $this->form_validation->set_rules('order_date','Статус заказа','trim|required|xss_clean');
 
         if($this->form_validation->run() == true)
         {
@@ -232,5 +232,10 @@ class Ajax extends CI_Controller {
     public function deleteOrder()
     {
         $this->ajax_model->deleteOrder( (int) $this->input->post("id") );
+    }
+    public function getAdressClient()
+    {
+        $this->data['adress'] = $this->ajax_model->getAdressClient( (int) $this->input->post("id") );
+        $this->load->view('ajax/listAdressClient', $this->data);
     }
 }

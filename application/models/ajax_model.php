@@ -171,24 +171,56 @@ class Ajax_model extends CI_Model {
         $this->db->delete("cour");
     }
     //kurier
+    private function addAdresClient($id,$adress)
+    {
+        $data = array(
+            'adress' => $adress
+        );
+        $this->db->where("id", $id);
+        $this->db->update("adress", $data);
+        return $this->db->insert_id();
+    }
     public function saveOrder($post = array(), $type = 'save') // two type 'save' or 'update'
     {
-        $buy = empty($post['buy'])?"0":"1";
-        $sell = empty($post['sell'])?"0":"1";
 
-        $data = array(
-            'id_client' => $post['id_client'],
-            'date' => $post['date'],
-            'order_state' => $post['order_state'],
-            'tariff' => $post['tariff'],
-            'payment' => $post['payment'],
-            'giver_adress' => $post['giver_adress'],
-            'id_courier_1' => $post['courier_1'],
-            'taker_adress' => $post['taker_adress'],
-            'id_courier_2' => $post['courier_2'],
-            'buy' => $buy,
-            'sell' => $sell
+        //$buy = empty($post['buy'])?"0":"1";
+        //$sell = empty($post['sell'])?"0":"1";
+
+        $post['id_sender_adress'] = is_int($post['id_sender_adress']) ? $post['id_sender_adress'] : $this->addAdresClient($post['id_client'], $post['id_sender_adress']);
+
+        $date = array(
+                    'id_client',
+                    'order_date', //2016-01-22
+                    'sender_order_date', //2016-01-22
+                    'id_sender_adress', //14
+                    'sender_note', //note
+                    'sender_time1', //:00:00
+                    'sender_time2', //:03:00
+                    'sender_weight', //:11
+                    'sender_order_note', //:102
+                    'sender_courier', //:11
+                    'sender_buy', //:0
+                    'sender_sell', //:2
+                    'sender_dis_note', //:note
+                    'recipient_order_date', //:2016-01-22
+                    'recipient_adress', //:адрес
+                    'recipient_note', //:note
+                    'recipient_time1', //:11:00
+                    'recipient_time2', //:00:00
+                    'recipient_weight', //:20
+                    'recipient_order_note', //:131
+                    'recipient_courier', //:14
+                    'recipient_buy', //:20
+                    'recipient_sell', //:20
+                    'recipient_dis_note', //:note
+                    'tariff', //:1234
+                    'payment', //:Приват
+                    'payment_person', //:Получатель
+                    'state' //:Отменён
         );
+        foreach ($date as $key) {
+            $data[$key] = !empty($_POST[$key]) ? $_POST[$key] : '';
+        }
         $id = isset($post['id']) ? $post['id'] : null ;
         if($type == 'update' && !empty($id))
         {
@@ -217,5 +249,11 @@ class Ajax_model extends CI_Model {
         $this->db->where("id", $id);
         $query = $this->db->get("order");
         return $query->row();
+    }
+    public function getAdressClient($id)
+    {
+        $this->db->where("id_contragent", $id);
+        $query = $this->db->get("adress");
+        return $query->result_array();
     }
 }
