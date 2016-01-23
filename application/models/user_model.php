@@ -98,7 +98,7 @@ class User_model extends CI_Model
                             <th>Диспетчер</th>
                             <th>Курьер</th>
     */
-        $user_id = $_SESSION['user_id'];
+
         $this->db->select("
                          order.id,
                          sender.nick as sender_courier,
@@ -116,7 +116,8 @@ class User_model extends CI_Model
         $this->db->join("cour as sender", "sender.id = order.sender_courier");
         $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
         $this->db->join("adress", "adress.id = order.id_sender_adress");
-        $this->db->join("users", "users.id = {$user_id}");
+        $this->db->join("users", "users.id = order.id_disp");
+        //$this->db->where("users.id = {$user_id}");
         $query = $this->db->get("order");
         //echo $this->db->last_query();
         return $query->result_array();
@@ -124,32 +125,22 @@ class User_model extends CI_Model
     }
     public function getOrder($id)
     {
-        $this->db->select("*");
-        $this->db->where("id",$id);
+        $this->db->select("
+                         order.*,
+                         sender.nick as sender_courier,
+                         recipient.nick as recipient_courier,
+                         users.fio as disp,
+                         contragent.name as client,
+                         adress.adress as sender_adress,
+                         ");
+        $this->db->join("contragent", "contragent.id = order.id_client");
+        $this->db->join("cour as sender", "sender.id = order.sender_courier");
+        $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
+        $this->db->join("adress", "adress.id = order.id_sender_adress");
+        $this->db->join("users", "users.id = order.id_disp");
+        $this->db->where("order.id",$id);
         $query = $this->db->get("order");
-        $items = $query->row();
-
-        $this->db->select("*");
-        $this->db->where("id", $items->id_client);
-        $query = $this->db->get("contragent");
-        $item = $query->row();
-        $items->id_client = $item->name;
-
-        unset($query);
-        $this->db->select("*");
-        $this->db->where("id", $items->id_courier_1);
-        $query = $this->db->get("cour");
-        $item = $query->row();
-        $items->id_courier_1 = $item->name;
-
-        unset($query);
-        $this->db->select("*");
-        $this->db->where("id", $items->id_courier_2);
-        $query = $this->db->get("cour");
-        $item = $query->row();
-        $items->id_courier_2 = isset($item->name)? $item->name : NULL;
-
-        return $items;
+        return $query->row();
     }
 
 }

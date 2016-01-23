@@ -186,10 +186,12 @@ class Ajax_model extends CI_Model {
         //$buy = empty($post['buy'])?"0":"1";
         //$sell = empty($post['sell'])?"0":"1";
 
-        $post['id_sender_adress'] = is_int($post['id_sender_adress']) ? $post['id_sender_adress'] : $this->addAdresClient($post['id_client'], $post['id_sender_adress']);
+        //$post['id_sender_adress'] = (is_int($post['id_sender_adress'])==true) ? $post['id_sender_adress'] : $this->addAdresClient($post['id_client'], $post['id_sender_adress']);
 
+        $post['id_disp'] = $_SESSION['user_id'];
         $date = array(
                     'id_client',
+                    'id_disp',
                     'order_date', //2016-01-22
                     'sender_order_date', //2016-01-22
                     'id_sender_adress', //14
@@ -219,7 +221,7 @@ class Ajax_model extends CI_Model {
                     'state' //:Отменён
         );
         foreach ($date as $key) {
-            $data[$key] = !empty($_POST[$key]) ? $_POST[$key] : '';
+            $data[$key] = !empty($post[$key]) ? $post[$key] : '';
         }
         $id = isset($post['id']) ? $post['id'] : null ;
         if($type == 'update' && !empty($id))
@@ -233,9 +235,27 @@ class Ajax_model extends CI_Model {
     }
     public function getShortOrders() //получение данных курьеров
     {
-        $this->db->select("order.id, contragent.name as client, order.date, order.order_state, order.tariff, order.payment");
+        $this->db->select("
+                         order.id,
+                         sender.nick as sender_courier,
+                         recipient.nick as recipient_courier,
+                         users.fio as disp,
+                         contragent.name as client,
+                         order.order_date,
+                         order.state,
+                         order.tariff,
+                         order.payment,
+                         adress.adress as sender_adress,
+                         order.recipient_adress
+                         ");
         $this->db->join("contragent", "contragent.id = order.id_client");
+        $this->db->join("cour as sender", "sender.id = order.sender_courier");
+        $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
+        $this->db->join("adress", "adress.id = order.id_sender_adress");
+        $this->db->join("users", "users.id = order.id_disp");
+        //$this->db->where("users.id = {$user_id}");
         $query = $this->db->get("order");
+
         return $query->result_array();
 
     }
