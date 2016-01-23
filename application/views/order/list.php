@@ -255,10 +255,10 @@
                                 <td><?=$listOrder['order_date']?></td>
                                 <td><?=$listOrder['client']?></td>
                                 <td><?=$listOrder['sender_adress']?></td>
-                                <td><?=$listOrder['id']?></td>
+                                <td><?=$listOrder['disp']?></td>
                                 <td><?=$listOrder['sender_courier']?></td>
                                 <td><?=$listOrder['recipient_adress']?></td>
-                                <td><?=$listOrder['id']?></td>
+                                <td><?=$listOrder['disp']?></td>
                                 <td><?=$listOrder['recipient_courier']?></td>
                                 <td>
                                     <div class="btn-group">

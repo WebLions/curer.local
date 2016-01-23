@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'jera.mysql.ukraine.com.ua';
-$db['default']['username'] = 'jera_curer';
-$db['default']['password'] = 'y6sa9tej';
-$db['default']['database'] = 'jera_curer';
+$db['default']['hostname'] = 'angara5.beget.ru';
+$db['default']['username'] = 'fb3809sd_curer';
+$db['default']['password'] = '123456';
+$db['default']['database'] = 'fb3809sd_curer';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = false;
