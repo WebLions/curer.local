@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
                     <li><i class="fa fa-laptop"></i><a href ="/user/olist">Заказы</a></li>
-                    <li><i class="fa fa-laptop"></i><?=$order->id_client?></li>
+                    <li><i class="fa fa-laptop"></i><?=$order->client?> - #<?=$order->id_client?></li>
                 </ol>
             </div>
         </div>
@@ -17,7 +17,6 @@
             <li><a data-toggle="tab" href="#sender_data">Данные по отправителю</a></li>
             <li><a data-toggle="tab" href="#recipient_data">Данные по получателю</a></li>
         </ul>
-
         <div class="tab-content">
         <div id="order_data" class="tab-pane fade active in">
             <div class = "row">
@@ -33,12 +32,12 @@
                             <th style = "width: 20%">Статус</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?=$order->client?></td>
+                            <td><?=$order->order_date?></td>
+                            <td><?=$order->tariff?></td>
+                            <td><?=$order->payment?></td>
+                            <td><?=$order->payment_person?></td>
+                            <td><?=$order->state?></td>
                          </tr>
                     </table>
                 </div>
@@ -62,15 +61,15 @@
                             <th style = "width: 20%">Комментарий</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?=$order->sender_order_date?></td>
+                            <td><?=$order->sender_adress?></td>
+                            <td><?=$order->sender_note?></td>
+                            <td><?=$order->sender_time1  ." - ". $order->sender_time2?></td>
+                            <td><?=$order->sender_order_note?></td>
+                            <td><?=$order->sender_courier?></td>
+                            <td><?=$order->sender_buy?></td>
+                            <td><?=$order->sender_sell?></td>
+                            <td><?=$order->sender_dis_note?></td>
                         </tr>
                     </table>
                 </div>
@@ -94,15 +93,15 @@
                             <th style = "width: 20%">Комментарий</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?=$order->recipient_order_date?></td>
+                            <td><?=$order->recipient_adress?></td>
+                            <td><?=$order->recipient_note?></td>
+                            <td><?=$order->recipient_time1  ." - ". $order->sender_time2?></td>
+                            <td><?=$order->recipient_order_note?></td>
+                            <td><?=$order->recipient_courier?></td>
+                            <td><?=$order->recipient_buy?></td>
+                            <td><?=$order->recipient_sell?></td>
+                            <td><?=$order->recipient_dis_note?></td>
                         </tr>
                     </table>
                 </div>
