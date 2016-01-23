@@ -292,4 +292,13 @@ $( document ).ready(function() {
             $("#sender_adress").html(data);
         });
     });
+
+    $('#addAdress').click(function(){
+        $('#sender_adress').remove();
+        $('<input name="sender_adress"'+
+          'class="form-control"'+
+          'id="sender_adress"'+
+          'placeholder="Адрес отправителя">').appendTo('#client_adress_block');
+
+    });
 });
