@@ -35,7 +35,7 @@ class User_model extends CI_Model
                 $_SESSION['token'] = rand(0, 123456);
                 $_SESSION['access'] = $result->access;
                 $_SESSION['fio'] = $result->fio;
-                $_SESSION['id'] = $result->id;
+                $_SESSION['user_id'] = $result->id;
                 return TRUE;
             } else {
                 return FALSE;
@@ -116,7 +116,7 @@ class User_model extends CI_Model
         $this->db->join("cour as sender", "sender.id = order.sender_courier");
         $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
         $this->db->join("adress", "adress.id = order.id_sender_adress");
-        $this->db->join("users", "users.id = order.{$user_id}");
+        $this->db->join("users", "users.id = {$user_id}");
         $query = $this->db->get("order");
         //echo $this->db->last_query();
         return $query->result_array();
