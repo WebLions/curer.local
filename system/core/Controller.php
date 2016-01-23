@@ -61,6 +61,10 @@ class CI_Controller {
 	{
 		return self::$instance;
 	}
+	public function __destruct()
+	{
+		$this->db->close();
+	}
 }
 // END Controller class
 

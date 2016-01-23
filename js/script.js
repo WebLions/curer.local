@@ -247,12 +247,12 @@ $( document ).ready(function() {
             if(obj.error == 0)
             {
                 $(".close").trigger('click');
+                $.post( "/ajax/getShortOrders", function( data ) {
+                    $("#orders").html(data);
+                });
             }
             else{
             }
-        });
-        $.post( "/ajax/getShortOrders", function( data ) {
-            $("#orders").html(data);
         });
         return false;
         e.preventDefault();
@@ -286,7 +286,7 @@ $( document ).ready(function() {
             $(this).val('TRUE');
         }
     });
-    $('#client').change(function(){
+    $('#main-content').on('change','#client',function(){
         $.post( "/ajax/getAdressClient",{id: $(this).find(":selected").val() }, function( data ) {
             $("#sender_adress").empty();
             $("#sender_adress").html(data);

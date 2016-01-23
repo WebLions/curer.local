@@ -226,6 +226,7 @@ class Ajax extends CI_Controller {
 
         $this->data['clientList'] = $this->user_model->getClientsList();
         $this->data['courierList'] = $this->user_model->getCouriersList();
+        $this->data['adressList'] = $this->user_model->getAdressList($this->data['order']->id_client);
 
         $this->load->view('order/edit', $this->data);
     }
