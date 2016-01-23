@@ -47,7 +47,6 @@
                                     <div class="form-group" id="client_adress_block">
                                         <label for="sender_adress" style="width: 100%">Адрес отправителя</label>
                                         <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
-                                           //адреса клиента
                                         </select>
                                         <div>
                                             <button type="submit" class="glyphicon glyphicon-plus addadress form-control" style="width: 10%"></button>
