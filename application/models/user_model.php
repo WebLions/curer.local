@@ -8,6 +8,10 @@ class User_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
+    public function __destruct()
+    {
+        $this->db->close();
+    }
 
     public function register($email, $password)
     {
@@ -120,6 +124,7 @@ class User_model extends CI_Model
         //$this->db->where("users.id = {$user_id}");
         $query = $this->db->get("order");
         //echo $this->db->last_query();
+        //var_dump($query->row());
         return $query->result_array();
 
     }
@@ -142,5 +147,6 @@ class User_model extends CI_Model
         $query = $this->db->get("order");
         return $query->row();
     }
+
 
 }

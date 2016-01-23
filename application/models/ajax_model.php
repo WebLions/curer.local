@@ -7,6 +7,10 @@ class Ajax_model extends CI_Model {
         parent::__construct();
         $this->load->database();
     }
+    public function __destruct()
+    {
+        $this->db->close();
+    }
 
     function hash_password_db($login, $password)
     {
