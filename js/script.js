@@ -301,4 +301,8 @@ $( document ).ready(function() {
           'placeholder="Адрес отправителя">').appendTo('#client_adress_block');
 
     });
+
+
+
+
 });

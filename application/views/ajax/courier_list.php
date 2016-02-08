@@ -4,6 +4,7 @@
                 <tr>
                     <th style="width: 10%">Позывной</th>
                     <th style="width: 20%">ФИО</th>
+                    <th style="width: 20%">Цвет</th>
                     <th style="width: 15%">Конт. телефон</th>
                     <th style="width: 50%">Примечание</th>
                     <th style="width: 5%"><i class="icon_cogs"></i>Действия</th>
@@ -12,6 +13,7 @@
                     <tr>
                         <td><?=$listCourier['nick']?></td>
                         <td><?=$listCourier['name']?></td>
+                        <td><?=$listCourier['color']?></td>
                         <td><?=$listCourier['contact']?></td>
                         <td><?=$listCourier['note']?></td>
                         <td>

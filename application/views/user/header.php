@@ -62,6 +62,12 @@
                         <span>Контрагенты</span>
                     </a>
                 </li>
+                <li class="sub-menu <?=($active=="path")? 'active' : ''?>">
+                    <a href="/user/paths" class="">
+                        <i class="icon_id-2"></i>
+                        <span>Маршруты</span>
+                    </a>
+                </li>
 
                 <li class="sub-menu <?=($active=="courlist")? 'active' : ''?>">
                     <a href="/user/courlist" class="">
