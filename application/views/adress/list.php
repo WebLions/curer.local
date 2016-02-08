@@ -74,7 +74,6 @@
 
                 </section>
                 <div class = "button-center">
-
                     <a class="btn btn-success " data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i></a>
                 </div>
 

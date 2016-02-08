@@ -13,6 +13,13 @@
                     <input name="nick" type="text" class="form-control" id="nick" value="<?=$listCouriers->nick?>">
                 </div>
                 <div class="form-group">
+                    <label for="color">Цвет/label>
+                        <select>
+                            <option> Нужно впилить палитру</option>
+                        </select>
+                    <input name="color" type="text" class="form-control" id="color" value="<?=$listCouriers->nick?>">
+                </div>
+                <div class="form-group">
                     <label for="name">ФИО</label>
                     <input name="name" type="text" class="form-control" id="name" value="<?=$listCouriers->name?>">
                 </div>
@@ -24,6 +31,7 @@
                     <label for="note">Примечание</label>
                     <input name="note" class="form-control" id="note" value="<?=$listCouriers->note?>">
                 </div>
+
                 <button type="submit" class="btn btn-default saveCourier">Сохранить</button>
             </form>
         </div>
