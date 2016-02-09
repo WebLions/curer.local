@@ -12,13 +12,14 @@
                     <label for="nick">Позывной</label>
                     <input name="nick" type="text" class="form-control" id="nick" value="<?=$listCouriers->nick?>">
                 </div>
+
                 <div class="form-group">
-                    <label for="color">Цвет/label>
-                        <select>
+                    <label for="color">Цвет курьера<label>
+                        <select name="color" id="color">
                             <option> Нужно впилить палитру</option>
                         </select>
-                    <input name="color" type="text" class="form-control" id="color" value="<?=$listCouriers->nick?>">
                 </div>
+
                 <div class="form-group">
                     <label for="name">ФИО</label>
                     <input name="name" type="text" class="form-control" id="name" value="<?=$listCouriers->name?>">
