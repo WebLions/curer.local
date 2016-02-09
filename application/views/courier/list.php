@@ -35,6 +35,12 @@
                                         <input name="name" type="text" class="form-control" id="name">
                                     </div>
                                     <div class="form-group">
+                                        <label for="color">Цвет курьера<label>
+                                                <select name="color" id="color">
+                                                    <option> Нужно впилить палитру</option>
+                                                </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="vendor">Контактные данные</label>
                                         <input name="contact" class="form-control" id="vendor">
                                     </div>

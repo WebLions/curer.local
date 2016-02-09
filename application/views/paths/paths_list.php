@@ -6,7 +6,8 @@
 
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
-                    <li><i class="fa fa-laptop"></i><a href ="/user/olist">Маршруты</a></li>
+                    <li><i class="fa fa-laptop"></i><a href ="/user/paths">Маршруты</a></li>
+                    <li><i class="fa fa-laptop"></i><a href ="">Имя курьера</a></li>
                 </ol>
             </div>
         </div>
@@ -25,7 +26,7 @@
                     <th style="width: 43%">Закупка</th>
                     <th style="width: 43%">Продажа</th>
                 </tr>
-                <? foreach($listClients as $listClient) { ?>
+                <? foreach() { ?>
                     <tr>
                         <td></td>
                         <td></td>
