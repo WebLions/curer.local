@@ -143,10 +143,22 @@ class User extends CI_Controller {
         if(!$this->data['user_token']) {
             redirect('user/login');
         }
-        $this->data['paths'] = $this->user_model->getPaths();
+        $this->data['cour'] = $this->user_model->getCourListPath();
         //$this->data['listClients'] = $this->user_model->getClientsList();
         $this->data['active'] = "paths";
 
+        $this->load->view('user/header', $this->data);
+        $this->load->view('paths/courier_path_list', $this->data);
+        $this->load->view('user/footer');
+    }
+
+    public function cour_path($id)
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['paths'] = $this->user_model->getPaths((int)$id);
+        $this->data['active'] = "paths";
         $this->load->view('user/header', $this->data);
         $this->load->view('paths/paths_list', $this->data);
         $this->load->view('user/footer');

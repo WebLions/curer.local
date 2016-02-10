@@ -91,6 +91,14 @@ class User_model extends CI_Model
         $result = $this->db->get('cour');
         return $result->result_array();
     }
+    // @courier list for path page
+    public function getCourListPath()
+    {
+        $this->db->select('cour.id, cour.name, cour.nick, cour_color.color');
+        $this->db->join('cour_color','cour_color.id=cour.color_id');
+        $result = $this->db->get('cour');
+        return $result->result_array();
+    }
     public function getShortOrders() //получение данных курьеров
     {
         /*
@@ -150,7 +158,7 @@ class User_model extends CI_Model
         return $query->row();
     }
 
-    public function getPaths()
+    public function getPaths($id = 0)
     {
         $this->db->select("
                          order.*,
@@ -163,6 +171,8 @@ class User_model extends CI_Model
         $this->db->join("cour as sender", "sender.id = order.sender_courier");
         $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
         $this->db->join("adress", "adress.id = order.id_sender_adress");
+        $this->db->where("order.sender_courier",$id);
+        $this->db->or_where("order.recipient_courier",$id);
         $query = $this->db->get("order");
         return $query->result_array();
     }
