@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
                     <li><i class="fa fa-laptop"></i><a href ="/user/paths">Маршруты</a></li>
-                    <li><i class="fa fa-laptop"></i><?=empty($paths[0]['sender_courier'])?"Маршрутов нет":$paths[0]['sender_courier'];?></li>
+                    <li><i class="fa fa-laptop"></i><?=empty($cour->nick)?"Маршрутов нет":$cour->nick;?></li>
                 </ol>
             </div>
         </div>
@@ -26,22 +26,18 @@
                     <th style="width: 10%">Закупка</th>
                     <th style="width: 10%">Продажа</th>
                 </tr>
-                <? foreach($paths as $path) { ?>
+
+                <? foreach($paths as $path) {
+                    if($cour->nick==$path['recipient_courier']) $val = 'recipient';
+                        else $val = 'sender';
+                        ?>
                     <tr>
                         <td><?=$path['client']?></td>
                         <td><?=$path['vendor']?></td>
-                        <td><?=$path['sender_note']?></td>
+                        <td><?=$path[$val.'_note']?></td>
                         <td><?=$path['tariff']?></td>
-                        <td><?=$path['sender_buy']?></td>
-                        <td><?=$path['sender_sell']?></td>
-                    </tr>
-                    <tr>
-                        <td><?=$path['client']?></td>
-                        <td><?=$path['vendor']?></td>
-                        <td><?=$path['recipient_note']?></td>
-                        <td><?=$path['tariff']?></td>
-                        <td><?=$path['recipient_buy']?></td>
-                        <td><?=$path['recipient_sell']?></td>
+                        <td><?=$path[$val.'_buy']?></td>
+                        <td><?=$path[$val.'_sell']?></td>
                     </tr>
                 <? } ?>
                 </tbody>

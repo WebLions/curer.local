@@ -159,6 +159,8 @@ class User extends CI_Controller {
         }
         $this->data['paths'] = $this->user_model->getPaths((int)$id);
         $this->data['active'] = "paths";
+        $this->data['cour'] = $this->user_model->getCourName((int)$id);
+
         $this->load->view('user/header', $this->data);
         $this->load->view('paths/paths_list', $this->data);
         $this->load->view('user/footer');

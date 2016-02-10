@@ -173,7 +173,15 @@ class User_model extends CI_Model
         $this->db->where("order.sender_courier",$id);
         $this->db->or_where("order.recipient_courier",$id);
         $query = $this->db->get("order");
+
         return $query->result_array();
+    }
+    public function getCourName($id = 0)
+    {
+        $this->db->select('nick');
+        $this->db->where('cour.id',$id);
+        $query = $this->db->get('cour');
+        return $query->row();
     }
     public function getColor()
     {
