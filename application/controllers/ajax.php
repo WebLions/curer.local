@@ -179,6 +179,7 @@ class Ajax extends CI_Controller {
     {
         $id = $this->input->post('id');
         $this->data['listCouriers'] = $this->ajax_model->getCouriers($id);
+        $this->data['color'] = $this->user_model->getColor();
         if(!empty($id))
             $this->load->view('courier/edit', $this->data);
         else

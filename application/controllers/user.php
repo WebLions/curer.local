@@ -76,6 +76,7 @@ class User extends CI_Controller {
         }
         //$this->data['client'] = $this->user_model->getClient($id);
         $this->data['listCouriers'] = $this->user_model->getCouriersList();
+        $this->data['color'] = $this->user_model->getColor();
         $this->data['active'] = "courlist";
 
         $this->load->view('user/header', $this->data);
@@ -142,7 +143,7 @@ class User extends CI_Controller {
         if(!$this->data['user_token']) {
             redirect('user/login');
         }
-        //$this->data['listUsers'] = $this->user_model->getUserList();
+        $this->data['paths'] = $this->user_model->getPaths();
         //$this->data['listClients'] = $this->user_model->getClientsList();
         $this->data['active'] = "paths";
 
