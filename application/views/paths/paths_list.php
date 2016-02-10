@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
                     <li><i class="fa fa-laptop"></i><a href ="/user/paths">Маршруты</a></li>
-                    <li><i class="fa fa-laptop"></i><a href =""><?=empty($paths[0]['sender_courier'])?"Маршрутов нет":$paths[0]['sender_courier'];?></a></li>
+                    <li><i class="fa fa-laptop"></i><?=empty($paths[0]['sender_courier'])?"Маршрутов нет":$paths[0]['sender_courier'];?></li>
                 </ol>
             </div>
         </div>
@@ -19,12 +19,12 @@
             <table class="table table-striped table-advance table-hover">
                 <tbody>
                 <tr>
-                    <th style="width: 1%">Клиент</th>
-                    <th style="width: 14%">Контактное лицо</th>
-                    <th style="width: 20%">Примечание к адресу</th>
+                    <th style="width: 15%">Клиент</th>
+                    <th style="width: 15%">Контактное лицо</th>
+                    <th style="width: 40%">Примечание к адресу</th>
                     <th style="width: 10%">Тариф</th>
-                    <th style="width: 43%">Закупка</th>
-                    <th style="width: 43%">Продажа</th>
+                    <th style="width: 10%">Закупка</th>
+                    <th style="width: 10%">Продажа</th>
                 </tr>
                 <? foreach($paths as $path) { ?>
                     <tr>

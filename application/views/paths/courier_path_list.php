@@ -6,7 +6,7 @@
 
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
-                    <li><i class="fa fa-laptop"></i><a href ="/paths/cour_path">Маршруты</a></li>
+                    <li><i class="fa fa-laptop"></i>Маршруты</li>
                 </ol>
             </div>
         </div>
@@ -25,10 +25,10 @@
                         <table class="table table-striped table-advance table-hover">
                             <tbody>
                             <tr>
-                                <th style="width: 1%">Курьер</th>
-                                <th style="width: 14%">Позывной</th>
-                                <th style="width: 14%">Цвет</th>
-                                <th style="width: 12%"><i class="icon_cogs"></i>Действия</th>
+                                <th style="width: 60%">Курьер</th>
+                                <th style="width: 20%">Позывной</th>
+                                <th style="width: 5%">Цвет</th>
+                                <th style="width: 15%"><i class="icon_cogs"></i>Действия</th>
                             </tr>
                             <? foreach($cour as $c) { ?>
                                 <tr>
@@ -37,7 +37,7 @@
                                     <td><span style="display: block; width:15px; height: 15px; background: #<?=$c['color']?>"></span></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-danger showPaths" a href="/user/cour_path/<?=$c['id']?>"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                            <a class="btn btn-success showPaths" a href="/user/cour_path/<?=$c['id']?>"><i class="glyphicon glyphicon-eye-open"></i></a>
                                         </div>
                                     </td>
                                 </tr>
