@@ -15,9 +15,11 @@
 
                 <div class="form-group">
                     <label for="color">Цвет курьера<label>
-                        <select name="color" id="color">
-                            <option> Нужно впилить палитру</option>
-                        </select>
+                            <select name="color" id="color" style="width: 100px;">
+                                <?foreach($color as $v){?>
+                                    <option value="<?=$v['id']?>" <?=($listCouriers->color_id==$v['id'])? 'selected':'';?> style="background: #<?=$v['color']?>;">#<?=$v['color']?></option>
+                                <?}?>
+                            </select>
                 </div>
 
                 <div class="form-group">

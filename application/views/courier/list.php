@@ -36,8 +36,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="color">Цвет курьера<label>
-                                                <select name="color" id="color">
-                                                    <option> Нужно впилить палитру</option>
+                                                <select name="color" id="color" style="width: 100px;">
+                                                    <?foreach($color as $v){?>
+                                                        <option value="<?=$v['id']?>" style="background: #<?=$v['color']?>;">#<?=$v['color']?></option>
+                                                    <?}?>
                                                 </select>
                                     </div>
                                     <div class="form-group">
@@ -64,6 +66,7 @@
                     <table class="table table-striped table-advance table-hover">
                         <tbody>
                         <tr>
+                            <th style="width: 10%">Цвет</th>
                             <th style="width: 10%">Позывной</th>
                             <th style="width: 20%">ФИО</th>
                             <th style="width: 15%">Конт. телефон</th>
@@ -72,6 +75,7 @@
                         </tr>
                         <? foreach($listCouriers as $listCourier) { ?>
                             <tr>
+                                <td><span style="display: block; width:15px; height: 15px; background: #<?=$listCourier['color']?>"></span></td>
                                 <td><?=$listCourier['nick']?></td>
                                 <td><?=$listCourier['name']?></td>
                                 <td><?=$listCourier['contact']?></td>

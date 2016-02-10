@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'angara5.beget.ru';
-$db['default']['username'] = 'fb3809sd_curer';
-$db['default']['password'] = '123456';
-$db['default']['database'] = 'fb3809sd_curer';
+$db['default']['hostname'] = '212.109.223.89';
+$db['default']['username'] = 'project_curer';
+$db['default']['password'] = 'd2WFjE2vby86jsv6';
+$db['default']['database'] = 'project_curer';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;

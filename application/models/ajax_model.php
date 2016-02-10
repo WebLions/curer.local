@@ -145,6 +145,7 @@ class Ajax_model extends CI_Model {
             'nick' => $post['nick'],
             'name' => $post['name'],
             'contact' => $post['contact'],
+            'color_id' => $post['color'],
             'note' => $post['note']
         );
         $id = isset($post['id']) ? $post['id'] : null ;
@@ -165,7 +166,9 @@ class Ajax_model extends CI_Model {
             $query = $this->db->get("cour");
             return $query->row();
         }else{
-            $query = $this->db->get("cour");
+            $this->db->select('cour.*, cour_color.color');
+            $this->db->join('cour_color','cour_color.id=cour.color_id');
+            $query = $this->db->get('cour');
             return $query->result_array();
         }
     }

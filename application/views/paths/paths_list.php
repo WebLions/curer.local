@@ -26,14 +26,22 @@
                     <th style="width: 43%">Закупка</th>
                     <th style="width: 43%">Продажа</th>
                 </tr>
-                <? foreach() { ?>
+                <? foreach($paths as $path) { ?>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?=$path['client']?></td>
+                        <td><?=$path['vendor']?></td>
+                        <td><?=$path['sender_note']?></td>
+                        <td><?=$path['tariff']?></td>
+                        <td><?=$path['sender_buy']?></td>
+                        <td><?=$path['sender_sell']?></td>
+                    </tr>
+                    <tr>
+                        <td><?=$path['client']?></td>
+                        <td><?=$path['vendor']?></td>
+                        <td><?=$path['recipient_note']?></td>
+                        <td><?=$path['tariff']?></td>
+                        <td><?=$path['recipient_buy']?></td>
+                        <td><?=$path['recipient_sell']?></td>
                     </tr>
                 <? } ?>
                 </tbody>
