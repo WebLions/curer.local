@@ -15,16 +15,9 @@
                                     <? } ?>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <input name="order_date" value="<?=$order->order_date?>" type="text" class="form-control datepicker"  placeholder="Дата заказа" id="order_date">
-                            </div>
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input name="sender_order_date" type="text" value="<?=$order->sender_order_date?>" class="form-control datepicker" id="sender_date" placeholder="Дата заказа">
-                                    </div>
-
                                     <div class="form-group" id="client_adress_block">
                                         <label for="sender_adress" style="width: 100%">Адрес отправителя</label>
                                         <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
@@ -38,17 +31,23 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <input name="sender_order_date" type="text" value="<?=$order->sender_order_date?>" class="form-control datepicker" id="sender_date" placeholder="Дата заказа">
+                                    </div>
+
+                                    <div class="form-group">
                                         <input name="sender_note" value="<?=$order->sender_note?>" class="form-control" id="sender_note" placeholder="Примечание">
                                     </div>
 
                                     <div class="form-group">
                                         <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
+                                            <option></option>
                                             <? for($i=0;$i<=24;$i++) {
                                                 $val = ($i<10)?'0'.$i.':00':$i.':00';?>
                                                 <option value="<?=$val?>" <?=($order->sender_time1==$val)? 'selected':'';?> ><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
                                             <? } ?>
                                         </select>
                                         <select style="width: 49%" name="sender_time2" class="form-control">
+                                            <option></option>
                                             <? for($i=0;$i<=24;$i++) {
                                                 $val = ($i<10)?'0'.$i.':00':$i.':00';?>
                                                 <option value="<?=$val?>" <?=($order->sender_time2==$val)? 'selected':'';?> ><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
@@ -67,6 +66,7 @@
                                     <div class="form-group">
                                         <label style="width:19%;float: left; font-size: 14px;padding: 4px 1px" for="recipient_courier">Курьер</label>
                                         <select style="width: 80%" name="sender_courier" class="form-control">
+                                            <option></option>
                                             <? foreach($courierList as $row) {?>
                                                 <option value="<?=$row['id']?>" <?=($order->sender_courier==$row['id'])? 'selected':'';?> ><?=$row['nick']?></option>
                                             <? } ?>

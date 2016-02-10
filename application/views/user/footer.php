@@ -10,22 +10,17 @@
 
 <script src="/js/script.js"></script>
 <script src="/js/jquery.maskMoney.js" type="text/javascript"></script>
+
 <script>
+
     $(function() {
         $("#sender_buy").maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' ГРН'});
-    });
-    $(function() {
         $("#sender_sell").maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' ГРН'});
-    });
-    $(function() {
         $("#recipient_buy").maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' ГРН'});
-    });
-    $(function() {
         $("#recipient_sell").maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' ГРН'});
-    });
-    $(function() {
         $("#tariff").maskMoney({thousands:'', decimal:'.', allowZero:true, suffix: ' ГРН'});
     })
+
 </script>
 
 
