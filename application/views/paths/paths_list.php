@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
                     <li><i class="fa fa-laptop"></i><a href ="/user/paths">Маршруты</a></li>
-                    <li><i class="fa fa-laptop"></i><a href ="">Имя курьера</a></li>
+                    <li><i class="fa fa-laptop"></i><a href =""><?=empty($paths[0]['sender_courier'])?"Маршрутов нет":$paths[0]['sender_courier'];?></a></li>
                 </ol>
             </div>
         </div>

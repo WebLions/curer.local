@@ -30,14 +30,14 @@
                                 <th style="width: 14%">Цвет</th>
                                 <th style="width: 12%"><i class="icon_cogs"></i>Действия</th>
                             </tr>
-                            <? foreach() { ?>
+                            <? foreach($cour as $c) { ?>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?=$c['name']?></td>
+                                    <td><?=$c['nick']?></td>
+                                    <td><span style="display: block; width:15px; height: 15px; background: #<?=$c['color']?>"></span></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-danger showPaths" data-id="Ссылка на страницу путей курьера"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                            <a class="btn btn-danger showPaths" a href="/user/cour_path/<?=$c['id']?>"><i class="glyphicon glyphicon-eye-open"></i></a>
                                         </div>
                                     </td>
                                 </tr>
