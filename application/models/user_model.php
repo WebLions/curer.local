@@ -119,7 +119,6 @@ class User_model extends CI_Model
                          recipient.nick as recipient_courier,
                          users.fio as disp,
                          contragent.name as client,
-                         order.order_date,
                          order.state,
                          order.tariff,
                          order.payment,
