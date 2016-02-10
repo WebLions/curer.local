@@ -88,7 +88,6 @@ class User extends CI_Controller {
         if(!$this->data['user_token']) {
             redirect('user/login');
         }
-
         $this->data['client'] = $this->user_model->getClient($id);
         $this->data['clientList'] = $this->user_model->getClientsList();
         $this->data['courierList'] = $this->user_model->getCouriersList();
