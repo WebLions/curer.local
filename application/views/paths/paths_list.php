@@ -19,12 +19,12 @@
             <table class="table table-striped table-advance table-hover">
                 <tbody>
                 <tr>
-                    <th style="width: 1%">Клиент</th>
-                    <th style="width: 14%">Контактное лицо</th>
-                    <th style="width: 20%">Примечание к адресу</th>
+                    <th style="width: 15%">Клиент</th>
+                    <th style="width: 15%">Контактное лицо</th>
+                    <th style="width: 40%">Примечание к адресу</th>
                     <th style="width: 10%">Тариф</th>
-                    <th style="width: 43%">Закупка</th>
-                    <th style="width: 43%">Продажа</th>
+                    <th style="width: 10%">Закупка</th>
+                    <th style="width: 10%">Продажа</th>
                 </tr>
                 <? foreach($paths as $path) {
                     if($cour->nick==$path['recipient_courier']) $val = 'recipient';
