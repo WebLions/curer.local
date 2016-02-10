@@ -2,7 +2,7 @@
             <table class="table table-striped table-advance table-hover">
                 <tbody>
                 <tr>
-                    <th style="width: 10%">Цвет</th>
+                    <th style="width: 1%">Цвет</th>
                     <th style="width: 10%">Позывной</th>
                     <th style="width: 20%">ФИО</th>
                     <th style="width: 15%">Конт. телефон</th>
