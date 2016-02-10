@@ -240,4 +240,8 @@ class Ajax extends CI_Controller {
         $this->data['adress'] = $this->ajax_model->getAdressClient( (int) $this->input->post("id") );
         $this->load->view('ajax/listAdressClient', $this->data);
     }
+    public function getAdressClientNote()
+    {
+        $this->ajax_model->getAdressClientNote( (int) $this->input->post("id") );
+    }
 }

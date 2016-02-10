@@ -283,4 +283,12 @@ class Ajax_model extends CI_Model {
         $query = $this->db->get("adress");
         return $query->result_array();
     }
+    public function getAdressClientNote($id)
+    {
+        $this->db->select('note');
+        $this->db->where("id", $id);
+        $query = $this->db->get("adress");
+        $query = $query->row();
+        echo $query->note;
+    }
 }

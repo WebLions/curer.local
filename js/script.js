@@ -289,7 +289,15 @@ $( document ).ready(function() {
     $('#main-content').on('change','#client',function(){
         $.post( "/ajax/getAdressClient",{id: $(this).find(":selected").val() }, function( data ) {
             $("#sender_adress").empty();
-            $("#sender_adress").html(data);
+            var obj = jQuery.parseJSON( data );
+            $("#sender_adress").html(obj.option);
+            $("#sender_note").val(obj.note);
+        });
+    });
+    $('#main-content').on('change','#sender_adress',function(){
+        $.post( "/ajax/getAdressClientNote",{id: $(this).find(":selected").val() }, function( data ) {
+            $("#sender_note").empty();
+            $("#sender_note").val(data);
         });
     });
 
