@@ -29,8 +29,8 @@
 
                                     <div class="form-group">
                                         <select name="id_client" class="form-control" id="client">
+                                            <option></option>
                                             <? foreach($clientList as $row) {?>
-                                                <option></option>
                                                 <option value="<?=$row['id']?>"><?=$row['name']?></option>
                                             <? } ?>
                                         </select>
@@ -58,14 +58,14 @@
 
                                     <div class="form-group">
                                         <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
+                                            <option></option>
                                             <? for($i=0;$i<=24;$i++) {?>
-                                                <option></option>
                                                 <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
                                             <? } ?>
                                         </select>
                                         <select style="width: 49%" name="sender_time2" class="form-control">
+                                            <option></option>
                                             <? for($i=0;$i<=24;$i++) {?>
-                                                <option></option>
                                                 <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
                                             <? } ?>
                                         </select>
@@ -128,14 +128,14 @@
 
                                         <div class="form-group">
                                             <select style="width: 50%; float:left;" name="recipient_time1" class="form-control">
+                                                <option></option>
                                                 <? for($i=0;$i<=24;$i++) {?>
-                                                    <option></option>
                                                     <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
                                                 <? } ?>
                                             </select>
                                             <select style="width: 49%" name="recipient_time2" class="form-control">
+                                                <option></option>
                                                 <? for($i=0;$i<=24;$i++) {?>
-                                                    <option></option>
                                                     <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
                                                 <? } ?>
                                             </select>
@@ -152,8 +152,8 @@
                                     <div class="form-group">
                                         <label style="width:19%;float: left; font-size: 14px;padding: 4px 1px" for="recipient_courier">Курьер</label>
                                         <select style="width:80%" name="recipient_courier" class="form-control">
+                                            <option></option>
                                             <? foreach($courierList as $row) {?>
-                                                <option></option>
                                                 <option value="<?=$row['id']?>"><?=$row['nick']?></option>
                                             <? } ?>
                                         </select>
