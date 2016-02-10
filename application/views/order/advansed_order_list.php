@@ -25,7 +25,6 @@
                     <table width = "100%" class="table table-striped table-advance table-hover table-font">
                         <tr>
                             <th style = "width: 15%">Клиент</th>
-                            <th style = "width: 15%">Дата заказа</th>
                             <th style = "width: 10%">Тариф</th>
                             <th style = "width: 20%">Методы оплаты</th>
                             <th style = "width: 20%">Оплачивает доставку</th>
@@ -33,7 +32,6 @@
                         </tr>
                         <tr>
                             <td><?=$order->client?></td>
-                            <td><?=$order->order_date?></td>
                             <td><?=$order->tariff?></td>
                             <td><?=$order->payment?></td>
                             <td><?=$order->payment_person?></td>

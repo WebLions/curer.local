@@ -244,7 +244,6 @@
                         <tbody>
                         <tr>
                             <th style="width: 1%">№</th>
-                            <th style="width: 2%">Дата</th>
                             <th style="width: 1%">Клиент</th>
                             <th style="width: 5%">Адрес отправителя</th>
                             <th style="width: 1%">Диспетчер</th>
@@ -257,7 +256,6 @@
                         <? foreach($listOrders as $listOrder) { ?>
                             <tr>
                                 <td><?=$listOrder['id']?></td>
-                                <td><?=$listOrder['order_date']?></td>
                                 <td><?=$listOrder['client']?></td>
                                 <td><?=$listOrder['sender_adress']?></td>
                                 <td><?=$listOrder['disp']?></td>
