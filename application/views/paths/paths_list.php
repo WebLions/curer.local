@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="/user/home">Административная панель</a></li>
                     <li><i class="fa fa-laptop"></i><a href ="/user/paths">Маршруты</a></li>
-                    <li><i class="fa fa-laptop"></i><a href =""><?=empty($cour->nick)?"Маршрутов нет":$cour->nick;?></a></li>
+                    <li><i class="fa fa-laptop"></i><?=empty($cour->nick)?"Маршрутов нет":$cour->nick;?></li>
                 </ol>
             </div>
         </div>
@@ -26,6 +26,7 @@
                     <th style="width: 10%">Закупка</th>
                     <th style="width: 10%">Продажа</th>
                 </tr>
+
                 <? foreach($paths as $path) {
                     if($cour->nick==$path['recipient_courier']) $val = 'recipient';
                         else $val = 'sender';
