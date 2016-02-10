@@ -1,22 +1,31 @@
 $( document ).ready(function() {
-    $('#order_date').datetimepicker({
-        format: 'YYYY-MM-DD'
+
+
+    $('#order_date').datetimepicker({isRTL: false,
+        format: 'YYYY-MM-DD',
+        locale:'ru'
     });
+
     $('#myModalEditOrder').find('#order_date_edit').datetimepicker({
-        format: 'YYYY-MM-DD'
+        format: 'YYYY-MM-DD',
+        locale:'ru'
     });
         $('#sender_date').datetimepicker({
-            format: 'YYYY-MM-DD'
+            format: 'YYYY-MM-DD',
+            locale:'ru'
         });
         $('#myModalEditOrder').find('#sender_date_order').datetimepicker({
-            format: 'YYYY-MM-DD'
+            format: 'YYYY-MM-DD',
+            locale:'ru'
         });
 
             $('#recipient_date').datetimepicker({
-                format: 'YYYY-MM-DD'
+                format: 'YYYY-MM-DD',
+                locale:'ru'
             });
             $('#myModalEditOrder').find('#recipient_date_edit').datetimepicker({
-                format: 'YYYY-MM-DD'
+                format: 'YYYY-MM-DD',
+                locale:'ru'
             });
 
     $(".adduser").click(function(e){

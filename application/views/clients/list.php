@@ -31,12 +31,8 @@
                                         <input name="name" type="text" class="form-control" id="name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="vendor">Ответственное лицо</label>
+                                        <label for="vendor">Контакт с магазином</label>
                                         <input name="vendor" class="form-control" id="vendor">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="contact">Контактные данные</label>
-                                        <input name="contact" class="form-control" id="contact">
                                     </div>
                                     <div class="form-group">
                                         <label for="contact">Дополнительно:</label>
@@ -60,8 +56,7 @@
                         <tr>
                             <th style="width: 1%">ID</th>
                             <th style="width: 14%">Название</th>
-                            <th style="width: 20%">Отв.лицо</th>
-                            <th style="width: 10%">Конт. данные</th>
+                            <th style="width: 30%">Конт. с магазином</th>
                             <th style="width: 43%">Дополнительно</th>
                             <th style="width: 12%"><i class="icon_cogs"></i>Действия</th>
                         </tr>
@@ -69,7 +64,6 @@
                             <tr>
                                 <td><?=$listClient['id']?></td>
                                 <td><?=$listClient['name']?></td>
-                                <td><?=$listClient['vendor']?></td>
                                 <td><?=$listClient['contact']?></td>
                                 <td><?=$listClient['other']?></td>
                                 <td>
