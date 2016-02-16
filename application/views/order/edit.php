@@ -26,7 +26,7 @@
                                             <? } ?>
                                         </select>
                                         <div>
-                                            <button class="glyphicon glyphicon-plus addAdress form-control" style="width: 10%"></button>
+                                            <button id="addAdress" class="glyphicon glyphicon-plus form-control" style="width: 10%"></button>
                                         </div>
                                     </div>
 

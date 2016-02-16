@@ -306,15 +306,15 @@ $( document ).ready(function() {
         });
     });
 
-    $('#modal_form').on('click','.addAdress',function(e){
+    $('#myModal').on('click','#addAdress',function(e){
         e.preventDefault();
 
         if(addAdress == true)  {
             $('#sender_adress').remove();
-            $('.addAdress').remove();
+            $('#addAdress').remove();
             $( '<input id="new_sender_adress" class="form-control" type="text"  style="width: 89%; float:left;" name="new_sender_adress"  placeholder="Адресс отправителя">').appendTo( "#sender_mark" );
             $( '<div>'+
-                '<button  class="glyphicon glyphicon-eye-open showAdress form-control" style="width: 10%"></button>'+
+                '<button id="showAdress" class="glyphicon glyphicon-eye-open form-control" style="width: 10%"></button>'+
                 '</div>').appendTo( "#sender_mark" );
             addAdress = false;
             showAdress = true;
@@ -325,14 +325,14 @@ $( document ).ready(function() {
 
     });
 
-    $('#modal_form').on('click','.showAdress',function(e){
+    $('#myModal').on('click','#showAdress',function(e){
 
             if(showAdress == true){
                 $('#new_sender_adress').remove();
-                $('.showAdress').remove();
+                $('#showAdress').remove();
                 $( '<select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >').appendTo( "#sender_mark" );
                 $( '<div>'+
-                    '<button  class="glyphicon glyphicon-plus addAdress form-control" style="width: 10%"></button>'+
+                    '<button id="addAdress" class="glyphicon glyphicon-plus form-control" style="width: 10%"></button>'+
                     '</div>').appendTo( "#sender_mark" );
                 addAdress = true;
                 showAdress = false;
@@ -341,15 +341,15 @@ $( document ).ready(function() {
         return false;
     });
 
-    $('#myModalEditOrder').on('click','.addAdress',function(e){
+    $('#myModalEditOrder').on('click','#addAdress',function(e){
         e.preventDefault();
 
         if(addAdress == true)  {
             $('#sender_adress').remove();
-            $('.addAdress').remove();
+            $('#addAdress').remove();
             $( '<input id="new_sender_adress" class="form-control" type="text"  style="width: 89%; float:left;" name="new_sender_adress"  placeholder="Адресс отправителя">').appendTo( "#sender_mark" );
             $( '<div>'+
-                '<button  class="glyphicon glyphicon-eye-open showAdress form-control" style="width: 10%"></button>'+
+                '<button id="showAdress" class="glyphicon glyphicon-eye-open form-control" style="width: 10%"></button>'+
                 '</div>').appendTo( "#sender_mark" );
             addAdress = false;
             showAdress = true;
@@ -360,14 +360,14 @@ $( document ).ready(function() {
 
     });
 
-    $('$myModalEditOrder').on('click','.showAdress',function(e){
+    $('#myModalEditOrder').on('click','#showAdress',function(e){
 
         if(showAdress == true){
             $('#new_sender_adress').remove();
-            $('.showAdress').remove();
+            $('#showAdress').remove();
             $( '<select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >').appendTo( "#sender_mark" );
             $( '<div>'+
-                '<button  class="glyphicon glyphicon-plus addAdress form-control" style="width: 10%"></button>'+
+                '<button id="addAdress" class="glyphicon glyphicon-plus form-control" style="width: 10%"></button>'+
                 '</div>').appendTo( "#sender_mark" );
             addAdress = true;
             showAdress = false;
