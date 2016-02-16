@@ -1,7 +1,6 @@
 var addAdress = true;
 var showAdress = true;
-var addAdressEdit = true;
-var showAdressEdit = true;
+
 
 $( document ).ready(function() {
 
@@ -307,7 +306,7 @@ $( document ).ready(function() {
         });
     });
 
-    $('#addform').on('click','#addAdress',function(e){
+    $('#modal_form').on('click','#addAdress',function(e){
         e.preventDefault();
 
         if(addAdress == true)  {
@@ -325,7 +324,7 @@ $( document ).ready(function() {
 
     });
 
-    $('#addform').on('click','#showAdress',function(e){
+    $('#modal_form').on('click','#showAdress',function(e){
         e.preventDefault();
             if(showAdress == true){
                 $('#new_sender_adress').remove();
@@ -340,42 +339,7 @@ $( document ).ready(function() {
         return false;
     });
 
-    $('#saveform').on('click','#addAdressEdit',function(e){
-        e.preventDefault();
 
-        if(addAdressEdit == true)  {
-            $('#sender_adress').remove();
-            $('#addAdressEdit').remove();
-            $( '<input id="new_sender_adress" class="form-control" type="text"  style="width: 89%; float:left;" name="new_sender_adress"  placeholder="Адресс отправителя">').appendTo( "#sender_mark" );
-            $( '<div>'+
-                '<button id="showAdressEdit" class="glyphicon glyphicon-eye-openform-control" style="width: 10%"></button>'+
-                '</div>').appendTo( "#sender_mark" );
-            addAdressEdit = false;
-            showAdressEdit = true;
-        }
-
-        return false;
-
-    });
-
-    $('#saveform').on('click','#showAdressEdit',function(e){
-        e.preventDefault();
-        if(showAdressEdit == true){
-            $('#new_sender_adress').remove();
-            $('#showAdressEdit').remove();
-            $('<select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >'+
-            '<? foreach($adressList as $row) {?>'+
-            '<option value="<?=$row[\'id\']?>" <?=($order->id_sender_adress==$row[\'id\'])? \'selected\':\'\';?> ><?=$row[\'adress\']?></option>'+
-            '<? } ?>'+
-            '</select>').appendTo( "#sender_mark" );
-            $( '<div>'+
-                '<button id="addAdressEdit" class="glyphicon glyphicon-plus form-control" style="width: 10%"></button>'+
-                '</div>').appendTo( "#sender_mark" );
-            addAdressEdit = true;
-            showAdressEdit = false;
-        }
-        return false;
-    });
 
 
 });
