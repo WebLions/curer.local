@@ -314,36 +314,38 @@ $( document ).ready(function() {
         });
     });
 
-    $('#modal_form').on('click','#addAdress',function(e){
+    $('#modal_form').on('click','.addAdress',function(e){
         e.preventDefault();
 
         if(addAdress == true)  {
             $('#sender_adress').remove();
-            $('#addAdress').remove();
+            $('.addAdress').remove();
             $( '<input id="new_sender_adress" class="form-control" type="text"  style="width: 89%; float:left;" name="new_sender_adress"  placeholder="Адресс отправителя">').appendTo( "#sender_mark" );
             $( '<div>'+
-                '<button id="showAdress" class="glyphicon glyphicon-eye-open showAdress form-control" style="width: 10%"></button>'+
+                '<button  class="glyphicon glyphicon-eye-open showAdress form-control" style="width: 10%"></button>'+
                 '</div>').appendTo( "#sender_mark" );
             addAdress = false;
             showAdress = true;
         }
 
+        e.preventDefault();
         return false;
 
     });
 
-    $('#modal_form').on('click','#showAdress',function(e){
-        e.preventDefault();
+    $('#modal_form').on('click','.showAdress',function(e){
+
             if(showAdress == true){
                 $('#new_sender_adress').remove();
-                $('#showAdress').remove();
+                $('.showAdress').remove();
                 $( '<select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >').appendTo( "#sender_mark" );
                 $( '<div>'+
-                    '<button id="addAdress" class="glyphicon glyphicon-plus form-control" style="width: 10%"></button>'+
+                    '<button  class="glyphicon glyphicon-plus addAdress form-control" style="width: 10%"></button>'+
                     '</div>').appendTo( "#sender_mark" );
                 addAdress = true;
                 showAdress = false;
             }
+        e.preventDefault();
         return false;
     });
 
