@@ -19,14 +19,14 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group" id="client_adress_block">
-                                        <label for="sender_adress" style="width: 100%">Адрес отправителя</label>
+                                        <label id="sender_mark" for="sender_adress" style="width: 100%">Адрес отправителя</label>
                                         <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
                                             <? foreach($adressList as $row) {?>
                                                 <option value="<?=$row['id']?>" <?=($order->id_sender_adress==$row['id'])? 'selected':'';?> ><?=$row['adress']?></option>
                                             <? } ?>
                                         </select>
                                         <div>
-                                            <button type="submit" class="glyphicon glyphicon-plus addadress form-control" style="width: 10%" id="addAdress"></button>
+                                            <button id="addAdressEdit" class="glyphicon glyphicon-plus addAdressEdit form-control" style="width: 10%"></button>
                                         </div>
                                     </div>
 
