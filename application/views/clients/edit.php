@@ -13,7 +13,11 @@
                     <input name="name" type="text" class="form-control" id="name" value="<?=$client->name?>">
                 </div>
                 <div class="form-group">
-                    <label for="contact">Контакт с магазином</label>
+                    <label for="vendor">Ответcтвенное лицо</label>
+                    <input name="vendor" class="form-control" id="vendor" value="<?=$client->vendor?>">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Контактные данные</label>
                     <input name="contact" class="form-control" id="contact" value="<?=$client->contact?>">
                 </div>
                 <div class="form-group">

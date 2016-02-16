@@ -40,11 +40,11 @@
                                         <div class="col-lg-6">
 
                                             <div class="form-group" id="client_adress_block">
-                                                <label for="sender_adress" style="width: 100%">Отправитель</label>
+                                                <label id="sender_mark" for="sender_adress" style="width: 100%">Отправитель</label>
                                                 <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
                                                 </select>
                                                 <div>
-                                                    <button type="submit" class="glyphicon glyphicon-plus addadress form-control" style="width: 10%"></button>
+                                                    <button id="addAdress" class="glyphicon glyphicon-plus addAdress form-control" style="width: 10%"></button>
                                                 </div>
                                             </div>
 
