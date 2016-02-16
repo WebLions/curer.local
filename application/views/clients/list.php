@@ -31,11 +31,11 @@
                                         <input name="name" type="text" class="form-control" id="name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="vendor">Контакт с магазином</label>
-                                        <input name="vendor" class="form-control" id="vendor">
+                                        <label for="contact">Контакт с магазином</label>
+                                        <input name="contact" class="form-control" id="contact">
                                     </div>
                                     <div class="form-group">
-                                        <label for="contact">Дополнительно:</label>
+                                        <label for="other">Дополнительно:</label>
                                         <input name="other" class="form-control" id="other">
                                     </div>
                                     <button type="submit" class="btn btn-default addcontragent">Добавить</button>

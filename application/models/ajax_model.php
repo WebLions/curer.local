@@ -67,7 +67,6 @@ class Ajax_model extends CI_Model {
     {
         $data = array(
             'name' => $post['name'],
-            'vendor' => $post['vendor'],
             'contact' => $post['contact'],
             'other' => $post['other']
         );
@@ -95,7 +94,6 @@ class Ajax_model extends CI_Model {
     {
         $data = array(
             'name' => $post['name'],
-            'vendor' => $post['vendor'],
             'contact' => $post['contact'],
             'other' => $post['other']
         );
@@ -199,7 +197,6 @@ class Ajax_model extends CI_Model {
         $date = array(
                     'id_client',
                     'id_disp',
-                    'order_date', //2016-01-22
                     'sender_order_date', //2016-01-22
                     'id_sender_adress', //14
                     'sender_note', //note
@@ -248,7 +245,6 @@ class Ajax_model extends CI_Model {
                          recipient.nick as recipient_courier,
                          users.fio as disp,
                          contragent.name as client,
-                         order.order_date,
                          order.state,
                          order.tariff,
                          order.payment,

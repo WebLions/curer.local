@@ -49,7 +49,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <input name="sender_order_date" type="text" class="form-control datepicker" id="sender_date" placeholder="Дата заказа">
+                                                <input name="sender_order_date" type="text" class="form-control" id="sender_date" placeholder="Дата заказа">
                                             </div>
 
                                             <div class="form-group">
