@@ -192,8 +192,18 @@ class Ajax_model extends CI_Model {
         //$sell = empty($post['sell'])?"0":"1";
 
         //$post['id_sender_adress'] = (is_int($post['id_sender_adress'])==true) ? $post['id_sender_adress'] : $this->addAdresClient($post['id_client'], $post['id_sender_adress']);
-
+        if(!empty($post['new_sender_adress']))
+        {
+            $data = array(
+                'id_contragent'=> $post['id_client'],
+                'adress'=>$post['new_sender_adress'],
+                'note'=>$post['sender_note']
+            );
+            $this->db->insert('adress',$data);
+            $post['id_sender_adress'] = $this->db->insert_id();
+        }
         $post['id_disp'] = $_SESSION['user_id'];
+        unset($data);
         $date = array(
                     'id_client',
                     'id_disp',
