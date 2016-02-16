@@ -3,7 +3,6 @@
     <tr>
         <th style="width: 1%">ID</th>
         <th style="width: 14%">Название</th>
-        <th style="width: 20%">Отв.лицо</th>
         <th style="width: 10%">Конт. данные</th>
         <th style="width: 43%">Дополнительно</th>
         <th style="width: 12%"><i class="icon_cogs"></i>Действия</th>
@@ -12,7 +11,6 @@
         <tr>
             <td><?=$listClient['id']?></td>
             <td><?=$listClient['name']?></td>
-            <td><?=$listClient['vendor']?></td>
             <td><?=$listClient['contact']?></td>
             <td><?=$listClient['other']?></td>
             <td>

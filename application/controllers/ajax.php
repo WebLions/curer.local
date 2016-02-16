@@ -60,8 +60,8 @@ class Ajax extends CI_Controller {
     public function addContragent()
     {
         $this->form_validation->set_rules('name','Логин','trim|required|xss_clean');
-        $this->form_validation->set_rules('vendor','Пароль','trim|required|xss_clean');
-        $this->form_validation->set_rules('contact','ФИО','trim|required|xss_clean');
+        $this->form_validation->set_rules('contact','Контакты','trim|required|xss_clean');
+        $this->form_validation->set_rules('other','Дополнительно','trim|required|xss_clean');
 
         if($this->form_validation->run() == true)
         {
@@ -85,9 +85,8 @@ class Ajax extends CI_Controller {
     public function saveContragent()
     {
         $this->form_validation->set_rules('name','Логин','trim|required|xss_clean');
-        //$this->form_validation->set_rules('password','Пароль','trim|required|xss_clean');
-        $this->form_validation->set_rules('vendor','ФИО','trim|required|xss_clean');
-        $this->form_validation->set_rules('contact','Роль','trim|required|xss_clean');
+        $this->form_validation->set_rules('contact','Контакты','trim|required|xss_clean');
+        $this->form_validation->set_rules('other','Дополнительно','trim|required|xss_clean');
 
         if($this->form_validation->run() == true)
         {
@@ -192,7 +191,7 @@ class Ajax extends CI_Controller {
     //Orders
     public function addOrder()
     {
-        $this->form_validation->set_rules('order_date','Статус заказа','trim|required|xss_clean');
+        $this->form_validation->set_rules('id_client','Клиент','trim|required|xss_clean');
 
         if($this->form_validation->run() == true)
         {
