@@ -1,4 +1,4 @@
-            <div class="modal-dialog">
+            <div class="modal-dialog" id="modal_form" >
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -26,7 +26,7 @@
                                             <? } ?>
                                         </select>
                                         <div>
-                                            <button id="addAdressEdit" class="glyphicon glyphicon-plus addAdressEdit form-control" style="width: 10%"></button>
+                                            <button id="addAdress" class="glyphicon glyphicon-plus form-control" style="width: 10%"></button>
                                         </div>
                                     </div>
 
