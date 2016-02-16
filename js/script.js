@@ -27,10 +27,7 @@ $( document ).ready(function() {
                 format: 'YYYY-MM-DD',
                 locale:'ru'
             });
-            $('#myModalEditOrder').find('#recipient_date_edit').datetimepicker({
-                format: 'YYYY-MM-DD',
-                locale:'ru'
-            });
+
 
     $(".adduser").click(function(e){
         $.post( "/ajax/addUser",  $("#addform").serialize() , function( data ) {

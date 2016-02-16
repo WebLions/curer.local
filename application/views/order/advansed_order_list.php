@@ -11,14 +11,7 @@
                 </ol>
             </div>
         </div>
-
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#order_data">Данные по заказу</a></li>
-            <li><a data-toggle="tab" href="#sender_data">Данные по отправителю</a></li>
-            <li><a data-toggle="tab" href="#recipient_data">Данные по получателю</a></li>
-        </ul>
-        <div class="tab-content">
-        <div id="order_data" class="tab-pane fade active in">
+        <h3>Общие данные по заказу</h3>
             <div class = "row">
                 <div class = "col-md-12">
                     <br>
@@ -38,14 +31,9 @@
                             <td><?=$order->state?></td>
                          </tr>
                     </table>
-                </div>
-            </div>
-        </div>
 
-        <div id="sender_data" class="tab-pane fade ">
-            <div class = "row">
-                <div class = "col-md-12">
-                    <br>
+                    <h3>Данные по отправителю</h3>
+
                     <table width = "100%" class="table table-striped table-advance table-hover table-font">
                         <tr>
                             <th style = "width: 10%">Дата</th>
@@ -70,14 +58,7 @@
                             <td><?=$order->sender_dis_note?></td>
                         </tr>
                     </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="recipient_data" class="tab-pane fade ">
-            <div class = "row">
-                <div class = "col-md-12">
-                    <br>
+                    <h3>Данные по получателю</h3>
                     <table width = "100%" class="table table-striped table-advance table-hover table-font">
                         <tr>
                             <th style = "width: 10%">Дата</th>
@@ -105,7 +86,8 @@
                 </div>
             </div>
         </div>
-            </div>
+
+
 
 
     </section>
