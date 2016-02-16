@@ -274,11 +274,24 @@ $( document ).ready(function() {
         $("#myModalEditOrder").empty();
         $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
             $("#myModalEditOrder").html(data);
-            var date = $('#myModalEditOrder').find('#date2').val();
-            $('#myModalEditOrder').find('#date2').datetimepicker({
-                format: 'YYYY-MM-DD HH:MM:SS'
+            var date = $('#myModalEditOrder').find('#recipient_date').val();
+            $('#myModalEditOrder').find('#recipient_date').datetimepicker({
+                format: 'YYYY-MM-DD',
+                locale:'ru'
             });
-            $('#myModalEditOrder').find('#date2').val(date);
+            $('#myModalEditOrder').find('#recipient_date').val(date);
+        });
+    });
+    $("#orders").on("click", ".editOrder", function (e) {
+        $("#myModalEditOrder").empty();
+        $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
+            $("#myModalEditOrder").html(data);
+            var date = $('#myModalEditOrder').find('#sender_date').val();
+            $('#myModalEditOrder').find('#sender_date').datetimepicker({
+                format: 'YYYY-MM-DD',
+                locale:'ru'
+            });
+            $('#myModalEditOrder').find('#sender_date').val(date);
         });
     });
     $("#orders").on("click", ".deleteOrder", function (e) {

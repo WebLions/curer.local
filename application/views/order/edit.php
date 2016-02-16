@@ -19,7 +19,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group" id="client_adress_block">
-                                        <label id="sender_mark" for="sender_adress" style="width: 100%">Адрес отправителя</label>
+                                        <label id="sender_mark" for="sender_adress" style="width: 100%">Отправитель</label>
                                         <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
                                             <? foreach($adressList as $row) {?>
                                                 <option value="<?=$row['id']?>" <?=($order->id_sender_adress==$row['id'])? 'selected':'';?> ><?=$row['adress']?></option>
@@ -96,14 +96,13 @@
                                 </div>
 
                                 <div class="col-lg-6">
+                                    <div class="form-group" id="client_adress_block">
+                                        <label for="recipient_adress">Получатель</label>
+                                        <input name="recipient_adress" value="<?=$order->recipient_adress?>" class="form-control" id="recipient_adress" >
+                                    </div>
 
                                     <div class="form-group">
                                         <input name="recipient_order_date"  value="<?=$order->recipient_order_date?>" type="text" class="form-control datepicker" placeholder="Дата заказа" id="recipient_date">
-                                    </div>
-
-                                    <div class="form-group" id="client_adress_block">
-                                        <label for="recipient_adress">Адрес получателя</label>
-                                        <input name="recipient_adress" value="<?=$order->recipient_adress?>" class="form-control" id="recipient_adress" >
                                     </div>
 
                                     <div class="form-group">
