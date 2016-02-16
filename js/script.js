@@ -341,6 +341,40 @@ $( document ).ready(function() {
         return false;
     });
 
+    $('#myModalEditOrder').on('click','.addAdress',function(e){
+        e.preventDefault();
+
+        if(addAdress == true)  {
+            $('#sender_adress').remove();
+            $('.addAdress').remove();
+            $( '<input id="new_sender_adress" class="form-control" type="text"  style="width: 89%; float:left;" name="new_sender_adress"  placeholder="Адресс отправителя">').appendTo( "#sender_mark" );
+            $( '<div>'+
+                '<button  class="glyphicon glyphicon-eye-open showAdress form-control" style="width: 10%"></button>'+
+                '</div>').appendTo( "#sender_mark" );
+            addAdress = false;
+            showAdress = true;
+        }
+
+        e.preventDefault();
+        return false;
+
+    });
+
+    $('$myModalEditOrder').on('click','.showAdress',function(e){
+
+        if(showAdress == true){
+            $('#new_sender_adress').remove();
+            $('.showAdress').remove();
+            $( '<select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >').appendTo( "#sender_mark" );
+            $( '<div>'+
+                '<button  class="glyphicon glyphicon-plus addAdress form-control" style="width: 10%"></button>'+
+                '</div>').appendTo( "#sender_mark" );
+            addAdress = true;
+            showAdress = false;
+        }
+        e.preventDefault();
+        return false;
+    });
 
 
 
