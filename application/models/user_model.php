@@ -101,27 +101,19 @@ class User_model extends CI_Model
     }
     public function getShortOrders() //получение данных курьеров
     {
-        /*
-        <th>Номер заказа(начинается с 100001)</th>
-                            <th>Дата</th>
-                            <th>Клиент</th>
-                            <th>Адрес отправителя</th>
-                            <th>Диспетчер</th>
-                            <th>Курьер</th>
-                            <th>Адрес получателя</th>
-                            <th>Диспетчер</th>
-                            <th>Курьер</th>
-    */
 
         $this->db->select("
                          order.id,
                          sender.nick as sender_courier,
                          recipient.nick as recipient_courier,
-                         users.fio as disp,
+                         sender.id as sender_id,
+                         recipient.id as recipient_id,
                          contragent.name as client,
                          order.state,
                          order.tariff,
                          order.payment,
+                         order.sender_dis_note,
+                         order.recipient_dis_note,
                          adress.adress as sender_adress,
                          order.recipient_adress
                          ");
@@ -129,7 +121,7 @@ class User_model extends CI_Model
         $this->db->join("cour as sender", "sender.id = order.sender_courier");
         $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
         $this->db->join("adress", "adress.id = order.id_sender_adress");
-        $this->db->join("users", "users.id = order.id_disp");
+
         //$this->db->where("users.id = {$user_id}");
         $query = $this->db->get("order");
         //echo $this->db->last_query();
