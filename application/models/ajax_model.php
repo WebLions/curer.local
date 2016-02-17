@@ -297,4 +297,8 @@ class Ajax_model extends CI_Model {
         $query = $query->row();
         echo $query->note;
     }
+    public function editInput($post){
+        $this->db->where('id',$post['id']);
+        $this->db->update("order", array($post['type']=>$post['val']));
+    }
 }

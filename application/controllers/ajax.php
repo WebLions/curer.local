@@ -204,7 +204,7 @@ class Ajax extends CI_Controller {
     }
     public function saveOrder()
     {
-        $this->form_validation->set_rules('order_date','Статус заказа','trim|required|xss_clean');
+        $this->form_validation->set_rules('id_client','Клиент','trim|required|xss_clean');
 
         if($this->form_validation->run() == true)
         {
@@ -242,5 +242,8 @@ class Ajax extends CI_Controller {
     public function getAdressClientNote()
     {
         $this->ajax_model->getAdressClientNote( (int) $this->input->post("id") );
+    }
+    public function editInput(){
+        $this->ajax_model->editInput( $this->input->post() );
     }
 }

@@ -258,11 +258,23 @@
                                 <td><?=$listOrder['id']?></td>
                                 <td><?=$listOrder['client']?></td>
                                 <td><?=$listOrder['sender_adress']?></td>
-                                <td><?=$listOrder['disp']?></td>
-                                <td><?=$listOrder['sender_courier']?></td>
+                                <td><input class="dis-edit" data-id="<?=$listOrder['id']?>" data-type="sender_dis_note" value="<?=$listOrder['sender_dis_note']?>" style="border: none"></td>
+                                <td>
+                                    <select data-id="<?=$listOrder['id']?>" data-type="sender_courier" style="width: 80%" name="sender_courier" class="form-control sel-cour">
+                                        <? foreach($courierList as $row) {?>
+                                            <option value="<?=$row['id']?>" <?=($listOrder['sender_id']==$row['id'])? 'selected':'';?> ><?=$row['nick']?></option>
+                                        <? } ?>
+                                    </select>
+                                </td>
                                 <td><?=$listOrder['recipient_adress']?></td>
-                                <td><?=$listOrder['disp']?></td>
-                                <td><?=$listOrder['recipient_courier']?></td>
+                                <td><input class="dis-edit" data-id="<?=$listOrder['id']?>" data-type="recipient_dis_note" value="<?=$listOrder['recipient_dis_note']?>" style="border: none"></td>
+                                <td>
+                                    <select data-id="<?=$listOrder['id']?>" data-type="recipient_courier" style="width: 80%" name="recipient_courier" class="form-control sel-cour">
+                                        <? foreach($courierList as $row) {?>
+                                            <option value="<?=$row['id']?>" <?=($listOrder['recipient_id']==$row['id'])? 'selected':'';?> ><?=$row['nick']?></option>
+                                        <? } ?>
+                                    </select>
+                                </td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-primary editOrder" data-id="<?=$listOrder['id']?>" data-toggle="modal" data-target="#myModalEditOrder"  href="#"><i class="icon_cog"></i></a>
