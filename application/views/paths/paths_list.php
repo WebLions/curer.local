@@ -18,11 +18,17 @@
             <table class="table table-striped table-advance table-hover">
                 <tbody>
                 <tr>
-                    <th style="width: 15%">Клиент</th>
-                    <th style="width: 15%">Контактное лицо</th>
-                    <th style="width: 40%">Примечание к адресу</th>
-                    <th style="width: 10%">Тариф</th>
+                    <th style="width: 5%">№</th>//Можно выбирать
+                    <th style="width: 15%">Дата</th>
+                    <th style="width: 10%">Статус</th>//при статусе віполенено он пропадает с маршрутов(статусы можно выбирать)
+                    <th style="width: 10%">Адресс</th>
+                    <th style="width: 10%">Примечание</th>
+                    <th style="width: 10%">Комментарий</th>
+                    <th style="width: 10%">Время</th>
+                    <th style="width: 10%">Вес</th>
                     <th style="width: 10%">Закупка</th>
+                    <th style="width: 10%">Продажа</th>
+                    <th style="width: 10%">Оплата тарифа</th>
                     <th style="width: 10%">Продажа</th>
                 </tr>
 
@@ -31,12 +37,12 @@
                         else $val = 'sender';
                         ?>
                     <tr>
-                        <td><?=$path['client']?></td>
-                        <td><?=$path['vendor']?></td>
-                        <td><?=$path[$val.'_note']?></td>
-                        <td><?=$path['tariff']?></td>
-                        <td><?=$path[$val.'_buy']?></td>
-                        <td><?=$path[$val.'_sell']?></td>
+                        <td><??></td>
+                        <td><??></td>
+                        <td><??></td>
+                        <td>=?></td>
+                        <td><?=?></td>
+                        <td><?=?></td>
                     </tr>
                 <? } ?>
                 </tbody>
