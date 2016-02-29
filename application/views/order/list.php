@@ -80,16 +80,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label style="width:19%;float: left; font-size: 14px;padding: 4px 1px" for="recipient_courier">Курьер</label>
-                                        <select style="width: 80%" name="sender_courier" class="form-control">
-                                            <option></option>
-                                            <? foreach($courierList as $row) {?>
-                                                <option value="<?=$row['id']?>"><?=$row['nick']?></option>
-                                            <? } ?>
-                                        </select>
-                                     </div>
-
-                                    <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">₴</span>
                                             <input name="sender_buy" id="sender_buy" type="text" class="form-control" placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
@@ -149,15 +139,6 @@
                                         <input name="recipient_order_note" class="form-control" id="order_note" placeholder="Дополнительно">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label style="width:19%;float: left; font-size: 14px;padding: 4px 1px" for="recipient_courier">Курьер</label>
-                                        <select style="width:80%" name="recipient_courier" class="form-control">
-                                            <option></option>
-                                            <? foreach($courierList as $row) {?>
-                                                <option value="<?=$row['id']?>"><?=$row['nick']?></option>
-                                            <? } ?>
-                                        </select>
-                                    </div>
 
                                     <div class="form-group">
                                         <div class="input-group">

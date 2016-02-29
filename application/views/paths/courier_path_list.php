@@ -25,15 +25,17 @@
                         <table class="table table-striped table-advance table-hover">
                             <tbody>
                             <tr>
-                                <th style="width: 60%">Курьер</th>
                                 <th style="width: 20%">Позывной</th>
+                                <th style="width: 20%">Кол-во адресов</th>
+                                <th style="width: 20%">Денег в кассе</th>
                                 <th style="width: 5%">Цвет</th>
                                 <th style="width: 15%"><i class="icon_cogs"></i>Действия</th>
                             </tr>
                             <? foreach($cour as $c) { ?>
                                 <tr>
-                                    <td><?=$c['name']?></td>
                                     <td><?=$c['nick']?></td>
+                                    <td><?=?></td>
+                                    <td><?=?></td>
                                     <td><span style="display: block; width:15px; height: 15px; background: #<?=$c['color']?>"></span></td>
                                     <td>
                                         <div class="btn-group">
