@@ -35,10 +35,13 @@
                                             <? } ?>
                                         </select>
                                     </div>
+                                    <div class="form-group" id="client_adress_block">
+                                        <label for="contact">Контактное лицо</label>
+                                        <input name="contact" class="form-control" id="contact" >
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-6">
-
                                             <div class="form-group" id="client_adress_block">
                                                 <label id="sender_mark" for="sender_adress" style="width: 100%">Отправитель</label>
                                                 <select id="sender_adress" name="id_sender_adress" style="width: 89%; float:left;" class="form-control" >
