@@ -35,8 +35,8 @@
                                             <? } ?>
                                         </select>
                                     </div>
-                                    <div class="form-group" id="client_adress_block">
-                                        <label for="contact">Контактное лицо</label>
+                                    <div class="form-group" id="">
+                                        <label for="contact">Контактное лицо клиента:</label>
                                         <input name="contact" class="form-control" id="contact" >
                                     </div>
 

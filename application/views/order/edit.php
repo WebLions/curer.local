@@ -16,8 +16,8 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label id="sender_mark" for="sender_adress" style="width: 100%">Контактное лицо клиента:</label>
-                                <input name="sender_order_date" type="text" value="<?=?>" class="form-control" id="client_agent" >
+                                <label for="contact" style="width: 100%">Контактное лицо клиента:</label>
+                                <input name="contact" type="text" value="" class="form-control" id="contact" >
                             </div>
 
                             <div class="row">
