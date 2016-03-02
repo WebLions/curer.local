@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="form-group" id="">
                                         <label for="contact">Контактное лицо клиента:</label>
-                                        <input name="contact" class="form-control" id="contact" >
+                                        <input disabled name="contact" class="form-control" id="contact" >
                                     </div>
 
                                     <div class="row">

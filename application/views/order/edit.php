@@ -17,7 +17,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="contact" style="width: 100%">Контактное лицо клиента:</label>
-                                <input name="contact" type="text" value="" class="form-control" id="contact" >
+                                <input disabled name="contact" type="text" value="" class="form-control" id="contact" >
                             </div>
 
                             <div class="row">
