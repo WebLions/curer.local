@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="form-group" id="">
                                         <label for="contact">Контактное лицо клиента:</label>
-                                        <input disabled name="contact" class="form-control" id="contact" >
+                                        <input disabled name="contact" class="form-control" id="contact">
                                     </div>
 
                                     <div class="row">
@@ -227,6 +227,7 @@
                     <table class="table table-striped table-advance table-hover table-font">
                         <tbody>
                         <tr>
+                            <th style="width: 1%"></th>
                             <th style="width: 1%">№</th>
                             <th style="width: 1%">Клиент</th>
                             <th style="width: 5%">Адрес отправителя</th>
@@ -238,7 +239,8 @@
                             <th style="width: 3%"><i class="icon_cogs"></i>Действия</th>
                         </tr>
                         <? foreach($listOrders as $listOrder) { ?>
-                            <tr>
+                            <tr style="background: <?=!empty($listOrder['color'])?$listOrder['color']:'#ffffff';?>">
+                                <td><input type="color" class="color-order" data-id="<?=$listOrder['id']?>" value="<?=!empty($listOrder['color'])?$listOrder['color']:'#ffffff';?>"></td>
                                 <td><?=$listOrder['id']?></td>
                                 <td><?=$listOrder['client']?></td>
                                 <td><?=$listOrder['sender_adress']?></td>
