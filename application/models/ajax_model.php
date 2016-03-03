@@ -257,7 +257,10 @@ class Ajax_model extends CI_Model {
                          contragent.name as client,
                          order.state,
                          order.tariff,
+                         order.color,
                          order.payment,
+                         order.sender_dis_note,
+                         order.recipient_dis_note,
                          adress.adress as sender_adress,
                          order.recipient_adress
                          ");
@@ -300,5 +303,14 @@ class Ajax_model extends CI_Model {
     public function editInput($post){
         $this->db->where('id',$post['id']);
         $this->db->update("order", array($post['type']=>$post['val']));
+    }
+    public function getContactVendor($id){
+        $this->db->where('id',$id);
+        $result = $this->db->get('contragent')->row();
+        echo $result->contact;
+    }
+    public function setColorOrder($id,$color){
+        $this->db->where('id',$id);
+        $this->db->update('order',array('color'=>$color));
     }
 }

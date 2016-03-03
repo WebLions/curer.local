@@ -111,6 +111,7 @@ class User_model extends CI_Model
                          contragent.name as client,
                          order.state,
                          order.tariff,
+                         order.color,
                          order.payment,
                          order.sender_dis_note,
                          order.recipient_dis_note,
@@ -137,6 +138,7 @@ class User_model extends CI_Model
                          recipient.nick as recipient_courier,
                          users.fio as disp,
                          contragent.name as client,
+                         contragent.contact as contact,
                          adress.adress as sender_adress,
                          ");
         $this->db->join("contragent", "contragent.id = order.id_client");
@@ -157,11 +159,13 @@ class User_model extends CI_Model
                          recipient.nick as recipient_courier,
                          contragent.name as client,
                          contragent.vendor as vendor,
+                         sender_adress.adress as sender_adress
                          ");
         $this->db->join("contragent", "contragent.id = order.id_client");
         $this->db->join("cour as sender", "sender.id = order.sender_courier");
         $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
-        $this->db->join("adress", "adress.id = order.id_sender_adress");
+        $this->db->join("adress as sender_adress", "sender_adress.id = order.id_sender_adress");
+        $this->db->not_like("order.state",'Выполнено');
         $this->db->where("order.sender_courier",$id);
         $this->db->or_where("order.recipient_courier",$id);
         $query = $this->db->get("order");

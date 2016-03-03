@@ -17,7 +17,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="contact" style="width: 100%">Контактное лицо клиента:</label>
-                                <input disabled name="contact" type="text" value="" class="form-control" id="contact" >
+                                <? foreach($clientList as $row) { if($row['id']==$order->id_client) {?>
+                                <input disabled name="contact" type="text" value="<?=$row['vendor']?>" class="form-control" id="contact" >
+                                <? } }?>
                             </div>
 
                             <div class="row">

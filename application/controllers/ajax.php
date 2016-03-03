@@ -218,6 +218,8 @@ class Ajax extends CI_Controller {
     public function getShortOrders()
     {
         $this->data['listOrders'] = $this->ajax_model->getShortOrders();
+        $this->data['courierList'] = $this->user_model->getCouriersList();
+
         $this->load->view('ajax/orders_list', $this->data);
     }
     public function getOrder()
@@ -245,5 +247,11 @@ class Ajax extends CI_Controller {
     }
     public function editInput(){
         $this->ajax_model->editInput( $this->input->post() );
+    }
+    public function getContactVendor(){
+        $this->ajax_model->getContactVendor((int)$_GET['id']);
+    }
+    public function setColorOrder(){
+        $this->ajax_model->setColorOrder((int) $_GET['id'], $_GET['color']);
     }
 }

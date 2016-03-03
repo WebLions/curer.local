@@ -316,6 +316,9 @@ $( document ).ready(function() {
             $("#sender_adress").html(obj.option);
             $("#sender_note").val(obj.note);
         });
+        $.get('/ajax/getContactVendor',{id: $(this).find(":selected").val()}, function(e){
+            $('#contact').val(e);
+        });
     });
     $('#main-content').on('change','#sender_adress',function(){
         $.post( "/ajax/getAdressClientNote",{id: $(this).find(":selected").val() }, function( data ) {
@@ -403,6 +406,8 @@ $( document ).ready(function() {
         var type = $(this).attr('data-type');
         var val = $(this).val();
         $.post('/ajax/editInput',{id:id,type:type,val:val});
+        if(type=='state')
+            location.reload();
     });
     $('#main-content').on('keyup','.dis-edit',function(e){
         if(e.keyCode == 13)
@@ -416,5 +421,13 @@ $( document ).ready(function() {
     });
     $('#main-content').on('focusout','.dis-edit',function(e){
         $(this).css('border','none');
+    });
+    $('#container').on('change','.color-order',function(e){
+        var id = $(this).attr('data-id');
+        var color = $(this).val();
+        $.get('/ajax/setColorOrder',{id:id,color:color});
+        $.post( "/ajax/getShortOrders", function( data ) {
+            $("#orders").html(data);
+        });
     });
 });
