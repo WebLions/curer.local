@@ -41,6 +41,7 @@
                         <td>
                             <select data-id="<?=$path['id']?>" data-type="state" style="width: 80%" name="state" class="form-control sel-cour">
                                     <option></option>
+                                    <option value="В работе" <?=($path['state']=='В работе')?'selected':'';?>>В работе</option>
                                     <option value="Выполнено" <?=($path['state']=='Выполнено')?'selected':'';?>>Выполнено</option>
                                     <option value="Отменён" <?=($path['state']=='Отменён')?'selected':'';?>>Отменён</option>
                                     <option value="Отказ" <?=($path['state']=='Отказ')?'selected':'';?>>Отказ</option>

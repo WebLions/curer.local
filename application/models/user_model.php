@@ -96,8 +96,18 @@ class User_model extends CI_Model
     {
         $this->db->select('cour.id, cour.name, cour.nick, cour_color.color');
         $this->db->join('cour_color','cour_color.id=cour.color_id');
-        $result = $this->db->get('cour');
-        return $result->result_array();
+        $result = $this->db->get('cour')->result_array();
+        foreach ($result as $key => $item) {
+            $this->db->not_like("order.state",'Выполнено');
+            $this->db->where('order.sender_courier',$item['id']);
+            $this->db->or_where('order.recipient_courier',$item['id']);
+            $result[$key]['count'] = $this->db->count_all_results('order');
+
+                $g = $this->db->query("SELECT SUM(sender_sell) as sum FROM `order` WHERE sender_courier = {$item['id']}")->row();
+                $q = $this->db->query("SELECT SUM(recipient_sell) as sum FROM `order` WHERE recipient_courier = {$item['id']}")->row();
+            $result[$key]['money'] = $g->sum + $q->sum;
+        }
+        return $result;
     }
     public function getShortOrders() //получение данных курьеров
     {

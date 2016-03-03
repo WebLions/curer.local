@@ -203,6 +203,15 @@ class Ajax_model extends CI_Model {
             $post['id_sender_adress'] = $this->db->insert_id();
         }
         $post['id_disp'] = $_SESSION['user_id'];
+        preg_match("/\d+\.\d+/", $post['sender_buy'], $output_array);
+        $post['sender_buy'] = $output_array[0];
+        preg_match("/\d+\.\d+/", $post['sender_sell'], $output_array);
+        $post['sender_sell'] = $output_array[0];
+        preg_match("/\d+\.\d+/", $post['recipient_buy'], $output_array);
+        $post['recipient_buy'] = $output_array[0];
+        preg_match("/\d+\.\d+/", $post['recipient_sell'], $output_array);
+        $post['recipient_sell'] = $output_array[0];
+        $post['state'] = 'В работе';
         unset($data);
         $date = array(
                     'id_client',
@@ -253,6 +262,8 @@ class Ajax_model extends CI_Model {
                          order.id,
                          sender.nick as sender_courier,
                          recipient.nick as recipient_courier,
+                         sender.id as sender_id,
+                         recipient.id as recipient_id,
                          users.fio as disp,
                          contragent.name as client,
                          order.state,

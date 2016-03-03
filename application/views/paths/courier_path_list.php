@@ -34,8 +34,8 @@
                             <? foreach($cour as $c) { ?>
                                 <tr>
                                     <td><?=$c['nick']?></td>
-                                    <td><??></td>
-                                    <td><??></td>
+                                    <td><?=$c['count']?></td>
+                                    <td><?=$c['money']?></td>
                                     <td><span style="display: block; width:15px; height: 15px; background: #<?=$c['color']?>"></span></td>
                                     <td>
                                         <div class="btn-group">
