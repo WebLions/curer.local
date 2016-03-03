@@ -231,10 +231,10 @@
                             <th style="width: 1%">Клиент</th>
                             <th style="width: 5%">Адрес отправителя</th>
                             <th style="width: 1%">Диспетчер</th>
-                            <th style="width: 1%">Курьер</th>
+                            <th style="width: 10%">Курьер</th>
                             <th style="width: 5%">Адрес получателя</th>
                             <th style="width: 1%">Диспетчер</th>
-                            <th style="width: 1%">Курьер</th>
+                            <th style="width: 10%">Курьер</th>
                             <th style="width: 3%"><i class="icon_cogs"></i>Действия</th>
                         </tr>
                         <? foreach($listOrders as $listOrder) { ?>
