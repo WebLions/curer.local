@@ -82,8 +82,8 @@
                                 <td><?=$listCourier['note']?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-success editCourier" data-id="<?=$listCourier['id']?>" data-toggle="modal" data-target="#myModalEditCourier"  href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteCourier" data-id="<?=$listCourier['id']?>" href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-xs btn-success editCourier" data-id="<?=$listCourier['id']?>" data-toggle="modal" data-target="#myModalEditCourier"  href="#"><i class="icon_cog"></i></a>
+                                        <a class="btn btn-xs btn-danger deleteCourier" data-id="<?=$listCourier['id']?>" href="#"><i class="icon_trash_alt"></i></a>
                                     </div>
                                 </td>
                             </tr>

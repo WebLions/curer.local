@@ -63,8 +63,8 @@
                                 <td><?=$listAdres['note']?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-success editAdress" data-id="<?=$listAdres['id']?>" data-toggle="modal" data-target="#myModalEditAdress"  href="#"><i class="icon_cog"></i></a>
-                                        <a class="btn btn-danger deleteAdress" data-id="<?=$listAdres['id']?>" href="#"><i class="icon_trash_alt"></i></a>
+                                        <a class="btn btn-xs btn-success editAdress" data-id="<?=$listAdres['id']?>" data-toggle="modal" data-target="#myModalEditAdress"  href="#"><i class="icon_cog"></i></a>
+                                        <a class="btn btn-xs btn-danger deleteAdress" data-id="<?=$listAdres['id']?>" href="#"><i class="icon_trash_alt"></i></a>
                                     </div>
                                 </td>
                             </tr>
