@@ -11,24 +11,31 @@
             </div>
         </div>
 
-<div class="tab-content">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <button type="button" class="btn btn-success">Печать</button>
+            <button type="button" class="btn btn-success">Выгрузить в Excel</button>
+            </div>
+        </div>
      <div class = "row">
          <div class = "col-md-12">
                         <br>
-            <table class="table table-striped table-advance table-hover">
+            <table class="table table-striped table-advance table-hover" style="font-size: 11px">
                 <tbody>
                 <tr>
-                    <th style="width: 5%">№</th>//Можно выбирать
-                    <th style="width: 15%">Дата</th>
-                    <th style="width: 10%">Статус</th>//при статусе віполенено он пропадает с маршрутов(статусы можно выбирать)
-                    <th style="width: 10%">Адресс</th>
-                    <th style="width: 10%">Примечание</th>
-                    <th style="width: 10%">Комментарий</th>
-                    <th style="width: 10%">Время</th>
-                    <th style="width: 10%">Вес</th>
-                    <th style="width: 10%">Закупка</th>
-                    <th style="width: 10%">Продажа</th>
-                    <th style="width: 10%">Оплата тарифа</th>
+                    <th style="width: 2%">№</th>
+                    <th style="width: 5%">Дата</th>
+                    <th style="width: 6%">Статус</th>
+                    <th style="width: 10%">Адресс отправителя</th>
+                    <th style="width: 10%">Адресс получателя</th>
+                    <th style="width: 12%">Примечание</th>
+                    <th style="width: 12%">Комментарий</th>
+                    <th style="width: 8%">Время</th>
+                    <th style="width: 6%">Вес</th>
+                    <th style="width: 8%">Закупка</th>
+                    <th style="width: 8%">Продажа</th>
+                    <th style="width: 8%">Оплата тарифа</th>
                 </tr>
 
                 <? foreach($paths as $path) {
@@ -48,6 +55,7 @@
                             </select>
                         </td>
                         <td><?=$path[$val.'_adress']?></td>
+                        <td>Адресс получателя</td>
                         <td><?=$path[$val.'_note']?></td>
                         <td><?=$path[$val.'_dis_note']?></td>
                         <td><??></td>

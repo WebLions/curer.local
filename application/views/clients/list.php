@@ -71,7 +71,6 @@
                                         <a class="btn btn-xs btn-success editClient" data-id="<?=$listClient['id']?>" data-toggle="modal" data-target="#myModalEditClient"  href="#"><i class="icon_cog"></i></a>
                                         <a class="btn btn-xs btn-danger deleteClient" data-id="<?=$listClient['id']?>" href="#"><i class="icon_trash_alt"></i></a>
                                         <a class="btn btn-xs btn-danger showClient" data-id="<?=$listClient['id']?>" href="/user/alist/<?=$listClient['id']?>"><i class="glyphicon glyphicon-eye-open"></i></a>
-
                                     </div>
                                 </td>
                             </tr>

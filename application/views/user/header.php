@@ -55,7 +55,6 @@
                     </a>
                 </li>
                 <? } ?>
-
                 <li class="sub-menu <?=($active=="clist")? 'active' : ''?>">
                     <a href="/user/clist" class="">
                         <i class="icon_id-2"></i>
@@ -82,7 +81,30 @@
                         <span>Заказы</span>
                     </a>
                 </li>
-
+                <li class="sub-menu <?=($active=="till")? 'active' : ''?>">
+                    <a href="/user/till" class="">
+                        <i class="icon_id-2"></i>
+                        <span>Касса</span>
+                    </a>
+                </li>
+                <li class="sub-menu <?=($active=="expenses")? 'active' : ''?>">
+                    <a href="/user/expenses" class="">
+                        <i class="icon_id-2"></i>
+                        <span>Учет расходов</span>
+                    </a>
+                </li>
+                <li class="sub-menu <?=($active=="sales")? 'active' : ''?>">
+                    <a href="/user/sales" class="">
+                        <i class="icon_id-2"></i>
+                        <span>Учет продаж</span>
+                    </a>
+                </li>
+                <li class="sub-menu <?=($active=="revise")? 'active' : ''?>">
+                    <a href="/user/revise" class="">
+                        <i class="icon_id-2"></i>
+                        <span>Акт сверки</span>
+                    </a>
+                </li>
                 <li class="sub-menu">
                     <a href="/user/logout" class="">
                         <i class="icon_lock_alt"></i>

@@ -66,7 +66,6 @@
                     <table class="table table-striped table-advance table-hover">
                         <tbody>
                         <tr>
-                            <th style="width: 1%">Цвет</th>
                             <th style="width: 10%">Позывной</th>
                             <th style="width: 20%">ФИО</th>
                             <th style="width: 15%">Конт. телефон</th>
@@ -75,7 +74,6 @@
                         </tr>
                         <? foreach($listCouriers as $listCourier) { ?>
                             <tr>
-                                <td><span style="display: block; width:15px; height: 15px; background: #<?=$listCourier['color']?>"></span></td>
                                 <td><?=$listCourier['nick']?></td>
                                 <td><?=$listCourier['name']?></td>
                                 <td><?=$listCourier['contact']?></td>
