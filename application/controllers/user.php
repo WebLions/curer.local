@@ -165,6 +165,46 @@ class User extends CI_Controller {
         $this->load->view('paths/paths_list', $this->data);
         $this->load->view('user/footer');
     }
+    public function till()
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['active'] = "till";
+        $this->load->view('user/header', $this->data);
+        $this->load->view('till/till_list', $this->data);
+        $this->load->view('user/footer');
+    }
+    public function expenses()
+{
+    if(!$this->data['user_token']) {
+        redirect('user/login');
+    }
+    $this->data['active'] = "expenses";
+    $this->load->view('user/header', $this->data);
+    $this->load->view('expenses/expenses_list', $this->data);
+    $this->load->view('user/footer');
+}
+    public function sales()
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['active'] = "sales";
+        $this->load->view('user/header', $this->data);
+        $this->load->view('sales/sales_list', $this->data);
+        $this->load->view('user/footer');
+    }
+    public function revise()
+    {
+        if(!$this->data['user_token']) {
+            redirect('user/login');
+        }
+        $this->data['active'] = "revise";
+        $this->load->view('user/header', $this->data);
+        $this->load->view('revise/revise_list', $this->data);
+        $this->load->view('user/footer');
+    }
 
     //добавить контроллеры для всех видов
     public function logout()
