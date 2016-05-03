@@ -188,10 +188,6 @@ class Ajax_model extends CI_Model {
     public function saveOrder($post = array(), $type = 'save') // two type 'save' or 'update'
     {
 
-        //$buy = empty($post['buy'])?"0":"1";
-        //$sell = empty($post['sell'])?"0":"1";
-
-        //$post['id_sender_adress'] = (is_int($post['id_sender_adress'])==true) ? $post['id_sender_adress'] : $this->addAdresClient($post['id_client'], $post['id_sender_adress']);
         if(!empty($post['new_sender_adress']))
         {
             $data = array(
@@ -251,9 +247,40 @@ class Ajax_model extends CI_Model {
         {
             $this->db->where("id", $id);
             $this->db->update("order", $data);
+
+            $data = array();
+            $data[0] = array(
+                'order_id' => $id,
+                'cour_id' => $post['sender_courier'],
+                'role' => 'sender',
+                'status' => $post['state']
+            );
+            $data[1] = array(
+                'order_id' => $id,
+                'cour_id' => $post['recipient_courier'],
+                'role' => 'recipient',
+                'status' => $post['state']
+            );
+            $this->db->update_batch("cour_to_order", $data);
             return true;
         }
         $this->db->insert("order", $data);
+        $data = array();
+        $data[0] = array(
+            'order_id' => $this->db->insert_id(),
+            'cour_id' => $post['sender_courier'],
+            'role' => 'sender',
+            'status' => $post['state']
+        );
+        $data[1] = array(
+            'order_id' => $this->db->insert_id(),
+            'cour_id' => $post['recipient_courier'],
+            'role' => 'recipient',
+            'status' => $post['state']
+        );
+        $this->db->insert_batch("cour_to_order", $data);
+
+
         return true;
     }
     public function getShortOrders() //получение данных курьеров
@@ -314,6 +341,16 @@ class Ajax_model extends CI_Model {
     public function editInput($post){
         $this->db->where('id',$post['id']);
         $this->db->update("order", array($post['type']=>$post['val']));
+        if($post['type']=='sender_courier'){
+            $this->db->where('order_id',$post['id']);
+            $this->db->where('role','sender');
+            $this->db->update("cour_to_order", array('cour_id'=>$post['val']));
+        }
+        if($post['type']=='recipient_courier'){
+            $this->db->where('order_id',$post['id']);
+            $this->db->where('role','recipient');
+            $this->db->update("cour_to_order", array('cour_id'=>$post['val']));
+        }
     }
     public function getContactVendor($id){
         $this->db->where('id',$id);

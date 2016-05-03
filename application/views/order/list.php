@@ -59,151 +59,151 @@
                                                 <input name="sender_note" class="form-control" id="sender_note" placeholder="Примечание">
                                             </div>
 
-                                    <div class="form-group">
-                                        <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
-                                            <option></option>
-                                            <? for($i=0;$i<=24;$i++) {?>
-                                                <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
-                                            <? } ?>
-                                        </select>
-                                        <select style="width: 49%" name="sender_time2" class="form-control">
-                                            <option></option>
-                                            <? for($i=0;$i<=24;$i++) {?>
-                                                <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
-                                            <? } ?>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <select style="width: 50%; float:left;" name="sender_time1" class="form-control">
+                                                    <option></option>
+                                                    <? for($i=0;$i<=24;$i++) {?>
+                                                        <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
+                                                    <? } ?>
+                                                </select>
+                                                <select style="width: 49%" name="sender_time2" class="form-control">
+                                                    <option></option>
+                                                    <? for($i=0;$i<=24;$i++) {?>
+                                                        <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
+                                                    <? } ?>
+                                                </select>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <input name="sender_weight" class="form-control" id="sender_weight" placeholder="Вес">
-                                    </div>
+                                            <div class="form-group">
+                                                <input name="sender_weight" class="form-control" id="sender_weight" placeholder="Вес">
+                                            </div>
 
-                                    <div class="form-group">
-                                        <input name="sender_order_note" class="form-control" id="sender_order_note" placeholder="Дополнительно">
-                                    </div>
+                                            <div class="form-group">
+                                                <input name="sender_order_note" class="form-control" id="sender_order_note" placeholder="Дополнительно">
+                                            </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₴</span>
-                                            <input name="sender_buy" id="sender_buy" type="text" class="form-control" placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">₴</span>
+                                                    <input name="sender_buy" id="sender_buy" type="text" class="form-control" placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
 
-                                        </div>
-                                    </div>
+                                                </div>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₴</span>
-                                            <input name="sender_sell" id="sender_sell" type="text" class="form-control" placeholder="Продажа" aria-label="Amount (to the nearest dollar)">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">₴</span>
+                                                    <input name="sender_sell" id="sender_sell" type="text" class="form-control" placeholder="Продажа" aria-label="Amount (to the nearest dollar)">
 
-                                        </div>
-                                    </div>
+                                                </div>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <input name="sender_dis_note" class="form-control" id="sender_dis_note" placeholder="Комментарий диспетчера">
-                                    </div>
-
-                                        </div>
-
-                                    <div class="col-lg-6">
-
-                                    <div class="form-group" id="client_adress_block">
-                                         <label for="recipient_adress">Получатель</label>
-                                            <input name="recipient_adress" class="form-control" id="recipient_adress" >
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input name="recipient_order_date" type="text" class="form-control datepicker" placeholder="Дата заказа" id="recipient_date">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input name="recipient_note" class="form-control" id="note" placeholder="Примечание">
-                                    </div>
-
-                                        <div class="form-group">
-                                            <select style="width: 50%; float:left;" name="recipient_time1" class="form-control">
-                                                <option></option>
-                                                <? for($i=0;$i<=24;$i++) {?>
-                                                    <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
-                                                <? } ?>
-                                            </select>
-                                            <select style="width: 49%" name="recipient_time2" class="form-control">
-                                                <option></option>
-                                                <? for($i=0;$i<=24;$i++) {?>
-                                                    <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
-                                                <? } ?>
-                                            </select>
-                                        </div>
-
-                                    <div class="form-group">
-                                        <input name="recipient_weight" class="form-control" id="weight" placeholder="Вес">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input name="recipient_order_note" class="form-control" id="order_note" placeholder="Дополнительно">
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₴</span>
-                                            <input name="recipient_buy" id="recipient_buy" type="text" class="form-control"  placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
+                                            <div class="form-group">
+                                                <input name="sender_dis_note" class="form-control" id="sender_dis_note" placeholder="Комментарий диспетчера">
+                                            </div>
 
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₴</span>
-                                            <input name="recipient_sell" id="recipient_sell" type="text" class="form-control" placeholder="Продажа" aria-label="Amount (to the nearest dollar)">
+                                        <div class="col-lg-6">
+
+                                            <div class="form-group" id="client_adress_block">
+                                                <label for="recipient_adress">Получатель</label>
+                                                <input name="recipient_adress" class="form-control" id="recipient_adress" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input name="recipient_order_date" type="text" class="form-control datepicker" placeholder="Дата заказа" id="recipient_date">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input name="recipient_note" class="form-control" id="note" placeholder="Примечание">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <select style="width: 50%; float:left;" name="recipient_time1" class="form-control">
+                                                    <option></option>
+                                                    <? for($i=0;$i<=24;$i++) {?>
+                                                        <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'От: 0'.$i.':00':'От: '.$i.':00'?></option>
+                                                    <? } ?>
+                                                </select>
+                                                <select style="width: 49%" name="recipient_time2" class="form-control">
+                                                    <option></option>
+                                                    <? for($i=0;$i<=24;$i++) {?>
+                                                        <option value="<?=($i<10)?'0'.$i.':00':$i.':00'?>"><?=($i<10)?'До: 0'.$i.':00':'До: '.$i.':00'?></option>
+                                                    <? } ?>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input name="recipient_weight" class="form-control" id="weight" placeholder="Вес">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input name="recipient_order_note" class="form-control" id="order_note" placeholder="Дополнительно">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">₴</span>
+                                                    <input name="recipient_buy" id="recipient_buy" type="text" class="form-control"  placeholder="Закупка" aria-label="Amount (to the nearest dollar)">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">₴</span>
+                                                    <input name="recipient_sell" id="recipient_sell" type="text" class="form-control" placeholder="Продажа" aria-label="Amount (to the nearest dollar)">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input name="recipient_dis_note" class="form-control t-text-area" id="recipient_dis_note" placeholder="Комментарий диспетчера" >
+                                            </div>
 
                                         </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input name="recipient_dis_note" class="form-control t-text-area" id="recipient_dis_note" placeholder="Комментарий диспетчера" >
-                                    </div>
-
-                                    </div>
                                     </div>
 
                                     <div class="row">
-                                    <div class="col-lg-12">
+                                        <div class="col-lg-12">
 
-                                    <div class="form-group">
-                                        <input name="tariff" class="form-control" id="tariff" placeholder="Тариф">
-                                    </div>
+                                            <div class="form-group">
+                                                <input name="tariff" class="form-control" id="tariff" placeholder="Тариф">
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label style="width: 20%; font-size: 14px;padding: 4px 1px" for="payment">Методы оплаты</label>
-                                        <select  style="width: 72%;float: right" name="payment" class="form-control">
-                                            <option value="Кредит">Кредит</option>
-                                            <option value="Приват">Приват</option>
-                                            <option value="Безнал">Безнал</option>
-                                            <option value="Наличные">Наличные</option>
-                                            <option value="Учёт">Учёт</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <label style="width: 20%; font-size: 14px;padding: 4px 1px" for="payment">Методы оплаты</label>
+                                                <select  style="width: 72%;float: right" name="payment" class="form-control">
+                                                    <option value="Кредит">Кредит</option>
+                                                    <option value="Приват">Приват</option>
+                                                    <option value="Безнал">Безнал</option>
+                                                    <option value="Наличные">Наличные</option>
+                                                    <option value="Учёт">Учёт</option>
+                                                </select>
+                                            </div>
 
-                                    <div  class="form-group">
-                                        <label style=" font-size: 14px;padding: 4px 1px" for="payment_person">Доставку оплачивает</label>
-                                        <select style="width: 72%;float: right"  name="payment_person" class="form-control">
-                                            <option value="Отравитель">Отправитель</option>
-                                            <option value="Получатель">Получатель</option>
-                                            <option value="Клиент">Клиент</option>
-                                        </select>
-                                    </div>
+                                            <div  class="form-group">
+                                                <label style=" font-size: 14px;padding: 4px 1px" for="payment_person">Доставку оплачивает</label>
+                                                <select style="width: 72%;float: right"  name="payment_person" class="form-control">
+                                                    <option value="Отравитель">Отправитель</option>
+                                                    <option value="Получатель">Получатель</option>
+                                                    <option value="Клиент">Клиент</option>
+                                                </select>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label style="width: 15%; font-size: 14px;padding: 4px 1px" for="state">Статус</label>
-                                        <select style="width: 72%;float: right"  name="state" class="form-control">
-                                            <option></option>
-                                            <option value="Выполнено">Выполнено</option>
-                                            <option value="Отменён">Отменён</option>
-                                            <option value="Отказ">Отказ</option>
-                                        </select>
-                                    </div>
+                                            <div class="form-group">
+                                                <label style="width: 15%; font-size: 14px;padding: 4px 1px" for="state">Статус</label>
+                                                <select style="width: 72%;float: right"  name="state" class="form-control">
+                                                    <option></option>
+                                                    <option value="Выполнено">Выполнено</option>
+                                                    <option value="Отменён">Отменён</option>
+                                                    <option value="Отказ">Отказ</option>
+                                                </select>
+                                            </div>
 
-                                    </div>
+                                        </div>
                                     </div>
 
                                     <div style="text-align: center">
@@ -219,7 +219,16 @@
             </div>
         </div>
 
-        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="PersonTableContainer">
+                </div>
+            </div>
+        </div>
+
+        <? if(false) { ?>
+
+
 
         <div class="row">
             <div class="col-lg-12">
@@ -275,9 +284,133 @@
                 </section>
             </div>
         </div>
-
+        <? } ?>
 
     </section>
 </section>
 <!--main content end-->
 </section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var cachedCourierOptions = null;
+
+        $('#PersonTableContainer').jtable({
+            paging: true,
+            pageSize: 10,
+            title: false,
+            actions: {
+                listAction: '/order/getOrders',
+                deleteAction: '/order/deleteOrders',
+            },
+            fields: {
+                color: {
+                    title: '',
+                    width: '1%'
+                },
+                id: {
+                    title: '№',
+                    key: true
+                },
+                name: {
+                    title: 'Клиент'
+                },
+                sender_adress: {
+                    title: 'Адрес отправителя'
+                },
+                sender_dis_note: {
+                    title: 'Диспетчер',
+                    display: function (data) {
+                        return '<input class="dis-edit" data-id="'+data.record.id+'" data-type="sender_dis_note" value="'+data.record.sender_dis_note+'" style="border: none; background: inherit">';
+                    }
+                },
+                sender_courier: {
+                    title: 'Курьер',
+                    display: function (data) {
+                        var re = '<select data-id="'+data.record.id+'" data-type="sender_courier" style="width: 80%" name="sender_courier" class="form-control sel-cour"><option value="0">нет</option>';
+                        $.each(subdata.cours, function(index, value) {
+                            if(index == data.record.sender_courier){
+                                re += '<option value="'+index+'" selected>'+value+'</option>';
+                            }else{
+                                re += '<option value="'+index+'">'+value+'</option>';
+                            }
+                        });
+                        re += '</select>';
+                        return re;
+                    }
+                },
+                recipient_adress: {
+                    title: 'Адрес получателя'
+                },
+                recipient_dis_note: {
+                    title: 'Диспетчер',
+                    display: function (data) {
+                        return '<input class="dis-edit" data-id="'+data.record.id+'" data-type="recipient_dis_note" value="'+data.record.recipient_dis_note+'" style="border: none; background: inherit">';
+                    }
+                },
+                recipient_courier: {
+                    title: 'Курьер',
+                    display: function (data) {
+                        var re = '<select data-id="'+data.record.id+'" data-type="recipient_courier" style="width: 80%" name="recipient_courier" class="form-control sel-cour"><option value="0">нет</option>';
+                        $.each(subdata.cours, function(index, value) {
+                            if(index == data.record.recipient_courier){
+                                re += '<option value="'+index+'" selected>'+value+'</option>';
+                            }else{
+                                re += '<option value="'+index+'">'+value+'</option>';
+                            }
+                        });
+                        re += '</select>';
+                        return re;
+                    }
+                },
+                MyButton: {
+                    title: '',
+                    width: '1%',
+                    display: function(data) {
+                        return '<button data-toggle="modal" data-target="#myModalEditOrder" title="Редактировать" class="jtable-command-button editOrder jtable-edit-command-button" data-id="'+data.record.id+'"></button>';
+                    }
+                },
+            }
+        });
+        $('#PersonTableContainer').jtable('load');
+        $('#PersonTableContainer').on('change','.color-order',function(e){
+            var id = $(this).attr('data-id');
+            var color = $(this).val();
+            $.get('/ajax/setColorOrder',{id:id,color:color});
+            $('#PersonTableContainer').jtable('reload');
+        });
+        $(".addOrder").click(function(e){
+            $.post( "/ajax/addOrder",  $("#addform").serialize() , function( data ) {
+                var obj = jQuery.parseJSON( data );
+                if(obj.error == 0)
+                {
+                    $(".close").trigger('click');
+                }
+                else{
+                }
+            });
+            $('#PersonTableContainer').jtable('reload');
+            e.preventDefault();
+            return false;
+        });
+        $("#PersonTableContainer").on("click", ".editOrder", function (e) {
+            $("#myModalEditOrder").empty();
+            $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
+                $("#myModalEditOrder").html(data);
+            });
+        });
+        $("#myModalEditOrder").on("click", ".saveOrder", function(e){
+            $.post( "/ajax/saveOrder",  $("#saveform").serialize() , function( data ) {
+                var obj = jQuery.parseJSON( data );
+                if(obj.error == 0)
+                {
+                    $(".close").trigger('click');
+                }
+                else{
+                }
+            });
+            $('#PersonTableContainer').jtable('reload');
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>

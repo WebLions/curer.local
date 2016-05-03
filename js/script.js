@@ -4,30 +4,11 @@ var showAdress = true;
 
 $( document ).ready(function() {
 
-
-    $('#order_date').datetimepicker({isRTL: false,
-        format: 'YYYY-MM-DD',
-        locale:'ru'
-    });
-
-    $('#myModalEditOrder').find('#order_date_edit').datetimepicker({
-        format: 'YYYY-MM-DD',
-        locale:'ru'
-    });
-        $('#sender_date').datetimepicker({
-            format: 'YYYY-MM-DD',
-            locale:'ru'
+    $(document).delegate(".datepicker", "focusin", function(){
+        $(this).datetimepicker({
+            format: 'YYYY-MM-DD', locale: 'ru'
         });
-        $('#myModalEditOrder').find('#sender_date_order').datetimepicker({
-            format: 'YYYY-MM-DD',
-            locale:'ru'
-        });
-
-            $('#recipient_date').datetimepicker({
-                format: 'YYYY-MM-DD',
-                locale:'ru'
-            });
-
+    });
 
     $(".adduser").click(function(e){
         $.post( "/ajax/addUser",  $("#addform").serialize() , function( data ) {
@@ -234,63 +215,7 @@ $( document ).ready(function() {
         }
     });
     //заказы
-    $(".addOrder").click(function(e){
-        $.post( "/ajax/addOrder",  $("#addform").serialize() , function( data ) {
-            var obj = jQuery.parseJSON( data );
-            if(obj.error == 0)
-            {
-                $(".close").trigger('click');
-            }
-            else{
-            }
-        });
-        $.post( "/ajax/getShortOrders", function( data ) {
-            $("#orders").html(data);
-        });
-        return false;
-        e.preventDefault();
-    });
 
-    $("#myModalEditOrder").on("click", ".saveOrder", function(e){
-        $.post( "/ajax/saveOrder",  $("#saveform").serialize() , function( data ) {
-            var obj = jQuery.parseJSON( data );
-            if(obj.error == 0)
-            {
-                $(".close").trigger('click');
-                $.post( "/ajax/getShortOrders", function( data ) {
-                    $("#orders").html(data);
-                });
-            }
-            else{
-            }
-        });
-        return false;
-        e.preventDefault();
-    });
-    $("#orders").on("click", ".editOrder", function (e) {
-        $("#myModalEditOrder").empty();
-        $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
-            $("#myModalEditOrder").html(data);
-            var date = $('#myModalEditOrder').find('#recipient_date').val();
-            $('#myModalEditOrder').find('#recipient_date').datetimepicker({
-                format: 'YYYY-MM-DD',
-                locale:'ru'
-            });
-            $('#myModalEditOrder').find('#recipient_date').val(date);
-        });
-    });
-    $("#orders").on("click", ".editOrder", function (e) {
-        $("#myModalEditOrder").empty();
-        $.post("/ajax/getOrder", { id : $(this).attr("data-id")}, function(data){
-            $("#myModalEditOrder").html(data);
-            var date = $('#myModalEditOrder').find('#sender_date').val();
-            $('#myModalEditOrder').find('#sender_date').datetimepicker({
-                format: 'YYYY-MM-DD',
-                locale:'ru'
-            });
-            $('#myModalEditOrder').find('#sender_date').val(date);
-        });
-    });
     $("#orders").on("click", ".deleteOrder", function (e) {
         if(confirm("Удалить заказ?")===false){
             e.preventDefault();
@@ -422,12 +347,5 @@ $( document ).ready(function() {
     $('#main-content').on('focusout','.dis-edit',function(e){
         $(this).css('border','none');
     });
-    $('#container').on('change','.color-order',function(e){
-        var id = $(this).attr('data-id');
-        var color = $(this).val();
-        $.get('/ajax/setColorOrder',{id:id,color:color});
-        $.post( "/ajax/getShortOrders", function( data ) {
-            $("#orders").html(data);
-        });
-    });
+
 });

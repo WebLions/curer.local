@@ -114,10 +114,6 @@ class User_model extends CI_Model
 
         $this->db->select("
                          order.id,
-                         sender.nick as sender_courier,
-                         recipient.nick as recipient_courier,
-                         sender.id as sender_id,
-                         recipient.id as recipient_id,
                          contragent.name as client,
                          order.state,
                          order.tariff,
@@ -129,8 +125,8 @@ class User_model extends CI_Model
                          order.recipient_adress
                          ");
         $this->db->join("contragent", "contragent.id = order.id_client");
-        $this->db->join("cour as sender", "sender.id = order.sender_courier");
-        $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
+       // $this->db->join("cour as sender", "sender.id = order.sender_courier");
+       // $this->db->join("cour as recipient", "recipient.id = order.recipient_courier");
         $this->db->join("adress", "adress.id = order.id_sender_adress");
 
         //$this->db->where("users.id = {$user_id}");
