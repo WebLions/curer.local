@@ -21,6 +21,8 @@
     <?php echo link_tag('bootstrap/css/jquery-jvectormap-1.2.2.css'); ?>
     <?php echo link_tag('bootstrap/css/style.css'); ?>
 
+    <script src="/js/jquery-2.1.4.min.js"></script>
+
 
 </head>
 
@@ -76,7 +78,7 @@
                 </li>
 
                 <li class="sub-menu <?=($active=="olist")? 'active' : ''?>">
-                    <a href="/user/olist" class="">
+                    <a href="/order" class="">
                         <i class="glyphicon glyphicon-shopping-cart"></i>
                         <span>Заказы</span>
                     </a>

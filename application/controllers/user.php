@@ -91,8 +91,8 @@ class User extends CI_Controller {
         $this->data['client'] = $this->user_model->getClient($id);
         $this->data['clientList'] = $this->user_model->getClientsList();
         $this->data['courierList'] = $this->user_model->getCouriersList();
-
         $this->data['listOrders'] = $this->user_model->getShortOrders();
+
         $this->data['active'] = "olist";
 
         $this->load->view('user/header', $this->data);

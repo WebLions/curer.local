@@ -87,7 +87,13 @@
 
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="PersonTableContainer">
 
+                </div>
+            </div>
+        </div>
      <div class = "row">
          <div class = "col-md-12">
                         <br>
@@ -117,3 +123,37 @@
 </section>
 <!--main content end-->
 </section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var cachedCourierOptions = null;
+
+        $('#PersonTableContainer').jtable({
+            paging: true,
+            pageSize: 10,
+            title: false,
+            actions: {
+                listAction: '/cassa/getCassa'
+            },
+            fields: {
+                id: {
+                    title: '№',
+                    key: true
+                },
+                name: {
+                    title: 'Курьер'
+                },
+                cassa: {
+                    title: 'Касса'
+                },
+                descript: {
+                    display: function(data){
+                        return '<div class="btn-group">'
+                            +'<a class="btn btn-success showTillLog" href="/user/till_log/'+data.record.id+'"><i class="glyphicon glyphicon-eye-open"></i></a>'
+                            +'</div>';
+                    }
+                }
+            }
+        });
+        $('#PersonTableContainer').jtable('load');
+    });
+</script>
