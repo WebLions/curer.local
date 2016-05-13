@@ -21,7 +21,7 @@ class User_model extends CI_Model
             'password' => $password
         );
         $this->db->insert('users', $data);
-
+//
         return true;
     }
 
