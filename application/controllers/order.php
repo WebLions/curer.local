@@ -8,6 +8,8 @@ class Order extends CI_Controller {
         $this->load->library("form_validation");
         $this->load->model("order_model");
         $this->load->model("user_model");
+        $this->load->model("delivery_model");
+        $this->load->model("status_model");
     }
 
     public function index(){
@@ -29,5 +31,11 @@ class Order extends CI_Controller {
     public function deleteOrders(){
         echo $this->order_model->deleteOrders($this->input->post());
         return false;
+    }
+
+    public function test(){
+        $par = array('list' => true);
+        $result = $this->order_model->getOrders($par);
+        var_dump($result);
     }
 }

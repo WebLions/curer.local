@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Order_model extends CI_Model
+class Payment_model extends CI_Model
 {
 
     public function __construct()
@@ -14,9 +14,9 @@ class Order_model extends CI_Model
         $this->db->close();
     }
 
-    public function getOrders($parameters = array())
+    public function getPayments($parameters = array())
     {
-        $query = $this->db->get("orders");
+        $query = $this->db->get("payments");
         $query = $query->result_array();
         if (isset($parameters['list']) && $parameters['list'] == true)
         {
