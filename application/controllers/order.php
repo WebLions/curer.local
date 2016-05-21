@@ -17,9 +17,9 @@ class Order extends CI_Controller {
         $this->load->model("delivery_model");
         $this->load->model("status_model");
         $orders = $this->order_model->getOrders();
-        $payments = $this->order_model->getPayments(array('list' => TRUE));
-        $deliveries = $this->order_model->getDeliveries(array('list' => TRUE));
-        $statuses = $this->order_model->getStatuses(array('list' => TRUE));
+        $payments = $this->payment_model->getPayments(array('list' => TRUE));
+        $deliveries = $this->delivery_model->getDeliveries(array('list' => TRUE));
+        $statuses = $this->status_model->getStatuses(array('list' => TRUE));
         foreach ($orders as $key => $val) {
             $payment_id = $val['payment_id'];
             $delivery_id = $val['delivery_id'];
