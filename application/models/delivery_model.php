@@ -8,12 +8,6 @@ class Delivery_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-
-    public function __destruct()
-    {
-        $this->db->close();
-    }
-
     public function getDeliveries($parameters = array())
     {
         $query = $this->db->get("deliveries");
