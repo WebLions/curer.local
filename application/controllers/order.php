@@ -6,25 +6,39 @@ class Order extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('url','html'));
         $this->load->library("form_validation");
-        $this->load->model("order_model");
-        $this->load->model("user_model");
     }
 
     public function index(){
-
-        $this->data['active'] = "orders";
-        $this->data['head_title'] = "Заказы";
-        $this->data['clientList'] = $this->user_model->getClientsList();
-
-        $this->load->view('user/header', $this->data);
-        $this->load->view('order/list', $this->data);
+        if(!$this->data['user_token']) {
+            redirect('user/home');
+        }
+        $this->load->model("order_model");
+        $this->load->model("payment_model");
+        $this->load->model("delivery_model");
+        $this->load->model("status_model");
+        $orders = $this->order_model->getOrders();
+        $payments = $this->order_model->getPayments(array('list' => TRUE));
+        $deliveries = $this->order_model->getDeliveries(array('list' => TRUE));
+        $statuses = $this->order_model->getStatuses(array('list' => TRUE));
+        foreach ($orders as $key => $val) {
+            $payment_id = $val['payment_id'];
+            $delivery_id = $val['delivery_id'];
+            $status_id = $val['status_id'];
+            $v['orders'][] = array(
+                'id' => $val['id'],
+                'contragent' => $val['contragent_id'],
+                'payment' => $payments[$payment_id]['type'],
+                'delivery' => $deliveries[$delivery_id]['type'],
+                'status' => $statuses[$status_id]['type'],
+                'tariff' => $val['tariff'],
+            );
+        }
+        $v['active'] = "olist";
+        $this->load->view('user/header', $v);
+        $this->load->view('order/orders');
         $this->load->view('user/footer');
     }
 
-    public function getOrders(){
-        echo $this->order_model->getOrders($this->input->get());
-        return false;
-    }
 
     public function deleteOrders(){
         echo $this->order_model->deleteOrders($this->input->post());
