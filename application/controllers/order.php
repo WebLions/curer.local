@@ -44,4 +44,10 @@ class Order extends CI_Controller {
         echo $this->order_model->deleteOrders($this->input->post());
         return false;
     }
+    public function test(){
+        $this->load->model("order_model");
+        $data = array('id_contragent' => 1);
+        echo $this->order_model->addOrder($data);
+    }
+
 }

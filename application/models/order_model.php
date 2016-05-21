@@ -9,11 +9,6 @@ class Order_model extends CI_Model
         $this->load->database();
     }
 
-    public function __destruct()
-    {
-        $this->db->close();
-    }
-
     public function getOrders($parameters = array())
     {
         $query = $this->db->get("orders");
@@ -34,4 +29,10 @@ class Order_model extends CI_Model
         return $target;
     }
 
+    public function addOrder($data = array())
+    {
+        if(!isset($data)){return false;}
+        $this->db->insert("orders", $data);
+        return $this->db->insert_id();
+    }
 }

@@ -9,11 +9,6 @@ class Payment_model extends CI_Model
         $this->load->database();
     }
 
-    public function __destruct()
-    {
-        $this->db->close();
-    }
-
     public function getPayments($parameters = array())
     {
         $query = $this->db->get("payments");
