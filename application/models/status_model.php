@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Order_model extends CI_Model
+class Status_model extends CI_Model
 {
 
     public function __construct()
@@ -14,9 +14,9 @@ class Order_model extends CI_Model
         $this->db->close();
     }
 
-    public function getOrders($parameters = array())
+    public function getStatuses($parameters = array())
     {
-        $query = $this->db->get("orders");
+        $query = $this->db->get("statuses");
         $query = $query->result_array();
         if (isset($parameters['list']) && $parameters['list'] == true)
         {
@@ -24,6 +24,7 @@ class Order_model extends CI_Model
         }
         return $query;
     }
+
     private function formatList($target = array())
     {
         foreach($target as $value){
