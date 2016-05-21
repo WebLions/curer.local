@@ -24,6 +24,7 @@ class Delivery_model extends CI_Model
         }
         return $query;
     }
+
     private function formatList($target = array())
     {
         foreach($target as $value){
