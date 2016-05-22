@@ -7,6 +7,17 @@ class Order extends CI_Controller {
         $this->load->helper(array('url','html'));
         $this->load->library("form_validation");
     }
+    public function test(){
+        $this->load->database();
+        $parameters = array('contragent_ids' => '3');
+        if(isset($parameters['contragent_ids'])){
+            $this->db->where_in('id_contragent', $parameters['contragent_ids']);
+        }
+        $query = $this->db->get("adress");
+        $query = $query->result_array();
+
+        print_r($query);
+    }
 
     public function index(){
         if(!$this->data['user_token']) {

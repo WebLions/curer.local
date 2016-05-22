@@ -13,16 +13,14 @@ class Contragent_model extends CI_Model
     {
         if(isset($parameters['ids'])){
             if(!is_array($parameters['ids'])){
-                (array) $parameters['ids'];
+                $parameters['ids'] = (array) $parameters['ids'];
             }
-            $ids = array();
-            foreach ($parameters['ids'] as $value){
-                $ids[] = $value;
-            }
-            $this->db->where_in('username', $ids);
+            $this->db->where_in('username', $parameters['ids']);
         }
+
         $query = $this->db->get("contragents");
         $query = $query->result_array();
+
         if (isset($parameters['list']) && $parameters['list'] == true) {
             $query = $this->formatList($query);
         }
