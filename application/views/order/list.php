@@ -26,14 +26,8 @@
                             </div>
                             <div class="modal-body">
                                 <form role="form" id="addform">
-
                                     <div class="form-group">
-                                        <select name="id_client" class="form-control" id="client">
-                                            <option></option>
-                                            <? foreach($clientList as $row) {?>
-                                                <option value="<?=$row['id']?>"><?=$row['name']?></option>
-                                            <? } ?>
-                                        </select>
+                                        <?php echo form_dropdown(NULL, $contragents, NULL, 'name="contragents" class="form-control" id="contragen"')?>
                                     </div>
                                     <div class="form-group" id="">
                                         <label for="contact">Контактное лицо клиента:</label>

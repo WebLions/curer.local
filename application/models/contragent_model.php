@@ -18,7 +18,7 @@ class Contragent_model extends CI_Model
             $this->db->where_in('username', $parameters['ids']);
         }
 
-        $query = $this->db->get("contragents");
+        $query = $this->db->get("contragent");
         $query = $query->result_array();
 
         if (isset($parameters['list']) && $parameters['list'] == true) {
@@ -29,7 +29,7 @@ class Contragent_model extends CI_Model
 
     private function formatList($target = array())
     {
-        foreach ($target as $value) {
+        foreach($target as $value){
             $id = $value['id'];
             $result[$id] = $value;
         }

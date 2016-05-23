@@ -7,17 +7,6 @@ class Order extends CI_Controller {
         $this->load->helper(array('url','html'));
         $this->load->library("form_validation");
     }
-    public function test(){
-        $this->load->database();
-        $parameters = array('contragent_ids' => '3');
-        if(isset($parameters['contragent_ids'])){
-            $this->db->where_in('id_contragent', $parameters['contragent_ids']);
-        }
-        $query = $this->db->get("adress");
-        $query = $query->result_array();
-
-        print_r($query);
-    }
 
     public function index(){
         if(!$this->data['user_token']) {
@@ -45,6 +34,12 @@ class Order extends CI_Controller {
             );
         }
         $v['active'] = "olist";
+        $this->load->model('contragent_model');
+        $contragents = $this->contragent_model->getContragents(array('list' => TRUE));
+        $v['contagents'] = array();
+        foreach ($contragents as $key => $val) {
+            $v['contagents'][$key] = $val['name'];
+        }
         $this->load->view('user/header', $v);
         $this->load->view('order/orders');
         $this->load->view('user/footer');
@@ -53,7 +48,7 @@ class Order extends CI_Controller {
         echo $this->order_model->deleteOrders($this->input->post());
         return false;
     }
-    public function ajax_order()
+    public function ajax_new_order()
     {
         $this->load->model("order_model");
         $this->load->model("adress_model");
