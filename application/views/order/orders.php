@@ -235,8 +235,8 @@
                             <td><?php echo $order['tariff']?></td>
                             <td>
                                 <div class="btn-group">
-                                    <a class="btn btn-xs btn-success" id="editCourier" data-id="<?=$order['id']?>" data-toggle="modal" data-target="#myModalEditCourier"  href="#"><i class="icon_cog"></i></a>
-                                    <a class="btn btn-xs btn-danger" id="deleteCourier" data-id="<?=$order['id']?>" href="#"><i class="icon_trash_alt"></i></a>
+                                    <a class="btn btn-xs btn-success editCourier" data-id="<?=$order['id']?>" data-toggle="modal" data-target="#myModalEditCourier"  href="#"><i class="icon_cog"></i></a>
+                                    <a class="btn btn-xs btn-danger deleteCourier" data-id="<?=$order['id']?>" href="#"><i class="icon_trash_alt"></i></a>
                                 </div>
                         </tr>
                         <? } ?>
@@ -253,7 +253,7 @@
     $( document ).ready(function()
     {
         //удаление
-        $( "#deleteCourier" ).click(function(data) {
+        $( ".deleteCourier" ).click(function(data) {
             if (confirm("Удалить курьера?") == true)
             {
                 $.post( "/order/ajax_delete_order", { id : $(this).attr("data-id")});
@@ -268,6 +268,9 @@
             }
         });
 
-        //редактирование
+    });
+    //редактирование
+    $( ".editCourier" ).click(function(data) {
+
     });
 </script>
