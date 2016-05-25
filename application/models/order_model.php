@@ -35,4 +35,8 @@ class Order_model extends CI_Model
         $this->db->insert("orders", $data);
         return $this->db->insert_id();
     }
+    public function deleteOrder($id){
+        $this->db->where('id', $id);
+        return $this->db->delete('orders');
+    }
 }

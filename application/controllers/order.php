@@ -48,7 +48,7 @@ class Order extends CI_Controller {
         echo $this->order_model->deleteOrders($this->input->post());
         return false;
     }
-    public function ajax_new_order()
+    public function ajax_order()
     {
         $this->load->model("order_model");
         $this->load->model("adress_model");
@@ -116,6 +116,14 @@ class Order extends CI_Controller {
         );
         $this->courier_order->addRecord($recipient_cour);
         return false;
+    }
+    public function ajax_delete_order()
+    {
+        $data = $this->input->post();
+        $this->load->model("order_model");
+        $result = $this->order_model->deleteOrder($data['id']);//Добавляем новый адрес и получаем его айди в таблице
+        $result = json_encode($result);
+        return $result;
     }
 
 }

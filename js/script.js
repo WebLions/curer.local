@@ -214,6 +214,8 @@ $( document ).ready(function() {
             });
         }
     });
+
+
     //заказы
 
     $("#orders").on("click", ".deleteOrder", function (e) {
