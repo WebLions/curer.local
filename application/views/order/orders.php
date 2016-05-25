@@ -25,7 +25,7 @@
                             <div class="modal-body">
                                 <form role="form" id="addform">
                                     <div class="form-group">
-                                        <?php echo form_dropdown(NULL, $contagents, NULL, 'name="contragents" class="form-control" id="contragen"'); ?>
+                                        <?php echo form_dropdown(NULL, $contagents, NULL, 'name="contragents" class="form-control" id="contragent"'); ?>
                                     </div>
                                     <div class="form-group" id="">
                                         <label for="contact">Контактное лицо клиента:</label>
@@ -252,6 +252,23 @@
 <script type="text/javascript">
     $( document ).ready(function()
     {
+        //Получение данных контрагента 
+        $("#contragent").on('change', function () {
+            var id = $(this).val();
+            $.post("/order/ajax_get_contragent_info", {id: id}, function(data) {
+                if (data.success) {
+                    var data = data.data;
+                    var select = $(document).find('#sender_adress');
+                    $(document).find('#contact').val(data.contact);
+                    select.empty();
+                    $.each(data.adress, function(val, text) {
+                        select.append(
+                            $('<option></option>').val(val).html(text)
+                        );
+                    });
+                }
+            }, "json");
+        });
         //удаление
         $( ".deleteCourier" ).click(function(data) {
             if (confirm("Удалить курьера?") == true)

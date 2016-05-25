@@ -15,7 +15,7 @@ class Contragent_model extends CI_Model
             if(!is_array($parameters['ids'])){
                 $parameters['ids'] = (array) $parameters['ids'];
             }
-            $this->db->where_in('username', $parameters['ids']);
+            $this->db->where_in('id', $parameters['ids']);
         }
 
         $query = $this->db->get("contragent");

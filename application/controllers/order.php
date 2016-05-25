@@ -126,4 +126,29 @@ class Order extends CI_Controller {
         return $result;
     }
 
+    public function ajax_get_contragent_info() {
+        $post = $this->input->post();
+        $result = $adress_info = array();
+        if (isset($post['id'])) {
+            $id = (int) $post['id'];
+        } else {
+            return FALSE;
+        }
+        $this->load->model('contragent_model');
+        $this->load->model('adress_model');
+        $contragent_info = $this->contragent_model->getContragents(array('ids' => $id));
+        $adress = $this->adress_model->getAdress(array('contragent_ids' => $id, 'list' => TRUE));
+        foreach ($adress as $key => $adres) {
+            $adress_info[$key] = $adres['adress'];
+        }
+        $result = array(
+            'success' => TRUE,
+            'data' => array(
+                'contact' => $contragent_info[0]['contact'],
+                'adress' => $adress_info,
+            ),
+        );
+        echo json_encode($result);
+    }
+
 }
