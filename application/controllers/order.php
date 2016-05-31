@@ -16,7 +16,7 @@ class Order extends CI_Controller {
         $this->load->model("payment_model");
         $this->load->model("delivery_model");
         $this->load->model("status_model");
-        $orders = $this->order_model->getOrders();
+            $orders = $this->order_model->getOrders();
         $payments = $this->payment_model->getPayments(array('list' => TRUE));
         $deliveries = $this->delivery_model->getDeliveries(array('list' => TRUE));
         $statuses = $this->status_model->getStatuses(array('list' => TRUE));

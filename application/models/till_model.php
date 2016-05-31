@@ -1,28 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Adress_model extends CI_Model
+class Status_model extends CI_Model
 {
+
     public function __construct()
     {
         parent::__construct();
         $this->load->database();
     }
-    public function addAdress($data)
-    {
-       if(!isset($data)){return false;}
-       $this->db->insert("adress", $data);
-       return $this->db->insert_id();
-    }
-    public function getAdress($parameters = array())
-    {
-        if(isset($parameters['ids'])){
-            $this->db->where_in('id', $parameters['ids']);
-        }
-        if(isset($parameters['contragent_ids'])){
-            $this->db->where_in('id_contragent', $parameters['contragent_ids']);
-        }
 
-        $query = $this->db->get("adress");
+    public function getTill($parameters = array())
+    {
+        $query = $this->db->get_where('courier_order', array('status_id' => 1)); // 1 - статус "выполнено"
         $query = $query->result_array();
 
         if (isset($parameters['list']) && $parameters['list'] == true) {
@@ -40,5 +29,4 @@ class Adress_model extends CI_Model
         $target = $result;
         return $target;
     }
-
 }
